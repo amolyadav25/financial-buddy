@@ -1,0 +1,174 @@
+{
+  "status": "1",
+  "blogs": [
+    {
+      "blog_id": "1",
+      "blog_name": "Lorem Ipsum is simply dummy text",
+      "blog_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "blog_url": "https://www.antworksmoney.com/blog/refinancing-home-loans/",
+      "blog_image_url": "https://www.webnode.com/blog/wp-content/uploads/2016/10/Blog-intro.jpg"
+    },
+    {
+      "blog_id": "2",
+      "blog_name": "Lorem Ipsum is simply dummy text",
+      "blog_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "blog_url": "https://www.antworksmoney.com/blog/refinancing-home-loans/",
+      "blog_image_url": "https://www.webnode.com/blog/wp-content/uploads/2016/10/Blog-intro.jpg"
+    },
+    {
+      "blog_id": "3",
+      "blog_name": "Lorem Ipsum is simply dummy text",
+      "blog_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "blog_url": "https://www.antworksmoney.com/blog/refinancing-home-loans/",
+      "blog_image_url": "https://www.webnode.com/blog/wp-content/uploads/2016/10/Blog-intro.jpg"
+    }
+  ],
+  "videos": [
+    {
+      "video_id": "1",
+      "video_name": "What are Personal Loan",
+      "video_url": "https://www.youtube.com/watch?v=irHxmnq_KAk",
+      "video_thumbnail": "http://www.samadhaannow.com/wp-content/uploads/2018/04/BestTaxSavingInvestments.jpg",
+      "video_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    {
+      "video_id": "2",
+      "video_name": "What are Personal Loan",
+      "video_url": "https://www.youtube.com/watch?v=irHxmnq_KAk",
+      "video_thumbnail": "http://www.samadhaannow.com/wp-content/uploads/2018/04/BestTaxSavingInvestments.jpg",
+      "video_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    {
+      "video_id": "3",
+      "video_name": "What are Personal Loan",
+      "video_url": "https://www.youtube.com/watch?v=irHxmnq_KAk",
+      "video_thumbnail": "http://www.samadhaannow.com/wp-content/uploads/2018/04/BestTaxSavingInvestments.jpg",
+      "video_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    }
+  ],
+  "offers": [
+    {
+      "offer_id": "1",
+      "offer_name": "Lorem Ipsum is simply dummy text",
+      "offer_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "offer_url": "https://www.antworksmoney.com/blog/refinancing-home-loans/",
+      "offer_image_url": "https://www.myloancare.in/getfile/images/home-loan.jpg"
+    },
+    {
+      "offer_id": "2",
+      "offer_name": "Lorem Ipsum is simply dummy text",
+      "offer_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "offer_url": "https://www.antworksmoney.com/blog/refinancing-home-loans/",
+      "offer_image_url": "https://www.myloancare.in/getfile/images/home-loan.jpg"
+    },
+    {
+      "offer_id": "3",
+      "offer_name": "Lorem Ipsum is simply dummy text",
+      "offer_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "offer_url": "https://www.antworksmoney.com/blog/refinancing-home-loans/",
+      "offer_image_url": "https://www.letzbank.com/sites/default/files/styles/large/public/banner_109.jpg"
+    }
+  ],
+  "pfds": [
+    {
+      "pfd_id": "1",
+      "pfd_name": "Lorem Ipsum is simply dummy text",
+      "pfd_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "pfd_url": "https://drive.google.com/file/d/1xDIDZRRCQk23JOHIaDrIrBg3oTr1qDRW/view?usp=sharing",
+      "pfd_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pdf_by_mimooh.svg/544px-Pdf_by_mimooh.svg.png"
+    },
+    {
+      "pfd_id": "2",
+      "pfd_name": "Lorem Ipsum is simply dummy text",
+      "pfd_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "pfd_url": "https://drive.google.com/file/d/1xDIDZRRCQk23JOHIaDrIrBg3oTr1qDRW/view?usp=sharing",
+      "pfd_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pdf_by_mimooh.svg/544px-Pdf_by_mimooh.svg.png"
+    },
+    {
+      "pfd_id": "3",
+      "pfd_name": "Lorem Ipsum is simply dummy text",
+      "pfd_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "pfd_url": "https://drive.google.com/file/d/1xDIDZRRCQk23JOHIaDrIrBg3oTr1qDRW/view?usp=sharing",
+      "pfd_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pdf_by_mimooh.svg/544px-Pdf_by_mimooh.svg.png"
+    }
+  ],
+  "app_download": [
+    {
+      "app_id": "APP_001",
+      "app_name": "112 Plus - One click Emergency Notifier (Unreleased)",
+      "app_url": "https://play.google.com/store/apps/details?id=com.prathamvision.hms",
+      "app_logo_url": "",
+      "app_image_url": "",
+      "app_company_name": "112 Plus Wellness Technologies",
+      "app_details": "112Plus is a venture from 112Plus Wellness Technologies.Our vision is to address the availability issues related to the health field. The availability could be connected with the presence of Family, Friends, Volunteers, Ambulance, Hospital, Pharmacy and availability of information that is connected with every individual.",
+      "app_category": "Health & Fitness",
+      "app_rating": "4",
+      "app_download":"100"
+    },
+    {
+      "app_id": "APP_001",
+      "app_name": "112 Plus - One click Emergency Notifier (Unreleased)",
+      "app_url": "https://play.google.com/store/apps/details?id=com.prathamvision.hms",
+      "app_logo_url": "",
+      "app_image_url": "",
+      "app_company_name": "112 Plus Wellness Technologies",
+      "app_details": "112Plus is a venture from 112Plus Wellness Technologies.Our vision is to address the availability issues related to the health field. The availability could be connected with the presence of Family, Friends, Volunteers, Ambulance, Hospital, Pharmacy and availability of information that is connected with every individual.",
+      "app_category": "Health & Fitness",
+      "app_rating": "4",
+      "app_download":"100"
+    },
+    {
+      "app_id": "APP_001",
+      "app_name": "112 Plus - One click Emergency Notifier (Unreleased)",
+      "app_url": "https://play.google.com/store/apps/details?id=com.prathamvision.hms",
+      "app_logo_url": "",
+      "app_image_url": "",
+      "app_company_name": "112 Plus Wellness Technologies",
+      "app_details": "112Plus is a venture from 112Plus Wellness Technologies.Our vision is to address the availability issues related to the health field. The availability could be connected with the presence of Family, Friends, Volunteers, Ambulance, Hospital, Pharmacy and availability of information that is connected with every individual.",
+      "app_category": "Health & Fitness",
+      "app_rating": "4",
+      "app_download":"100"
+    },
+    {
+      "app_id": "APP_001",
+      "app_name": "112 Plus - One click Emergency Notifier (Unreleased)",
+      "app_url": "https://play.google.com/store/apps/details?id=com.prathamvision.hms",
+      "app_logo_url": "",
+      "app_image_url": "",
+      "app_company_name": "112 Plus Wellness Technologies",
+      "app_details": "112Plus is a venture from 112Plus Wellness Technologies.Our vision is to address the availability issues related to the health field. The availability could be connected with the presence of Family, Friends, Volunteers, Ambulance, Hospital, Pharmacy and availability of information that is connected with every individual.",
+      "app_category": "Health & Fitness",
+      "app_rating": "4",
+      "app_download":"100"
+    },
+    {
+      "app_id": "APP_001",
+      "app_name": "112 Plus - One click Emergency Notifier (Unreleased)",
+      "app_url": "https://play.google.com/store/apps/details?id=com.prathamvision.hms",
+      "app_logo_url": "",
+      "app_image_url": "",
+      "app_company_name": "112 Plus Wellness Technologies",
+      "app_details": "112Plus is a venture from 112Plus Wellness Technologies.Our vision is to address the availability issues related to the health field. The availability could be connected with the presence of Family, Friends, Volunteers, Ambulance, Hospital, Pharmacy and availability of information that is connected with every individual.",
+      "app_category": "Health & Fitness",
+      "app_rating": "4",
+      "app_download":"100"
+    }
+  ],
+  "appCategories": [
+    {
+      "category_id": "C001",
+      "category_name": "Health & Fitness",
+      "category_image_url": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2017/07/runner-1200x600-796x398.jpg"
+    },
+    {
+      "category_id": "C002",
+      "category_name": "Finance & Consultancy",
+      "category_image_url": "https://news.sap.com/africa/files/2017/07/Finance-1.jpg"
+    },
+    {
+      "category_id": "C003",
+      "category_name": "Utilities",
+      "category_image_url": "http://www.selma-nc.com/Data/Sites/1/media/images/public-utilities-icon.jpg"
+    }
+  ]
+}

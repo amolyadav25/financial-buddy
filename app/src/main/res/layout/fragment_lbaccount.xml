@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBAccountFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/borowwerIdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center_vertical"
+            android:text="Upload Invoice"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_20sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@string/app_name"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:src="@drawable/upload_invoice_banr"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="DATE OF INVOICE"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <RelativeLayout
+                android:id="@+id/dateOfBirthSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:theme="@style/MyAppbarTheme">
+
+                <TextView
+                    android:id="@+id/selectDateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:hint="Enter Date Of Invoice"
+
+                    android:padding="@dimen/dimen_10dp"
+                    android:textColor="@color/background_color"
+                    android:textColorHint="@color/statusBackgroundColor"
+                    android:textSize="@dimen/dimen_14sp" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="INVOICE NUMBER"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/et_invoice_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Enter Invoice No."
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="AMOUNT"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/et_invoice_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Enter Amount"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="Request"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="@dimen/dimen_24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:gravity="center_horizontal"
+                android:text="We request you to share sale invoice with us. Go to upload document section to upload invoice."
+                android:textSize="@dimen/dimen_12dp" />
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_44dp"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:paddingStart="@dimen/dimen_20sp"
+                android:paddingEnd="@dimen/dimen_20sp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/buttonbackgroundenabled"
+                android:text="Submit"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

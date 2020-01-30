@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_5dp"
+    android:layout_marginEnd="@dimen/dimen_5dp"
+    android:layout_marginBottom="@dimen/dimen_20sp"
+    app:cardCornerRadius="@dimen/dimen_5dp">
+
+    <RelativeLayout
+        android:id="@+id/dataCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:theme="@style/MyAppbarTheme">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="@dimen/dimen_70dp"
+            android:layout_height="@dimen/dimen_70dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:background="@drawable/contact_view_circle_black"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_notifications_white_24dp" />
+
+        <TextView
+            android:id="@+id/notificationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:layout_toEndOf="@+id/notificationIcon"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="@dimen/dimen_18sp" />
+
+        <TextView
+            android:id="@+id/notificatonDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginTop="-5dp"
+            android:layout_toEndOf="@+id/notificationIcon"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_below="@+id/notificationText"
+            android:textColor="@color/statusBackgroundColor"
+            android:textSize="@dimen/dimen_14sp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

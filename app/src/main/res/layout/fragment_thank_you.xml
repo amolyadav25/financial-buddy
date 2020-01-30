@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.Loan.ThankYouFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/loanHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Credit Card"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="?android:attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:id="@+id/thankYouLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:padding="@dimen/dimen_30sp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:text="Thank You"
+            android:gravity="center_horizontal"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:weightSum="100">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="44"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimaryDark"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_40sp"
+                android:padding="@dimen/dimen_5dp"
+                android:layout_weight="12"
+                android:rotation="180"
+                android:tint="@color/colorPrimary"
+                android:background="@drawable/imageview_background_circle"
+                android:src="@drawable/ic_attach_money_black_24dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="44"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimaryDark"/>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen_16sp"
+
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="Thank you for contacting Antworks Money, \n\nYour query would be addressed soon by one of our expert."/>
+
+
+        <Button
+            android:id="@+id/returnToHomeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_40sp"
+            android:text="Return To Home"
+            android:paddingStart="@dimen/dimen_20sp"
+            android:paddingEnd="@dimen/dimen_20sp"
+            android:background="@drawable/buttonbackgroundenabled"
+            android:textColor="@android:color/white"
+            android:layout_gravity="end"
+            android:textAllCaps="false"
+
+            android:layout_marginTop="@dimen/dimen_30sp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

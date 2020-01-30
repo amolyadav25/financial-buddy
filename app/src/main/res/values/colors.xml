@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#018678</color>
+
+    <color name="colorPrimaryDark">#00574b</color>
+
+    <color name="colorAccent">#008577</color>
+
+    <color name="statusBackgroundColor">#a4a4a4</color>
+
+    <color name="background_color">#424242</color>
+
+    <color name="toolbar_background_color">#7b000000</color>
+
+    <color name="image_gradient_color">#e4009b8b</color>
+
+    <color name="backgroundColor">#acacac</color>
+
+    <color name="gradientbackgroundColor">#c1c1c1</color>
+
+    <color name="transparent_white">#d8ffffff</color>
+
+    <color name="red">#e81c1f</color>
+
+    <color name="tab_title_dark">#ef4d4d4d</color>
+
+    <color name="menu_selected_color">#43EBFB</color>
+
+
+    <color name="white">#ffffff</color>
+
+
+    <color name="green">#40C055</color>
+
+    <color name="yellow_color">#F8BA34</color>
+    <color name="yellow_color_dark">#C7952A</color>
+
+    <color name="blue_color_light">#4bd8fc</color>
+    <color name="blue_color_dark">#1386ff</color>
+
+    <color name="light_red">#ffa581</color>
+    <color name="dark_red">#ff5c81</color>
+
+    <color name="purple_light">#982DF5</color>
+    <color name="purple_dark">#4D0EF0</color>
+
+    <color name="cyan_light">#15E99C</color>
+    <color name="cyan_dark">#00A0F0</color>
+
+    <color name="orange_light">#FEAA48</color>
+    <color name="orange_dark">#E6750D</color>
+
+    <color name="magenta_light">#F23AF6</color>
+    <color name="magenta_dark">#D20CD6</color>
+
+    <color name="counselling_color2">#3CEA94</color>
+    <color name="counselling_color1">#0744D0</color>
+    <color name="counselling_color3">#EA3669</color>
+
+    <color name="yellow">#cba600</color>
+
+    <color name="blueColor">#003ACC</color>
+
+
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBLoanTypesFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="New Loan"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:weightSum="100"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_marginEnd="@dimen/dimen_14sp"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/consumerLoanLayout"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/request_background"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_80dp"
+                            android:src="@drawable/consumer_durable"
+                            android:layout_gravity="center_horizontal"
+                            android:tint="@android:color/white"
+                            android:layout_height="@dimen/dimen_80dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/dimen_14sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:textColor="@android:color/white"
+                            android:text="Consumer Durable"/>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_marginStart="@dimen/dimen_14sp"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/cashLoanLayout"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/micro_loan_background"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_80dp"
+                            android:src="@drawable/micro_loan"
+                            android:tint="@android:color/white"
+                            android:layout_height="@dimen/dimen_80dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/dimen_14sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:textColor="@android:color/white"
+                            android:text="Cash Loan"/>
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

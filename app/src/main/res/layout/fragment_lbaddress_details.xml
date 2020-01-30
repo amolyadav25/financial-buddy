@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBAddressDetails">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+            android:gravity="center_vertical"
+            android:text="Address Details"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                android:src="@drawable/address" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="ADDRESS"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/et_reg_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_70dp"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:ellipsize="end"
+                
+                android:gravity="start|top"
+                android:hint="Enter your full address"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:maxLines="5"
+                android:minLines="1"
+                android:padding="@dimen/dimen_5dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="STATE"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <RelativeLayout
+                android:id="@+id/stateSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:theme="@style/MyAppbarTheme">
+
+                <TextView
+                    android:id="@+id/stateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    
+                    android:hint="Select your state"
+                    android:padding="@dimen/dimen_10dp"
+                    android:textColor="@color/background_color"
+                    android:textColorHint="@color/statusBackgroundColor"
+                    android:textSize="@dimen/dimen_14sp" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="CITY"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <RelativeLayout
+                android:id="@+id/citySelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:theme="@style/MyAppbarTheme">
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    
+                    android:hint="Select your city"
+                    android:padding="@dimen/dimen_10dp"
+                    android:textColor="@color/background_color"
+                    android:textColorHint="@color/statusBackgroundColor"
+                    android:textSize="@dimen/dimen_14sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="PINCODE"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/et_user_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                
+                android:hint="Enter your Pincode"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <Button
+                android:id="@+id/ProceedButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_46dp"
+                android:layout_marginTop="@dimen/dimen_30sp"
+                android:layout_marginBottom="@dimen/dimen_30sp"
+                android:background="@drawable/buttonbackgroundenabled"
+                android:text="SUBMIT"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

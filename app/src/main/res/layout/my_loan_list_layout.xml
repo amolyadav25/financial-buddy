@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10dp"
+    android:orientation="vertical"
+    android:background="@drawable/border_background">
+
+    <RelativeLayout
+        android:id="@+id/dataCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:elevation="@dimen/dimen_2dp"
+        android:padding="@dimen/dimen_10dp"
+        android:theme="@style/MyAppbarTheme">
+
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="HOUSING LOAN"
+            android:textSize="@dimen/dimen_12dp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/accountNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="A/C No. 123456"
+            android:layout_below="@+id/userName"
+            android:textSize="@dimen/dimen_12dp"
+            android:textColor="@color/backgroundColor" />
+
+
+        <Button
+            android:id="@+id/viewDetailsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_30sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="View Details"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_12dp"
+            android:textAllCaps="false"
+            android:background="@drawable/buttonbackgroundyellow" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/background_color"
+        android:layout_height="1px"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/EMIHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EMI : "
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginStart="@dimen/dimen_10dp"/>
+
+            <TextView
+                android:id="@+id/EMIText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ 5000"
+                android:layout_toEndOf="@id/EMIHeading"
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/dimen_10dp"/>
+
+            <TextView
+                android:id="@+id/dueText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Due on. 10th November 2019"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_below="@+id/EMIHeading"
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/backgroundColor" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:background="@color/background_color"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/BalanceHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance : "
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginStart="@dimen/dimen_5dp"/>
+
+            <TextView
+                android:id="@+id/BalanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ 5000"
+                android:layout_toEndOf="@id/BalanceHeading"
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/dimen_10dp"/>
+
+
+            <TextView
+                android:id="@+id/offText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" of "
+                android:layout_toEndOf="@id/BalanceText"
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/background_color"
+                android:layout_marginTop="@dimen/dimen_10dp"/>
+
+            <TextView
+                android:id="@+id/principalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ 5000"
+                android:singleLine="true"
+                android:layout_toEndOf="@id/offText"
+                android:textSize="@dimen/dimen_12dp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/dimen_10dp"/>
+
+            <Button
+                android:id="@+id/payNowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_30sp"
+                android:text="Pay Now"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_12dp"
+                android:textAllCaps="false"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:layout_below="@+id/BalanceHeading"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:background="@drawable/buttonbackgroundenabled" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

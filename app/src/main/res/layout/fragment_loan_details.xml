@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBLoanConfirmationFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/loanIdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Loan Confirmation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/loan_details_banr" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOAN ACCOUNT NUMBER"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <TextView
+                    android:id="@+id/loanAccountNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TENURE"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <TextView
+                    android:id="@+id/tenureTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOAN AMOUNT"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <TextView
+                    android:id="@+id/loanAmountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DISBURSED AMOUNT"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <TextView
+                    android:id="@+id/disbursedAmountTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_44dp"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginTop="@dimen/dimen_20sp">
+
+                <Button
+                    android:id="@+id/loanStateMentButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="@dimen/dimen_44dp"
+                    android:background="@drawable/buttonbackgroundenabled"
+                    android:text="LOAN STATEMENT"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/loanAgreementButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_height="@dimen/dimen_44dp"
+                    android:background="@drawable/buttonbackgroundenabled"
+                    android:text="LOAN AGREEMENT"
+                    android:textColor="@color/white" />
+
+
+
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:id="@+id/confirmLoanButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_44dp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="?android:attr/actionBarSize"
+                android:background="@drawable/buttonbackgroundenabled"
+                android:text="LOAN NOC"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

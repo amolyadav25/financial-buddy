@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/sendingNotificationHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_30sp"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_18sp" />
+
+    <TextView
+        android:id="@+id/sendingNotificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendingNotificationHeading"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginEnd="@dimen/dimen_30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_30sp"
+        android:layout_marginTop="@dimen/dimen_16sp"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_14sp" />
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="@dimen/dimen_14sp"
+        android:layout_marginTop="@dimen/dimen_14sp"
+        android:padding="@dimen/dimen_5dp"
+        android:contentDescription="@string/app_name"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendingNotificationText"
+        android:layout_marginBottom="@dimen/dimen_30sp">
+
+        <com.antworksmoney.financialbuddy.helpers.Graphics.HorizontalDottedProgress
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/returnToHome"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_30sp"
+            android:layout_centerHorizontal="true"
+
+            android:background="@drawable/toolbar_background"
+            android:paddingEnd="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/dimen_10dp"
+            android:text="@string/return_to_home"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_14sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

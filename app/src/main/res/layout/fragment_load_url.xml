@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Insurance.LoadUrlFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="horizontal">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_toStartOf="@+id/cancel_Button"
+               android:layout_centerVertical="true">
+
+               <TextView
+                   android:id="@+id/insuranceType"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+       
+                   android:text="Insurance"
+                   android:singleLine="true"
+                   android:textStyle="bold"
+                   android:textSize="@dimen/dimen_16sp"
+                   android:textColor="@android:color/white" />
+
+               <TextView
+                   android:id="@+id/insuranceUrl"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+       
+                   android:text="Insurance"
+                   android:singleLine="true"
+                   android:textStyle="bold"
+                   android:padding="@dimen/dimen_2dp"
+                   android:textSize="@dimen/dimen_12dp"
+                   android:textColor="@android:color/white" />
+           </LinearLayout>
+
+           <ImageView
+               android:id="@+id/cancel_Button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_close"
+               android:tint="@android:color/white"
+               android:layout_centerVertical="true"
+               android:padding="@dimen/dimen_10dp"
+               android:layout_alignParentEnd="true"
+               android:contentDescription="@string/app_name"/>
+       </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_2dp"
+        android:layout_below="@+id/top_toolBar"
+        android:indeterminate="false"
+        android:progress="0"
+        android:progressDrawable="@drawable/green_progress" />
+
+</RelativeLayout>

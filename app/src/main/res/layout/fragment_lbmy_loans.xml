@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.MYLoans.LBMyLoansFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/toolbar_background"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp"
+        app:title="My Loans"
+        android:layout_height="?android:attr/actionBarSize"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60sp"
+        android:paddingStart="@dimen/dimen_20sp"
+        android:paddingEnd="@dimen/dimen_20sp"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/onGoingLoansTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ONGOING LOANS"
+            android:textSize="@dimen/dimen_12dp"
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:layout_toStartOf="@id/closedLoansTextView"
+            android:background="@drawable/buttonbackgroundenabled"/>
+
+        <TextView
+            android:id="@+id/closedLoansTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLOSED LOANS"
+            android:textSize="@dimen/dimen_12dp"
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/buttonbackgrounddisabled"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myLoanList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:padding="@dimen/dimen_10dp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

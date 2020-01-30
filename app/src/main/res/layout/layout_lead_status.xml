@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/dataCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/dimen_2dp"
+    android:layout_margin="@dimen/dimen_10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/bankOfferName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen_14sp"
+            android:padding="@dimen/dimen_5dp"
+            android:textColor="@color/background_color"
+            android:textStyle="bold"
+/>
+
+        <ImageView
+            android:id="@+id/bankImage"
+            android:layout_width="@dimen/dimen_70dp"
+            android:layout_height="@dimen/dimen_70dp"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:src="@drawable/loan"
+            android:contentDescription="@string/app_name"
+            android:layout_below="@+id/bankOfferName"
+            android:padding="1dp"
+            android:background="@drawable/update_profile_image_background"/>
+
+
+        <TextView
+            android:id="@+id/bankOfferDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_toEndOf="@+id/bankImage"
+            android:textSize="@dimen/dimen_12dp"
+            android:layout_below="@+id/bankOfferName"
+/>
+
+        <TextView
+            android:id="@+id/borowwerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bankOfferDetails"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            android:layout_marginBottom="@dimen/dimen_2dp"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
+
+            android:padding="5dp"
+            android:text="More Details"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <TextView
+            android:id="@+id/bankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:layout_toEndOf="@+id/bankImage"
+            android:textSize="@dimen/dimen_12dp"
+            android:visibility="gone"
+            android:layout_below="@+id/borowwerName"
+/>
+
+        <ImageView
+            android:id="@+id/statusView"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="-5dp"
+            android:visibility="visible"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

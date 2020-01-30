@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LeadStatus.InvestmentStatusFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/filterQuerryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:background="@drawable/edt_bg_selector"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:drawablePadding="@dimen/dimen_10dp"
+
+            android:hint="Search your leads "
+            android:textColor="@color/background_color"
+            android:textColorHint="@color/background_color"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_34sp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:layout_weight="20">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="@dimen/dimen_5dp"
+                    android:text="Sort by :"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/background_color"
+                    android:textSize="12dp"
+                    android:singleLine="true"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_34sp"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:layout_weight="40">
+
+                <RelativeLayout
+                    android:id="@+id/changeDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:theme="@style/MyAppbarTheme">
+
+                    <TextView
+                        android:id="@+id/changeDateText"
+                        style="@style/customTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_grey_24dp"
+                        android:drawablePadding="@dimen/dimen_10dp"
+                        android:padding="@dimen/dimen_5dp"
+                        android:singleLine="true"
+                        android:text="Date"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/background_color"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:layout_weight="40">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_34sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myLeadsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/dataLoaderProgressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

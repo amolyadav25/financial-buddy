@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:title="Investment"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:id="@+id/scrollBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/investmentContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:textColor="@color/background_color"
+                android:visibility="gone"
+                android:textSize="@dimen/dimen_12sp" />
+
+            <LinearLayout
+                android:id="@+id/otherLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/investment_banr"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/dimen_20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Benefits of Investment"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginEnd="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/socialBankingIcon"
+                            android:layout_width="@dimen/dimen_50sp"
+                            android:layout_height="@dimen/dimen_50sp"
+                            android:src="@drawable/portfolio"/>
+
+                        <TextView
+                            android:id="@+id/socialText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Portfolio"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/socialBankingIcon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Management"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/socialText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Our investment experts will help you in diversifying your investment portfolio to generate better returns"
+                            android:layout_below="@+id/socialText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/socialBankingIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginStart="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/largestNetworkIcon"
+                            android:layout_width="@dimen/dimen_50sp"
+                            android:layout_height="@dimen/dimen_50sp"
+                            android:src="@drawable/monthlyincome"/>
+
+                        <TextView
+                            android:id="@+id/LargestText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monthly"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/largestNetworkIcon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Income"
+                            android:singleLine="true"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/LargestText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="We offer a range of product which would help in in generating regular monthly income as coupon or EMIs."
+                            android:layout_below="@+id/LargestText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/largestNetworkIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginEnd="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/lowerRatesIcon"
+                            android:layout_width="@dimen/dimen_50sp"
+                            android:layout_height="@dimen/dimen_50sp"
+                            android:src="@drawable/higherreturn"/>
+
+                        <TextView
+                            android:id="@+id/lowestText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/lowerRatesIcon"
+                            android:text="Higher"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Returns"
+                            android:singleLine="true"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/lowestText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="We offer investment products such as FDs, NCDs and P2P investments which offer higher returns than Regular savings Account"
+                            android:layout_below="@+id/lowestText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/lowerRatesIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginStart="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/fastestApprovalsIcon"
+                            android:layout_width="@dimen/dimen_50sp"
+                            android:layout_height="@dimen/dimen_50sp"
+                            android:src="@drawable/taxsavings"/>
+
+                        <TextView
+                            android:id="@+id/FastestText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tax"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/fastestApprovalsIcon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Savings"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/FastestText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Investments in Tax saving FDs are eligible for tax exemption under section 80c. This amount can be a maximum of Rs. 1.5 lakh a year."
+                            android:layout_below="@+id/FastestText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/fastestApprovalsIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/applyForList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimen_20sp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <Button
+                        android:id="@+id/applyForSelf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40sp"
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:visibility="gone"
+                        android:background="@drawable/buttonbackgroundenabled"
+                        android:gravity="center"
+                        android:text="Self"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dimen_12sp" />
+
+
+                    <Button
+                        android:id="@+id/applyForOthers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40sp"
+                        android:background="@drawable/buttonbackgroundenabled"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dimen_20sp"
+                        android:paddingEnd="@dimen/dimen_20sp"
+                        android:text="Proceed"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dimen_12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/investmentTypeLoader"
+                android:layout_width="@dimen/dimen_40sp"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/investmentTypeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

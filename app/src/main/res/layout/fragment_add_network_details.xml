@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Network.AddNetworkDetails">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Add more Details"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20sp"
+            android:orientation="vertical">
+
+            <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:cardCornerRadius="@dimen/dimen_5dp">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/border_data_round"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--android:fontFamily="@font/raleway_regular"-->
+            <!--android:paddingStart="@dimen/dimen_10dp"-->
+            <!--android:paddingTop="@dimen/dimen_5dp"-->
+            <!--android:paddingEnd="@dimen/dimen_10dp"-->
+            <!--android:paddingBottom="@dimen/dimen_5dp"-->
+            <!--android:text="Why add more details ?"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="@dimen/dimen_14sp" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp"-->
+            <!--android:layout_marginBottom="@dimen/dimen_10dp"-->
+            <!--android:fontFamily="@font/raleway_regular"-->
+            <!--android:paddingStart="@dimen/dimen_5dp"-->
+            <!--android:paddingEnd="@dimen/dimen_5dp"-->
+            <!--android:text="@string/demo_text"-->
+            <!--android:textColor="@color/background_color"-->
+            <!--android:textSize="@dimen/dimen_12dp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--</android.support.v7.widget.CardView>-->
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_2dp"
+        
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="Reminder Details"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </android.support.v7.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/alreadyFilledDetails"
+                style="@style/customTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10dp" />
+
+            <EditText
+                android:id="@+id/et_user_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/et_remainder_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Message"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <LinearLayout
+                android:id="@+id/remainderDateSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <TextView
+                    android:id="@+id/et_remainder_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/edt_bg_selector"
+        
+                    android:hint="Reminder date (dd-mm-yyyy)"
+                    android:textColor="@color/background_color"
+                    android:textColorHint="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/remainderTimeSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+
+                <TextView
+                    android:id="@+id/et_reminder_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/edt_bg_selector"
+        
+                    android:hint="Reminder time (hh:mm:ss)"
+                    android:textColor="@color/background_color"
+                    android:textColorHint="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_20sp">
+
+                <Button
+                    android:id="@+id/ProceedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/buttonbackgroundenabled"
+        
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+                <ProgressBar
+                    android:id="@+id/detailsSaveProgressBar"
+                    android:layout_width="@dimen/dimen_40sp"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginEnd="@dimen/dimen_20sp"
+                    android:layout_toStartOf="@+id/ProceedButton"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

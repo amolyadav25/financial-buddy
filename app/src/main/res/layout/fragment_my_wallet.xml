@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Wallet.MyWalletFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:title="My Wallet"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10dp"
+            app:cardCornerRadius="@dimen/dimen_5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_5dp">
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/totalEarningHeading"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/contact_view_circle_accent"-->
+                    <!--android:fontFamily="@font/raleway_regular"-->
+                    <!--android:padding="@dimen/dimen_10dp"-->
+                    <!--android:text="Total Earning"-->
+                    <!--android:textColor="@color/background_color"-->
+                    <!--android:textSize="@dimen/dimen_14sp" />-->
+
+
+                <LinearLayout
+                    android:id="@+id/earningLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/walletBalanceHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                
+                            android:text="Wallet Balance"
+                            android:textSize="@dimen/dimen_14sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/coinIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/coin"/>
+
+                            <TextView
+                                android:id="@+id/walletAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:layout_toEndOf="@+id/coinIcon"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/dimen_24sp" />
+
+                            <ProgressBar
+                                android:id="@+id/amountLoaderProgressBar"
+                                android:layout_width="@dimen/dimen_40sp"
+                                android:layout_height="@dimen/dimen_40sp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="@dimen/dimen_10dp"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dimen_5dp"
+                        android:layout_weight=".5"
+                        android:background="@color/backgroundColor" />
+
+
+                    <LinearLayout
+                        android:id="@+id/transferToBankLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="49.5"
+                        android:theme="@style/MyAppbarTheme"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/transferToBankHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                
+                            android:singleLine="true"
+                            android:text="Transfer to Bank"
+                            android:textSize="@dimen/dimen_14sp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_34sp"
+                            android:layout_height="@dimen/dimen_34sp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="@dimen/dimen_5dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/transfer" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TransactionHistoryHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/contact_view_circle_accent"
+        
+                    android:padding="@dimen/dimen_10dp"
+                    android:layout_below="@+id/earningLayout"
+                    android:text="Transaction History"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/TransactionHistoryList"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_below="@+id/TransactionHistoryHeading"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transfetToHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textColor="@color/tab_title_dark"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_5dp"
+                    android:paddingTop="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:drawableEnd="@drawable/paytm_logo"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:text="Transfer To "/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textColor="@color/tab_title_dark"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_5dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/transfetToHeading"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:layout_marginEnd="@dimen/dimen_20sp"
+        
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:text="It will deduct the entered amount from your wallet and will get transferred to Paytm Wallet."/>
+
+                <ImageView
+                    android:id="@+id/closeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_close" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white">
+
+                <EditText
+                    android:id="@+id/countDownTimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:layout_marginEnd="@dimen/dimen_20sp"
+                    android:background="@drawable/border_background"
+                    android:padding="@dimen/dimen_10dp"
+                    android:textSize="@dimen/dimen_12dp"
+                    android:inputType="number"
+                    android:digits="0123456789"
+                    android:maxLength="4"
+                    android:hint="0"/>
+
+                <Button
+                    android:id="@+id/tryAgainPermissions"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/countDownTimer"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dimen_20sp"
+                    android:background="@drawable/buttonbackgroundenabled"
+                    android:padding="@dimen/dimen_10dp"
+        
+                    android:text="Transfer Now !!"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <ProgressBar
+                    android:id="@+id/resetPasswordProgressBar"
+                    android:layout_width="@dimen/dimen_40sp"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/countDownTimer"
+                    android:visibility="gone"
+                    android:layout_toStartOf="@+id/tryAgainPermissions"
+                    android:layout_margin="@dimen/dimen_10dp"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

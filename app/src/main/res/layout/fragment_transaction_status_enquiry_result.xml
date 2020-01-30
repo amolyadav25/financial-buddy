@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.BillPayment.TransactionStatusEnquiryResultFragment">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/subProductHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:singleLine="true"
+            android:text="Bill Payments"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_30sp"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/headingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:text="Get Transaction Status Details"
+
+            android:layout_toStartOf="@+id/logo"
+            android:layout_marginBottom="@dimen/dimen_20sp"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_30sp"
+            android:src="@drawable/bbps"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="Agent Id"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/agentId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="CCAVENUE"
+                android:layout_alignParentEnd="true"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/tab_title_dark"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="Amount"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="CCAVENUE"
+                android:layout_alignParentEnd="true"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/tab_title_dark"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="Biller Id"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/billerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="CCAVENUE"
+                android:layout_alignParentEnd="true"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/tab_title_dark"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="Transaction Date"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/transactionDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="CCAVENUE"
+                android:layout_alignParentEnd="true"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/tab_title_dark"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="Transaction Reference Id"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/transactionReferanceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="CCAVENUE"
+                android:layout_alignParentEnd="true"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/tab_title_dark"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="Transaction Status"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/transactionStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_12dp"
+                android:text="CCAVENUE"
+                android:layout_alignParentEnd="true"
+    
+                android:textColor="@color/background_color"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/tab_title_dark"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20sp"
+
+            android:text="Note : In-case of faliure, reversal of amount will be initiated if debited from account"
+            android:textSize="@dimen/dimen_12dp" />
+
+
+    </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

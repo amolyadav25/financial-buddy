@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.BuddyProfile.LBPersonalInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="?android:attr/actionBarSize"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:text="FULL NAME"
+            android:textSize="@dimen/dimen_12dp" />
+
+        <EditText
+            android:id="@+id/et_reg_fname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_24sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:background="@drawable/border_background"
+            android:hint="Full Name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@color/background_color"
+            android:textColorHint="@color/statusBackgroundColor"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:text="EMAIL ID"
+            android:textSize="@dimen/dimen_12dp" />
+
+        <EditText
+            android:id="@+id/et_user_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_24sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:background="@drawable/border_background"
+            
+            android:hint="Your Email ID"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@color/background_color"
+            android:textColorHint="@color/statusBackgroundColor"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:text="MOBILE NO"
+            android:textSize="@dimen/dimen_12dp" />
+
+        <RelativeLayout
+            android:id="@+id/phoneNumberLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_24sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:background="@drawable/border_background">
+
+            <TextView
+                android:id="@+id/et_user_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/countrycodeText"
+                android:background="@null"
+                android:hint="Enter Your Mobile No"
+                android:padding="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_5dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <TextView
+                android:id="@+id/countrycodeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:focusable="false"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dimen_10dp"
+                android:text=" +91 "
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:text="GENDER"
+            android:visibility="gone"
+            android:textSize="@dimen/dimen_12dp" />
+
+        <Spinner
+            android:id="@+id/genderSelector"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40sp"
+            android:layout_marginStart="@dimen/dimen_24sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:visibility="gone"
+            android:background="@drawable/border_background"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:text="DATE OF BIRTH"
+            android:textSize="@dimen/dimen_12dp" />
+
+        <RelativeLayout
+            android:id="@+id/dateOfBirthSelectorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40sp"
+            android:layout_marginStart="@dimen/dimen_24sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:background="@drawable/border_background"
+            android:theme="@style/MyAppbarTheme">
+
+            <TextView
+                android:id="@+id/selectDateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                
+                android:hint="DOB as per your PAN Card"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40sp"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:background="@drawable/buttonbackgroundenabled"
+            android:text="CONTINUE"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</ScrollView>

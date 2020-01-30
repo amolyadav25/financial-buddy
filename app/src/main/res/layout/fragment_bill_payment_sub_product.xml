@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.BillPayment.BillPaymentSubProduct">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/subProductHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:singleLine="true"
+            android:text="Bill Payments"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20sp">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_80dp"
+                android:layout_height="@dimen/dimen_30sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:src="@drawable/bbps" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+        
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="Biller Details"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+        
+                    android:text="Biller Name"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+
+                <Spinner
+                    android:id="@+id/billerSubCategoryProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:background="@drawable/border_background"
+                    android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+        
+                    android:text="Alternate Mobile Number"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <EditText
+                    android:id="@+id/mobileNumberEditText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:background="@drawable/border_background"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:padding="@dimen/dimen_10dp" />
+
+                <TextView
+                    android:id="@+id/dataTypeTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:visibility="gone"
+        
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <EditText
+                    android:id="@+id/dataTypeEditText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:background="@drawable/border_background"
+                    android:visibility="gone"
+                    android:padding="@dimen/dimen_10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+        
+                    android:text="Name"
+                    android:visibility="gone"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <EditText
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:background="@drawable/border_background"
+                    android:inputType="text"
+                    android:visibility="gone"
+                    android:padding="@dimen/dimen_10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+        
+                    android:text="Email Address"
+                    android:visibility="gone"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <EditText
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:visibility="gone"
+                    android:background="@drawable/border_background"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/dimen_10dp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:layout_marginBottom="@dimen/dimen_30sp">
+
+                    <Button
+                        android:id="@+id/nextButtonForBiller"
+                        style="@style/customTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40sp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/buttonbackgroundenabled"
+                        android:text="Fetch Bill"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white" />
+
+                    <ProgressBar
+                        android:id="@+id/loader"
+                        android:layout_width="@dimen/dimen_40sp"
+                        android:layout_height="@dimen/dimen_40sp"
+                        android:layout_marginEnd="@dimen/dimen_20sp"
+                        android:layout_toStartOf="@+id/nextButtonForBiller"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

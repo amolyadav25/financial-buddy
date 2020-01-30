@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBConsumerLoanFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/toolbar_background"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp"
+        app:title="Cash Loan"
+        android:layout_height="?android:attr/actionBarSize"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20sp"
+            android:layout_marginEnd="@dimen/dimen_20sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/micro_loan_banr" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOAN AMOUNT"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <SeekBar
+                    android:id="@+id/amountSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-10dp"
+                    android:max="20"
+                    android:progress="1"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    style="@style/tallerBarStyle"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5dp">
+
+                    <TextView
+                        android:id="@+id/amountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/dimen_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10000"
+                        android:layout_alignParentEnd="true"
+                        android:textSize="@dimen/dimen_14sp" />
+
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TENURE"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <Spinner
+                    android:id="@+id/modeOfPurchaseSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+                    android:background="@drawable/border_background"/>
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_46dp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_30sp"
+                android:text="SUBMIT"
+                android:textColor="@color/white"
+                android:background="@drawable/buttonbackgroundenabled"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

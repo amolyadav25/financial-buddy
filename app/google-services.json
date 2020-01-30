@@ -1,0 +1,72 @@
+{
+  "project_info": {
+    "project_number": "461367332152",
+    "firebase_url": "https://financialbuddy162b.firebaseio.com",
+    "project_id": "financialbuddy162b",
+    "storage_bucket": "financialbuddy162b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461367332152:android:369ed0d613f03a5b",
+        "android_client_info": {
+          "package_name": "com.antworksmoney.financialbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461367332152-ugngnms7kdsda6br1ij0ikpu9phq8otg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antworksmoney.financialbuddy",
+            "certificate_hash": "06907c91a850712ba321596e589fdc38f22f20aa"
+          }
+        },
+        {
+          "client_id": "461367332152-0krv77j5ff0u1vc6ko6r91kvt9fa6jn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antworksmoney.financialbuddy",
+            "certificate_hash": "109708762de992031f3ffaa0f5525451934ac129"
+          }
+        },
+        {
+          "client_id": "461367332152-ssem0pt68vc4cof06m12np5do0qe6oj1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antworksmoney.financialbuddy",
+            "certificate_hash": "91a8ef9cb30bf40870a7f2111f6e7ccad5f33891"
+          }
+        },
+        {
+          "client_id": "461367332152-7574bsde0v9ifagblknru1j8ndfitf5m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antworksmoney.financialbuddy",
+            "certificate_hash": "7f748ab82fd4b44e6cd87fc7c9b26b45c718ce3c"
+          }
+        },
+        {
+          "client_id": "461367332152-q13ibi3vrpcla32cotutvsfsurin97gb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg0e-Vs0dIgzphVvNTtZvF8tdQo1HY69A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461367332152-q13ibi3vrpcla32cotutvsfsurin97gb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

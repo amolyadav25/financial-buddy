@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.ContactsPickerActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <include
+        layout="@layout/search_toolbar"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/contactList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?android:attr/actionBarSize"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:scrollbars="vertical"
+        android:scrollbarSize="@dimen/dimen_2dp"/>
+
+    <RelativeLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:visibility="visible"
+        android:background="@color/transparent_white">
+
+        <TextView
+            android:id="@+id/contactFoundText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/found_contact"
+            android:textColor="@color/pin_normal"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/dimen_12dp"
+
+            android:gravity="center_horizontal"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_2dp"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/ProceedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Proceed"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/dimen_14sp"
+            android:layout_alignParentEnd="true"
+            android:background="?android:selectableItemBackground"/>
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

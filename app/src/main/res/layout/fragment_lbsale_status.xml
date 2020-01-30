@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBSaleSuccessfulFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Sale status"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_marginTop="@dimen/dimen_30sp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/sale_comp_banr"/>
+
+
+            <TextView
+                android:id="@+id/congratsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_25sp"
+                android:text="Sale Completed"
+                android:textColor="@color/black"
+                android:layout_below="@+id/bannerImage"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/loanStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_16sp"
+                android:text="Congrations, your sale has been completed"
+                android:layout_marginStart="@dimen/dimen_30sp"
+                android:layout_marginEnd="@dimen/dimen_30sp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColor="@color/tab_title_dark"
+                android:layout_below="@+id/congratsHeading"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_margin="@dimen/dimen_20sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/loanStatusTextView">
+
+                <Button
+                    android:id="@+id/loanAgreementButton"
+                    android:layout_width="wrap_content"
+                    android:text="Loan Agreement COPY"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:paddingStart="@dimen/dimen_20sp"
+                    android:paddingEnd="@dimen/dimen_20sp"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/buttonbackgroundenabled"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

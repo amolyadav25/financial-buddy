@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Investment.InvestmentApplyNowFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp"
+        app:title="Investment"
+        app:titleTextColor="@android:color/white" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_30sp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/headingLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/writeToUsHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+        
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="Please Share Details"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </android.support.v7.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/loanHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headingLayout"
+                android:layout_marginTop="@dimen/dimen_10dp"
+    
+                android:text="Help Us with the details so we book the desired investment and contact you"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loanHeading"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Full Name * "
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="30"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtFirstName"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Last Name * "
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="30"
+                android:visibility="gone"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <EditText
+                android:id="@+id/edtEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtLastName"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="E-mail * "
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLength="30"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/edtMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtEmailAddress"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Phone Number * "
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <RelativeLayout
+                android:id="@+id/dateOfBirthSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/edtMobileNumber"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/selectDateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+        
+                    android:hint="@string/firstname"
+                    android:layout_alignParentBottom="true"
+                    android:text="Date Of Birth"
+                    android:background="@drawable/edt_bg_selector"
+                    android:textColor="@color/background_color"
+                    android:textColorHint="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/stateSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_46dp"
+                android:layout_below="@+id/dateOfBirthSelectorLayout"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edt_bg_selector"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/selectStateHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            
+                        android:text="Select state"
+                        android:textSize="@dimen/dimen_10dp" />
+
+                    <TextView
+                        android:id="@+id/stateName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/selectStateHeading"
+                        android:layout_margin="@dimen/dimen_2dp"
+            
+                        android:text="Haryana"
+                        android:textSize="@dimen/dimen_14sp" />
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/stateSelectorLoader"
+                    android:layout_width="@dimen/dimen_30sp"
+                    android:layout_height="@dimen/dimen_30sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dimen_2dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/citySelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_46dp"
+                android:layout_below="@id/stateSelectorLayout"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edt_bg_selector"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/selectCityHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            
+                        android:text="Select city"
+                        android:textSize="@dimen/dimen_10dp" />
+
+                    <TextView
+                        android:id="@+id/cityName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/selectCityHeading"
+                        android:layout_margin="@dimen/dimen_2dp"
+            
+                        android:text="Gurugram"
+                        android:textSize="@dimen/dimen_14sp" />
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/citySelectorLoader"
+                    android:layout_width="@dimen/dimen_30sp"
+                    android:layout_height="@dimen/dimen_30sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dimen_2dp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/loanApplyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_44dp"
+                android:layout_below="@+id/citySelectorLayout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_30sp"
+                android:layout_marginBottom="@dimen/dimen_30sp"
+                android:background="@drawable/buttonbackgroundenabled"
+                android:elevation="@dimen/dimen_10dp"
+    
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:text="@string/apply_now"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

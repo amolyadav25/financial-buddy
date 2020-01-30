@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Financial Buddy</string>
+    <string name="tagline">India ka online Banker</string>
+    <string name="sign_up">Authenticate Now</string>
+    <string name="firstname">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="or">OR</string>
+
+    <string name="facebook_app_id">189789145248900</string>
+    <string name="fb_login_protocol_scheme">fb189789145248900</string>
+    <string name="send_otp">SEND OTP</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="verify_mobile_no">Verify Mobile Number</string>
+    <string name="didn_t_recieved_otp_try_again">Didn\'t received OTP ? Resend </string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="title_activity_home">Time Remaining : 45 Secs</string>
+    <string name="time_ended">Time Ended !!!</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="skip">Skip</string>
+    <string name="email">E-Mail</string>
+    <string name="your_name_required">Your Name (required)</string>
+    <string name="add_contacts">Add Contacts</string>
+    <string name="submit">Submit</string>
+    <string name="add_your_emergency_contacts_here">Add your network \nfrom here</string>
+    <string name="please_select_an_option">Please select an option</string>
+    <string name="select_image_from_camera">Take a Selfie</string>
+    <string name="select_image_from_gallery">Select from the Gallery</string>
+    <string name="remove_image">Remove image</string>
+    <string name="own_a_house">Do you own a house, car or  two wheeler ?</string>
+    <string name="your_current_net_monthly_income">Your current net monthly income</string>
+    <string name="house_car_or_two_wheeler">Do you own a house, car or  two wheeler ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="additional_info">Additional Info</string>
+    <string name="invest_in_equity_nmarket_mutual_funds">Do you invest in equity,  market, mutual funds and fixed ?</string>
+    <string name="financial_consultancy_services">Do you currently provide financial  consultancy services ?</string>
+    <string name="select_contacts_reason">Please add contacts \nto create your own Buddy Network</string>
+    <string name="open_contacts">Add Contacts</string>
+    <string name="found_contact">Please wait !! \n Found 1 contact</string>
+    <string name="action_settings">Settings</string>
+    <string name="next">Next</string>
+    <string name="see_all">See all</string>
+    <string name="apply_now">Apply Now !!!</string>
+    <string name="submitting_request">Submitting request to server</string>
+    <string name="return_to_home">Return to home</string>
+    <string name="sending_notification">Sending Request</string>
+    <string name="sending_notification_text">Please wait while we are sending request our server</string>
+    <string name="verify_details">Please verify all the details</string>
+    <string name="demo_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+    <string name="corporate_bonds">○ Company Fixed Deposits (Corporate FD) is a term deposit which is held over fixed period at fixed rates of interest. Company Fixed deposits are offered by Financial nad Non-Banking financial companies (NBFCs). The maturities of various company fixed deposits can renage from a very few months to a few years.\n\n○ Choose from multiple fixed deposits option varying in tenures, interest rates and institutions to suit your investment needs.\n\n○ Avail stable returns and benefits from much reduced volatility through a wide range of AAA and AA-rated Company Fixed Deposits.</string>
+    <string name="cordporate_fd">These days a number of Corporates accept Fixed Deposits from Individuals on an ongoing basis as part of their overall Borrowing Program. For investor, Corporate Fixed deposits are one of favourite investment options, as they give investors the assurance of fixed returns with higher interest rates as compared to Bank\n\nThinking of multiplying your earnings the easy way? We, at Antwork Money can help. With our seasoned professionals and sound research, we equip you with intelligent debt options apart from the conventional fixed deposits and saving accounts.</string>
+    <string name="feedback">Feedback</string>
+    <string name="empty"> </string>
+    <string name="by">By continuing you agree to our</string>
+    <string name="default_notification_channel_id">Channel 1</string>
+    <string name="cancel">Cancel</string>
+    <string name="permissions_heading">&#9432; Financial Buddy App</string>
+    <string name="location_enable_request">Location settings on your phone are not correct. Please configure it manually.</string>
+
+    <string name="title_activity_status">CCAvenueMobile</string>
+
+    <string-array name="selectAction">
+        <item>Resend OTP</item>
+        <item>Enter OTP Manually</item>
+    </string-array>
+
+
+</resources>

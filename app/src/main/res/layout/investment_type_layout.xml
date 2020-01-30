@@ -1,0 +1,30 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:layout_margin="@dimen/dimen_5dp">
+
+    <TextView
+        android:id="@+id/investmentTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:singleLine="true"
+        android:text="Corporate FDs"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_12dp" />
+
+    <Button
+        android:id="@+id/investTypeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_40sp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/buttonbackgrounddisabled"
+        android:text="Explore"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dimen_14sp" />
+
+</RelativeLayout>

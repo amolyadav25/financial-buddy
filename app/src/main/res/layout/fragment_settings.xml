@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Home.SettingsFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/action_settings"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="?android:selectableItemBackground"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_dehaze_white_24dp" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10dp">
+
+            <TextView
+                android:id="@+id/notificationHeading"
+                style="@style/customTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dimen_18sp" />
+
+            <RelativeLayout
+                android:id="@+id/allNotificationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notificationHeading"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="All Notifications"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/allNotificationCheckButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/colorAccent"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/separatorLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/allNotificationLayout"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@color/background_color" />
+
+            <RelativeLayout
+                android:id="@+id/allcontactsNoficationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/separatorLine"
+                android:layout_marginStart="@dimen/dimen_16sp"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Offer notifications"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/myContactsCheckButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/colorAccent"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/consistentTopBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allcontactsNoficationLayout"
+                android:layout_marginStart="@dimen/dimen_16sp"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Other Notifications"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/consistentTopBarCheckButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/colorAccent"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/loacationTrackingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/consistentTopBarLayout"
+                android:layout_marginStart="@dimen/dimen_16sp"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Location Tracking"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/locationTrackingCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/colorAccent"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/separatorLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/loacationTrackingLayout"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@color/background_color" />
+
+
+            <TextView
+                android:id="@+id/socialHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_below="@+id/separatorLine2"
+                android:text="Social"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dimen_18sp"
+                style="@style/customTextViewStyle"/>
+
+            <RelativeLayout
+                android:id="@+id/facebookSignInLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/socialHeading"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/loginButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+
+                <TextView
+                    android:id="@+id/fbText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connect with Facebook"
+                    android:textColor="@color/background_color"
+                    style="@style/customTextViewStyle"/>
+
+                <TextView
+                    android:id="@+id/facebookText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    style="@style/customTextViewStyle"
+                    android:text="Not connected"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:layout_below="@+id/fbText"/>
+
+                <ImageView
+                    android:id="@+id/facebookUserImage"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/fb"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/googleSignInLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/facebookSignInLayout"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:theme="@style/MyAppbarTheme"
+                android:background="?android:selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/googleHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connect with LinkedIn"
+                    android:textColor="@color/background_color"
+                    style="@style/customTextViewStyle"/>
+
+                <TextView
+                    android:id="@+id/googleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    style="@style/customTextViewStyle"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:text="Not connected"
+                    android:layout_below="@+id/googleHeading"/>
+
+                <ImageView
+                    android:id="@+id/googleImage"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/linkedinbutton"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/googleSignInLayout"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@color/background_color" />
+
+            <RelativeLayout
+                android:id="@+id/termsAndCondtionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/googleSignInLayout"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme"
+                android:layout_marginTop="@dimen/dimen_20sp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Terms And Condtions"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_40sp"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    tools:ignore="RelativeOverlap"
+                    android:src="@drawable/terms_and_conditions"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/privacyPolicyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme"
+                android:layout_below="@+id/termsAndCondtionsLayout"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_40sp"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    tools:ignore="RelativeOverlap"
+                    android:src="@drawable/privacy_policy"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/logoutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme"
+                android:layout_below="@+id/privacyPolicyLayout"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Logout"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <ImageView
+                    android:id="@+id/logoutButton"
+                    android:layout_width="@dimen/dimen_40sp"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    tools:ignore="RelativeOverlap"
+                    android:src="@drawable/logout"/>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

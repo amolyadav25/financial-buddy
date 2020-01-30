@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/sendingNotificationHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_40sp"
+        android:text="Applying For"
+        android:layout_toEndOf="@+id/questionMarkImageView"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_20sp" />
+
+    <ImageView
+        android:id="@+id/questionMarkImageView"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginTop="@dimen/dimen_30sp"
+        android:layout_width="@dimen/dimen_50sp"
+        android:layout_height="@dimen/dimen_50sp" />
+
+    <TextView
+        android:id="@+id/sendingNotificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/questionMarkImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginTop="@dimen/dimen_16sp"
+        android:layout_marginEnd="@dimen/dimen_30sp"
+        android:text="Please select for whom you are applying loan for ?"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_16sp" />
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dimen_14sp"
+        android:layout_marginEnd="@dimen/dimen_14sp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/dimen_5dp"
+        android:src="@drawable/ic_close" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendingNotificationText"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginTop="@dimen/dimen_20sp"
+        android:layout_marginBottom="?android:attr/actionBarSize"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/selfRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="@dimen/dimen_10dp"
+            android:text="Self"
+            android:textColor="@color/background_color" />
+
+        <RadioButton
+            android:id="@+id/othersRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="@dimen/dimen_10dp"
+            android:text="Refer a friend"
+            android:textColor="@color/background_color" />
+
+    </RadioGroup>
+
+</RelativeLayout>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".views.fragments.Home.HomeFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:id="@+id/notificationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dimen_10dp"
+                android:src="@drawable/ic_notifications_white_24dp"/>
+
+            <TextView
+                android:id="@+id/newNotificationText"
+                android:layout_width="@dimen/dimen_10dp"
+                android:layout_height="@dimen/dimen_10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_16sp"
+                android:visibility="gone"
+                android:background="@drawable/contact_view_circle_red"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:id="@+id/loanAndAppLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+
+            <ImageView
+                android:id="@+id/banner_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/top_banner" />
+
+
+            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dimen_10dp"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:layout_marginEnd="@dimen/dimen_10dp"
+
+                                android:singleLine="true"
+                                android:text="Offers"
+                android:visibility="gone"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/dimen_14sp"
+                                android:textStyle="bold" />
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/pharmacyTextHeading"
+
+                android:padding="@dimen/dimen_10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:text="Best offers for you!"
+                    android:textStyle="bold"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_18sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/chemistListLayout"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pharmacyTextHeading">
+
+                <ImageView
+                    android:id="@+id/offerListErrorImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="174dp"
+                    android:visibility="gone"
+                    android:src="@drawable/data_not_found"
+                    android:contentDescription="@string/app_name"/>
+
+                <ProgressBar
+                    android:id="@+id/chemistShopLoader"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/offerList"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:padding="@dimen/dimen_10dp"
+                android:id="@+id/loanLaysout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+
+
+                <TextView
+                    android:id="@+id/loanTexdt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:text="Choose a service"
+                    android:textStyle="bold"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_18sp" />
+
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/loanBuddyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <ImageView
+                    android:id="@+id/nearbyPharmacy"
+                    android:layout_width="@dimen/dimen_70dp"
+                    android:layout_height="@dimen/dimen_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/loanbuddy" />
+
+                <TextView
+                    android:id="@+id/appBazarText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_toEndOf="@+id/nearbyPharmacy"
+                    android:text="Loan Buddy"
+                    android:textStyle="bold"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/appBazarText"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:paddingStart="@dimen/dimen_5dp"
+                    android:gravity="center_vertical"
+                    android:layout_toEndOf="@+id/nearbyPharmacy"
+                    android:text="Increase your earnings by lending to eligible borrowers or customers."
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@color/dark_gray"
+
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/insuranceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <ImageView
+                    android:id="@+id/insurance_icon"
+                    android:layout_width="@dimen/dimen_70dp"
+                    android:layout_height="@dimen/dimen_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/insurance_image" />
+
+                <TextView
+                    android:id="@+id/insuranceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_toEndOf="@+id/insurance_icon"
+                    android:text="Insurance"
+                    android:textStyle="bold"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_below="@+id/insuranceText"
+                    android:layout_toEndOf="@+id/insurance_icon"
+                    android:text="Compare and buy more than over 20+  companies."
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@color/dark_gray"
+                />
+
+
+            <!-- <RelativeLayout
+                 android:id="@+id/loanBuddyLayout"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="?android:attr/selectableItemBackground"
+                 android:theme="@style/MyAppbarTheme">
+
+                 <ImageView
+                     android:id="@+id/nearbyPharmacy"
+                     android:layout_width="@dimen/dimen_70dp"
+                     android:layout_height="@dimen/dimen_70dp"
+                     android:layout_centerVertical="true"
+                     android:layout_marginStart="@dimen/dimen_20sp"
+                     android:contentDescription="@string/app_name"
+                     android:src="@drawable/loanbuddy" />
+
+                 <TextView
+                     android:id="@+id/appBazarText"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="@dimen/dimen_10dp"
+                     android:layout_marginEnd="@dimen/dimen_10dp"
+                     android:layout_toEndOf="@+id/nearbyPharmacy"
+                     android:text="Loan Buddy"
+                     android:textStyle="bold"
+                     android:textColor="@color/tab_title_dark"
+                     android:textSize="@dimen/dimen_16sp"/>
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/appBazarText"
+                     android:layout_margin="@dimen/dimen_5dp"
+                     android:paddingStart="@dimen/dimen_5dp"
+                     android:gravity="center_vertical"
+                     android:layout_toEndOf="@+id/nearbyPharmacy"
+                     android:text="Get instant cash and consumer loan upto 50 thousand."
+                     android:textColor="@color/tab_title_dark"
+                     android:textSize="@dimen/dimen_14sp" />
+
+             </RelativeLayout>-->
+
+            <RelativeLayout
+                android:id="@+id/loanLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <ImageView
+                    android:id="@+id/sos_Icon"
+                    android:layout_width="@dimen/dimen_70dp"
+                    android:layout_height="@dimen/dimen_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/loan_image" />
+
+                <TextView
+                    android:id="@+id/loanText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_toEndOf="@+id/sos_Icon"
+                    android:text="Bank Loan &amp; Card Offer"
+                    android:textStyle="bold"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_16sp" />
+
+                <TextView
+                    android:id="@+id/loanDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:layout_below="@+id/loanText"
+                    android:layout_toEndOf="@+id/sos_Icon"
+                    android:text="Compare and get best loan &amp; card offers."
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@color/dark_gray"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/investmentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <ImageView
+                    android:id="@+id/investmentImage"
+                    android:layout_width="@dimen/dimen_70dp"
+                    android:layout_height="@dimen/dimen_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/investment" />
+
+                <TextView
+                    android:id="@+id/investmentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_toEndOf="@+id/investmentImage"
+                    android:text="Investment"
+                    android:textStyle="bold"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_below="@+id/investmentText"
+                    android:layout_toEndOf="@+id/investmentImage"
+                    android:text="Kick start with new investment offers in Corporate fds and loan bonds."
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </RelativeLayout>
+
+
+
+            <View
+
+
+
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@color/dark_gray"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp">
+
+                <!--<TextView
+                    android:id="@+id/pharmacyTextHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+
+                    android:singleLine="true"
+                    android:text="Offers"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:id="@+id/chemistListLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/pharmacyTextHeading">
+
+                    <ImageView
+                        android:id="@+id/offerListErrorImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="174dp"
+                        android:visibility="gone"
+                        android:src="@drawable/data_not_found"
+                        android:contentDescription="@string/app_name"/>
+
+                    <ProgressBar
+                        android:id="@+id/chemistShopLoader"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/offerList"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+
+                </RelativeLayout>-->
+
+                <TextView
+                    android:id="@+id/friendStatusHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+
+                    android:text="Videos"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/friendSeeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/edt_bg_selected"
+
+                    android:text="See all"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:id="@+id/friendsListLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/friendSeeText">
+
+                    <ImageView
+                        android:id="@+id/friendErrorListImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="174dp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/data_not_found"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/friendSListLoader"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/videoList"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/bestHospitalHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/friendsListLayout"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+
+                    android:singleLine="true"
+                    android:text="Blogs"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bestHospitalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/friendsListLayout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/edt_bg_selected"
+
+                    android:text="See all"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:id="@+id/hospitalLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/bestHospitalText">
+
+                    <ImageView
+                        android:id="@+id/blogsErrorListImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="174dp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/data_not_found"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/bestHospitalLoader"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/blogList"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginBottom="@dimen/dimen_20sp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

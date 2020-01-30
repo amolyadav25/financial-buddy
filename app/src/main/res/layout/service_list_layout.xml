@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dataCard"
+    android:layout_width="match_parent"
+    android:layout_height="174dp"
+    android:layout_margin="@dimen/dimen_5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen_5dp">
+
+        <ImageView
+            android:id="@+id/servicePic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/userName" />
+
+        <RelativeLayout
+            android:id="@+id/playButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/userName"
+            android:background="@color/toolbar_background_color">
+
+            <ImageView
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_centerInParent="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_play_arrow_black_24dp" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/dimen_5dp"
+            android:textColor="@color/background_color"
+            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/dimen_24sp"
+            android:singleLine="true"
+            android:textSize="@dimen/dimen_12dp" />
+
+
+
+        <ImageView
+            android:id="@+id/seenImage"
+            android:layout_width="@dimen/dimen_24sp"
+            android:layout_height="@dimen/dimen_24sp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dimen_2dp"
+            android:padding="1dp"
+            android:contentDescription="@string/app_name"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_check_accent_24dp"/>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

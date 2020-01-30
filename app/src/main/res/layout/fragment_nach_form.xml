@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBEsignFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Nach Agreement"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/dimen_20sp"
+        android:paddingEnd="@dimen/dimen_20sp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/e_sign" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nach Agreement"
+            android:textSize="@dimen/dimen_24sp"
+            android:textColor="@color/tab_title_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Know about Nach agreement form"
+            android:textSize="@dimen/dimen_16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:textColor="@color/statusBackgroundColor"
+            android:text="Now, get rid of lengthy and time-consuming process with our user friendly Financial Buddy App - The single source for your financial planning and Money needs. Download our hassle free and top application Financial Buddy App to make speedy application for unsecured loan including personal loan along with the mortgage loans like Home Loan, Loan Against Property, Education Loan and more. Now, get rid of lengthy and time-consuming process with our user friendly Financial Buddy App - The single source for your financial planning and Money needs.\n\nDownload our hassle free and top application Financial Buddy App to make speedy application for unsecured loan including personal loan along with the mortgage loans like Home Loan, Loan Against Property, Education Loan and more."
+            android:textSize="@dimen/dimen_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/loanDetailsButton"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:text="DOWANLOAD NACH FORM"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:background="@drawable/buttonbackgroundwhite"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/loanAgreementButton"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:text="UPLOAD SIGNED NACH FORM"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:background="@drawable/buttonbackgroundwhite"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/acceptLoanAgreementButton"
+            android:layout_width="match_parent"
+            android:text="DOWNLOAN SAMPLE NACH AGREEMENT"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:background="@drawable/buttonbackgroundenabled"
+            android:layout_height="@dimen/dimen_46dp"/>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

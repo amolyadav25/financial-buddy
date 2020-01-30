@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.BillPayment.BillFetchFtagment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/subProductHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:singleLine="true"
+            android:text="Bill Payments"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_20sp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:text="Biller Fetch Details"
+        
+                    android:layout_marginBottom="@dimen/dimen_20sp"/>
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_80dp"
+                    android:layout_height="@dimen/dimen_30sp"
+                    android:src="@drawable/bbps"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Biller Name"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/billerName"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Customer Name"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/customerName"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Bill Date"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/billDate"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Bill Period"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/billPeriod"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Bill Number"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/billNumber"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Due Date"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/dueDate"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Customer Convenience Fees"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/customerconvienceFess"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Mobile"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/mobileNumber"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Amount Options"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:textColor="@color/background_color"
+        
+                    android:checked="true"
+                    android:enabled="false"
+                    android:text="Bill Amount 1000" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textColor="@color/background_color"
+        
+                    android:text="Fixed Charge-50" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textColor="@color/background_color"
+        
+                    android:text="Late payment Fee-40" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textColor="@color/background_color"
+        
+                    android:text="Additional Charge-60" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="Total Amount"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/totalAmount"
+                style="@style/customTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/border_background"
+                android:inputType="text"
+                android:padding="@dimen/dimen_10dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <Button
+                    android:id="@+id/proceedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/buttonbackgroundenabled"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"
+        
+                    android:text="Click To Pay"/>
+
+                <ProgressBar
+                    android:id="@+id/payProgressBar"
+                    android:layout_width="@dimen/dimen_40sp"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:visibility="gone"
+                    android:layout_toStartOf="@+id/proceedButton"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20sp"
+    
+                android:text="Note : In-case of faliure, reversal of amount will be initiated if debited from account"
+                android:textSize="@dimen/dimen_12dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

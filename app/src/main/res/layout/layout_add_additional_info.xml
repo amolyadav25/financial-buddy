@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_30sp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/applogo" />
+
+    <TextView
+        android:id="@+id/selectImageHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appLogo"
+        android:layout_centerHorizontal="true"
+        android:text="Oops ! We were not able to fetch any E-mail id to contact you. Please enter it manually to proceed further."
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_16sp"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginEnd="@dimen/dimen_30sp"
+        android:layout_marginBottom="@dimen/dimen_10dp"/>
+
+    <EditText
+        android:id="@+id/etMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edt_bg_selector"
+        android:hint="Email"
+        android:imeOptions="actionDone"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginEnd="@dimen/dimen_30sp"
+        android:layout_marginBottom="@dimen/dimen_20sp"
+        android:layout_below="@+id/selectImageHeading"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_14sp" />
+
+    <Button
+        android:id="@+id/saveEmailButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40sp"
+        android:background="@drawable/buttonbackgroundenabled"
+        android:elevation="@dimen/dimen_10dp"
+        android:paddingStart="@dimen/dimen_10dp"
+        android:paddingEnd="@dimen/dimen_10dp"
+        android:text="Proceed"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/dimen_30sp"
+        android:layout_marginEnd="@dimen/dimen_30sp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dimen_16sp"
+        android:layout_below="@+id/etMail"
+        android:layout_marginBottom="@dimen/dimen_30sp"
+        android:textStyle="bold" />
+
+
+
+
+</RelativeLayout>

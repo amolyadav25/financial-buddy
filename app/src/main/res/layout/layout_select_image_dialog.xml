@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_30sp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/applogo" />
+
+    <TextView
+        android:id="@+id/selectImageHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appLogo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/please_select_an_option"
+        android:textColor="@color/background_color"
+        android:textSize="@dimen/dimen_24sp"
+        android:layout_marginBottom="@dimen/dimen_10dp"/>
+
+    <Button
+        android:id="@+id/selectImageFromCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_30sp"
+        android:layout_below="@+id/selectImageHeading"
+        android:layout_centerHorizontal="true"
+        android:text="@string/select_image_from_camera"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:background="?android:selectableItemBackground"
+        android:textSize="@dimen/dimen_16sp"
+        android:paddingStart="@dimen/dimen_10dp"
+        android:paddingEnd="@dimen/dimen_10dp"/>
+
+    <Button
+        android:id="@+id/selectImageFromGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_30sp"
+        android:layout_below="@+id/selectImageFromCamera"
+        android:layout_centerHorizontal="true"
+        android:text="@string/select_image_from_gallery"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:paddingStart="@dimen/dimen_10dp"
+        android:paddingEnd="@dimen/dimen_10dp"
+        android:background="?android:selectableItemBackground"
+        android:textSize="@dimen/dimen_16sp" />
+
+    <Button
+        android:id="@+id/removeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_30sp"
+        android:layout_below="@+id/selectImageFromGallery"
+        android:layout_centerHorizontal="true"
+        android:text="@string/remove_image"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:paddingStart="@dimen/dimen_10dp"
+        android:paddingEnd="@dimen/dimen_10dp"
+        android:background="?android:selectableItemBackground"
+        android:textSize="@dimen/dimen_16sp"
+        android:layout_marginBottom="@dimen/dimen_30sp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.BuddyProfile.LBMyOccupationFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:layout_marginTop="@dimen/dimen_20sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="OCCUPATION TYPE"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_occupation_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Occupation Type"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="COMPANY TYPE"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_company_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Company Type"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="COMPANY NAME"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Company Name"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="TOTAL EXPERIENCE"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_total_experice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Total Experince"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="CURRENT EMI"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_current_emi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Current EMI"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="SALARY PROCESS"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_salary_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Salary Process"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="NET MONTHLY INCOME"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_net_monthly_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Net Monthly Income"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:text="TURNOVER LAST YEAR"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/et_reg_turnoer_lat_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/border_background"
+                android:hint="Turnovr last year"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/statusBackgroundColor"
+                android:textSize="@dimen/dimen_14sp" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

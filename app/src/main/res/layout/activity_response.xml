@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.ResponseActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:title="Response"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="?android:attr/actionBarSize"
+            android:background="@drawable/border_background"
+            android:padding="@dimen/dimen_10dp">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/responseImage"
+                android:layout_width="@dimen/dimen_80dp"
+                android:layout_height="@dimen/dimen_80dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/check" />
+
+            <TextView
+                android:id="@+id/Heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/responseImage"
+                android:gravity="start"
+                android:text="PayTm Transfer Response"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+            <TextView
+                android:id="@+id/respnseData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/responseImage"
+                android:labelFor="@id/Heading"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <Button
+                android:id="@+id/checkStatusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_below="@+id/respnseData"
+                android:layout_alignParentEnd="true"
+                android:text="check status"
+                android:textAllCaps="false"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/buttonbackgroundenabled"/>
+
+            <ProgressBar
+                android:id="@+id/updateStatusLoader"
+                android:layout_width="@dimen/dimen_40sp"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_toStartOf="@+id/checkStatusButton"
+                android:layout_below="@+id/respnseData"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dimen_14sp"
+                android:layout_marginEnd="@dimen/dimen_10dp"/>
+
+            <LinearLayout
+                android:id="@+id/statusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkStatusButton"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/tab_title_dark"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Status"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:textSize="@dimen/dimen_16sp"
+        
+                    android:textColor="@color/tab_title_dark"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:background="@color/tab_title_dark"/>
+
+                <TextView
+                    android:id="@+id/statusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_12dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

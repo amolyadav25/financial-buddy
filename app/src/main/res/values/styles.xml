@@ -1,0 +1,101 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="NumberPickerStyle">
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+        <item name="android:textColorPrimary">@color/background_color</item>
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">@color/colorAccent</item>
+    </style>
+
+    <style name="TextLabel" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="colorControlActivated">#FFFFFF</item>
+        <item name="colorControlHighlight">#FFFFFF</item>
+    </style>
+
+    <style name="myTheme" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:itemBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+    </style>
+
+    <style name="MyAppbarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/dimen_12dp</item>
+    </style>
+
+    <style name="MyAppbarThemeForDrawer" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="customTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/dimen_12dp</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:colorControlActivated">#ffea00</item>
+        <item name="android:datePickerMode">spinner</item>
+        <item name="android:calendarViewShown">false</item>
+    </style>
+
+    <style name="editTextStyle" parent="android:Widget.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/background_color</item>
+        <item name="android:textColor">@color/background_color</item>
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+    </style>
+
+    <style name="FabStyleForCall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_call_black_24dp</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">@dimen/dimen_5dp</item>
+        <item name="pressedTranslationZ">@dimen/dimen_12dp</item>
+        <item name="rippleColor">@color/backgroundColor</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="FabStyleForShare">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_share_white_24dp</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">@dimen/dimen_5dp</item>
+        <item name="pressedTranslationZ">@dimen/dimen_12dp</item>
+        <item name="rippleColor">@color/backgroundColor</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="FabStyleforFavourite">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_star_black_24dp</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">6dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+        <item name="rippleColor">@color/backgroundColor</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="tallerBarStyle" parent="@android:style/Widget.SeekBar">
+        <item name="android:minHeight">@dimen/dimen_5dp</item>
+        <item name="android:maxHeight">@dimen/dimen_5dp</item>
+    </style>
+
+
+</resources>

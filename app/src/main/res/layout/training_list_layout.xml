@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dataCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:theme="@style/MyAppbarTheme"
+    android:layout_marginBottom="@dimen/dimen_5dp">
+
+    <ImageView
+        android:id="@+id/servicePic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="@dimen/dimen_5dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY" />
+
+
+
+    <TextView
+        android:id="@+id/userName"
+        style="@style/customTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/servicePic"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingBottom="@dimen/dimen_5dp"
+        android:paddingStart="@dimen/dimen_5dp"
+        android:paddingEnd="@dimen/dimen_5dp"
+        android:textSize="@dimen/dimen_14sp" />
+
+    <TextView
+        android:id="@+id/userDetails"
+        style="@style/customTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userName"
+        android:layout_toEndOf="@+id/servicePic"
+        android:maxLines="3"
+        android:textSize="@dimen/dimen_12dp"
+        android:paddingBottom="@dimen/dimen_5dp"
+        android:paddingStart="@dimen/dimen_5dp"
+        android:paddingEnd="@dimen/dimen_5dp" />
+
+
+</RelativeLayout>

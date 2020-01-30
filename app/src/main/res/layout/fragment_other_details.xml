@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Loan.OtherDetailsFragment">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/loanHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Loan Application"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginBottom="@dimen/dimen_10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp">
+
+            <TextView
+                android:id="@+id/journeyCompletedProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="0 %"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <ProgressBar
+                android:id="@+id/journeyCompletedProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_10dp"
+                android:layout_below="@+id/journeyCompletedProgressText"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/green_progress" />
+
+            <TextView
+                android:id="@+id/myMaritalStatusHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/journeyCompletedProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_20sp"
+    
+                android:text="Other Details"
+                android:textSize="@dimen/dimen_16sp" />
+
+            <Spinner
+                android:id="@+id/industryTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/myMaritalStatusHeading"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+
+            <Spinner
+                android:id="@+id/professionTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/industryTypeSpinner"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+
+            <LinearLayout
+                android:id="@+id/dateOfIncorporationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_below="@+id/professionTypeSpinner"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <TextView
+                    android:id="@+id/dateOfIncorporation"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:background="@drawable/edt_bg_selector"
+                    android:gravity="bottom"
+                    android:text="Date of Incorporation"
+                    android:textAllCaps="false"
+                    android:textColor="@color/background_color" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/cinNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateOfIncorporationLayout"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="CIN"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/netWorthEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cinNumber"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Net Worth (in INR)"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <EditText
+                android:id="@+id/totalExperienceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/netWorthEditText"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Total Experience (in Years)"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/officePhoneNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/totalExperienceEditText"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Office Phone Number"
+                android:inputType="phone"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/grossTurnOverLastYearEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/officePhoneNumberEditText"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Gross Turnover (Last Year)"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/grossTurnOver2EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/grossTurnOverLastYearEditText"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Gross Turnover 2"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/grossTurnOver3EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/grossTurnOver2EditText"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Gross Turnover 3"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <EditText
+                android:id="@+id/grossTurnOverBeforeLastYearEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/grossTurnOver3EditText"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="Gross Turnover (Year before Last Year)"
+                android:inputType="number"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <Spinner
+                android:id="@+id/officeOwnerShip"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/grossTurnOverBeforeLastYearEditText"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+            <Spinner
+                android:id="@+id/auditDone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/officeOwnerShip"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+            <Spinner
+                android:id="@+id/defaultedOnLoanCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/auditDone"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+            <Spinner
+                android:id="@+id/chequeBounceInLastSixMonth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/defaultedOnLoanCard"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+            <Spinner
+                android:id="@+id/companyRatedByRatingAgency"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/chequeBounceInLastSixMonth"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+
+            <RelativeLayout
+                android:id="@+id/buttonlayout"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_below="@+id/companyRatedByRatingAgency"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_20sp">
+
+                <Button
+                    android:id="@+id/nextButtonForQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:background="@drawable/buttonbackgroundenabled"
+        
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/previousButtonForQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:layout_toStartOf="@+id/nextButtonForQuestions"
+                    android:background="@drawable/buttonbackgrounddisabled"
+        
+                    android:text="Previous"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

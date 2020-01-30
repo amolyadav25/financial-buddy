@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/menu_remainders"
+            android:icon="@drawable/calender"
+            android:title="Calendar" />
+
+        <item
+            android:id="@+id/menu_pocket_money"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+            android:title="Reward" />
+
+        <item android:title="Products">
+            <menu>
+
+                <item
+                    android:id="@+id/menu_loan"
+                    android:icon="@drawable/loan_icon"
+                    android:title="Loan Offer" />
+
+                <item
+                    android:id="@+id/menu_investment"
+                    android:icon="@drawable/investment_icon"
+                    android:title="Investment" />
+
+                <item
+                    android:id="@+id/menu_insurance"
+                    android:icon="@drawable/insurance_icon"
+                    android:title="Insurance" />
+
+<!--                <item-->
+<!--                    android:id="@+id/menu_app_download"-->
+<!--                    android:icon="@drawable/ic_file_download_black_24dp"-->
+<!--                    android:title="App Bazaar" />-->
+            </menu>
+        </item>
+
+        <item android:title="Services">
+            <menu>
+
+                <item
+                    android:id="@+id/menu_bill"
+                    android:icon="@drawable/bill_payment_nav_icon"
+                    android:title="Bill Payment" />
+
+<!--                <item-->
+<!--                    android:id="@+id/menu_network"-->
+<!--                    android:icon="@drawable/network"-->
+<!--                    android:title="My Network" />-->
+
+                <item
+                    android:id="@+id/menu_policies"
+                    android:icon="@drawable/lead_icon"
+                    android:title="Status" />
+
+                <item
+                    android:id="@+id/menu_training"
+                    android:icon="@drawable/training"
+                    android:title="Training" />
+            </menu>
+        </item>
+
+        <item android:title="Settings">
+            <menu>
+
+                <item
+                    android:id="@+id/menu_settings"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="Settings" />
+
+                <item
+                    android:id="@+id/menu_feedback"
+                    android:icon="@drawable/ic_feedback_black_24dp"
+                    android:title="Feedback" />
+
+                <item
+                    android:id="@+id/menu_refer"
+                    android:icon="@drawable/refer_icon"
+                    android:title="Refer a Financial Buddy" />
+            </menu>
+        </item>
+
+    </group>
+
+
+
+</menu>

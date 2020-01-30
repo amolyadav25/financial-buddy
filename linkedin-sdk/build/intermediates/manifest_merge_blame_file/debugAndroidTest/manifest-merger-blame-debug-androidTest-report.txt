@@ -1,0 +1,42 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.linkedin.android.mobilesdk.test"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:7:5-9:41
+8        android:minSdkVersion="21"
+8-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:8:9-35
+9        android:targetSdkVersion="28" />
+9-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:9:9-38
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:11:5-67
+11-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:11:22-64
+12
+13    <instrumentation
+13-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:13:5-18:71
+14        android:name="android.test.InstrumentationTestRunner"
+14-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:14:9-62
+15        android:functionalTest="false"
+15-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:15:9-39
+16        android:handleProfiling="false"
+16-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:16:9-40
+17        android:label="Tests for com.linkedin.android.mobilesdk.test"
+17-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:17:9-70
+18        android:targetPackage="com.linkedin.android.mobilesdk.test" />
+18-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:18:9-68
+19
+20    <application
+20-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:20:5-22:19
+21        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+21-->[com.android.support:support-compat:28.0.0] /home/vekain19/.gradle/caches/transforms-2/files-2.1/e80327cc5b6d14150f74585b4aa35cdb/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+22        android:debuggable="true" >
+22-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:20:18-43
+23        <uses-library android:name="android.test.runner" />
+23-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:21:9-60
+23-->/home/vekain19/Android/AndroidStudioProjects/financial-buddy/linkedin-sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5142265707486030189.xml:21:23-57
+24    </application>
+25
+26</manifest>

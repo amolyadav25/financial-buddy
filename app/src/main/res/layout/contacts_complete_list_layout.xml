@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/dataCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_70dp"
+        android:paddingStart="@dimen/dimen_20sp"
+        android:paddingEnd="@dimen/dimen_20sp"
+        android:background="?android:selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/contact_image"
+            android:layout_width="@dimen/dimen_50sp"
+            android:layout_height="@dimen/dimen_50sp"
+            android:layout_margin="@dimen/dimen_2dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_check_circle_grey_50dp"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/contact_text"
+
+            android:layout_width="@dimen/dimen_50sp"
+            android:layout_height="@dimen/dimen_50sp"
+            android:layout_margin="@dimen/dimen_2dp"
+            android:background="@drawable/contact_view_circle_black"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_20sp" />
+
+        <RelativeLayout
+            android:id="@+id/contactDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/contact_text">
+
+            <TextView
+                android:id="@+id/contacts_name"
+    
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:singleLine="true"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <TextView
+                android:id="@+id/contacts_number"
+    
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contacts_name"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:singleLine="true"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

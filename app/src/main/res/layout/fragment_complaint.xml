@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.BillPayment.RaiseAnIssueFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/subProductHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:singleLine="true"
+            android:text="Bill Payments"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_30sp"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:text="Raise Issue"
+
+            android:layout_marginBottom="@dimen/dimen_20sp"/>
+
+        <ImageView
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_30sp"
+            android:src="@drawable/bbps"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raise complaint"
+            android:textSize="@dimen/dimen_12dp"
+
+            android:textColor="@color/background_color"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/transactionIssue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction"
+                android:textColor="@color/background_color"
+    
+                android:textSize="@dimen/dimen_12dp"/>
+
+            <RadioButton
+                android:id="@+id/serviceIssue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service"
+                android:textColor="@color/background_color"
+    
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:textSize="@dimen/dimen_12dp"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/transactionReferenceHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transaction Referance Id *"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:textSize="@dimen/dimen_12dp"
+            android:visibility="gone"
+
+            android:textColor="@color/background_color"/>
+
+        <EditText
+            android:id="@+id/transactionReferanceText"
+            style="@style/customTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@drawable/border_background"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:padding="@dimen/dimen_10dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/participationHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Participation Type *"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:textSize="@dimen/dimen_12dp"
+
+            android:textColor="@color/background_color"/>
+
+        <Spinner
+            android:id="@+id/participationTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@drawable/border_background"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complaint Type *"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:textSize="@dimen/dimen_12dp"
+
+            android:textColor="@color/background_color"/>
+
+        <Spinner
+            android:id="@+id/complaintTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40sp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@drawable/border_background"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+        <TextView
+            android:id="@+id/agentIdReferenceHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agent Id *"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:textSize="@dimen/dimen_12dp"
+
+            android:textColor="@color/background_color"/>
+
+        <EditText
+            android:id="@+id/agentIdReferenceText"
+            style="@style/customTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_background"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:padding="@dimen/dimen_10dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:textSize="@dimen/dimen_12dp"
+
+            android:textColor="@color/background_color"/>
+
+        <EditText
+            style="@style/customTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_background"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:padding="@dimen/dimen_10dp"
+            android:inputType="text"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20sp">
+
+            <Button
+                android:id="@+id/nextButtonForBiller"
+                style="@style/customTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/buttonbackgroundenabled"
+                android:text="Proceed"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <ProgressBar
+                android:id="@+id/loader"
+                android:layout_width="@dimen/dimen_40sp"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_toStartOf="@+id/nextButtonForBiller"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20sp"
+
+            android:text="Note : In-case of faliure, reversal of amount will be initiated if debited from account"
+            android:textSize="@dimen/dimen_12dp" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

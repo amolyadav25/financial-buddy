@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Loan.CreditCounsellingFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/loanHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Counselling"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/credit_counselling_banr" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_30sp"
+                android:text="We Make It Simple"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_10dp" />
+
+            <TextView
+                android:id="@+id/howItWorksText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-5dp"
+                android:text="We Make It Simple"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="We intend to change the way credit is delivered in India by harnessing\nthe power of technology and digital platform"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:background="@drawable/shape_circle_white"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/creditscore_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:gravity="center_horizontal"
+                        android:text="Get Your"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:text="Credit Score"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:background="@drawable/shape_circle_white"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/creditanalysis_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:gravity="center_horizontal"
+                        android:text="Online"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:text="Credit Analysis"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:background="@drawable/shape_circle_white"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/actionables_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:gravity="center_horizontal"
+                        android:text="Credit Score"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:text="Actionables"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:background="@drawable/shape_circle_white"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/loan_doctor" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:gravity="center_horizontal"
+                        android:text="Ready Loan"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:text="Offers"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/dimen_14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_30sp"
+                android:text="Credit Counselling\nPackages"
+                android:textColor="@color/black"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/dimen_30sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="No hidden fees, all our plans include consultation and support"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_30sp"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/counselling_color1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/package1Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Super Saver Package"
+                        android:layout_marginTop="@dimen/dimen_20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/package1Cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 10000"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginBottom="@dimen/dimen_10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/dimen_34sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/package1List"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="300dp"
+                        android:background="@color/white"/>
+
+                    <Button
+                        android:id="@+id/package1BuyNowButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:text="Buy Now"
+                        android:textSize="@dimen/dimen_20sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_30sp"
+                android:layout_marginEnd="@dimen/dimen_30sp"
+                android:layout_marginBottom="@dimen/dimen_30sp"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/counselling_color2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/package2Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Super Saver Package"
+                        android:layout_marginTop="@dimen/dimen_20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/package2Cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 10000"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginBottom="@dimen/dimen_10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/dimen_34sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/package2List"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="300dp"
+                        android:background="@color/white"/>
+
+                    <Button
+                        android:id="@+id/package2BuyNowButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:text="Buy Now"
+                        android:textSize="@dimen/dimen_20sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_30sp"
+                android:layout_marginEnd="@dimen/dimen_30sp"
+                android:layout_marginBottom="@dimen/dimen_30sp"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/counselling_color3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/package3Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Super Saver Package"
+                        android:layout_marginTop="@dimen/dimen_20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/package3Cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 10000"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginBottom="@dimen/dimen_10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/dimen_34sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/package3List"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="300dp"
+                        android:background="@color/white"/>
+
+                    <Button
+                        android:id="@+id/package3BuyNowButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:text="Buy Now"
+                        android:textSize="@dimen/dimen_20sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

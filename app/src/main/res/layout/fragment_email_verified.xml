@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.LoanBuddy.Authentication.EmailVerifiedFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp"
+        app:title="Email Verification"
+        app:titleTextColor="@color/white"
+        android:background="@drawable/toolbar_background"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dimen_20sp"
+        android:paddingEnd="@dimen/dimen_20sp"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/verifiedBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/email_verify_banr"/>
+
+        <TextView
+            android:id="@+id/emailVerifiedHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Verified"
+            android:layout_below="@+id/verifiedBanner"
+            android:textSize="@dimen/dimen_24sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_marginTop="?android:attr/actionBarSize"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/thanksMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailVerifiedHeading"
+            android:gravity="center"
+            android:textSize="@dimen/dimen_14sp"
+            android:text="for verifying your Email with Antworks P2P Financing\n\nIndias fastest growing financial service portal. Please check Process any pay registration fees."/>
+
+        <Button
+            android:id="@+id/loginNowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_40sp"
+            android:background="@drawable/buttonbackgroundenabled"
+            android:text="Login Now"
+            android:paddingStart="@dimen/dimen_20sp"
+            android:paddingEnd="@dimen/dimen_20sp"
+            android:layout_below="@+id/thanksMessage"
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:layout_centerHorizontal="true"
+            android:drawableTint="@color/white"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.BillPayment.PayOptionFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/subProductHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Payment Options"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_80dp"
+                android:layout_height="@dimen/dimen_30sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:src="@drawable/bbps" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/dimen_5dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+        
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="Pay Options"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                </android.support.v7.widget.CardView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+        
+                    android:padding="@dimen/dimen_5dp"
+                    android:text="Please select your billing method and continue with payment"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <TextView
+                    android:id="@+id/bill_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+        
+                    android:padding="@dimen/dimen_5dp"
+                    android:text="Bill Amount : Rs. 2008"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_12dp" />
+
+                <CheckBox
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:textColor="@color/background_color"
+                    android:text="Continue using wallet" />
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dimen_5dp">
+
+                   <ProgressBar
+                       android:id="@+id/loader"
+                       android:layout_width="@dimen/dimen_40sp"
+                       android:layout_height="@dimen/dimen_40sp"
+                       android:layout_toStartOf="@+id/proceedToPayButton"
+                       android:layout_marginEnd="@dimen/dimen_20sp"
+                       android:visibility="gone"/>
+
+                   <Button
+                       android:id="@+id/proceedToPayButton"
+                       style="@style/customTextViewStyle"
+                       android:layout_width="wrap_content"
+                       android:layout_height="@dimen/dimen_40sp"
+                       android:layout_centerHorizontal="true"
+                       android:background="@drawable/buttonbackgroundenabled"
+                       android:paddingStart="@dimen/dimen_10dp"
+                       android:paddingEnd="@dimen/dimen_10dp"
+                       android:text="Proceed to Pay"
+                       android:textAllCaps="false"
+                       android:textColor="@android:color/white" />
+
+               </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:background="@color/background_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+        
+                    android:text="Other Payment modes"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <Button
+                    android:id="@+id/debitCardButton"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:theme="@style/MyAppbarTheme"
+                    android:text="Debit Card" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:layout_marginEnd="@dimen/dimen_20sp"
+                    android:background="@color/background_color" />
+
+                <Button
+                    android:id="@+id/creditCardButton"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:theme="@style/MyAppbarTheme"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:text="Credit Card" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:layout_marginEnd="@dimen/dimen_20sp"
+                    android:background="@color/background_color" />
+
+                <Button
+                    android:id="@+id/internetBankingButton"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="@dimen/dimen_20sp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:theme="@style/MyAppbarTheme"
+                    android:text="Internet Banking" />
+
+                <TextView
+                    android:id="@+id/response"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

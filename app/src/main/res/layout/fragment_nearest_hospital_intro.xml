@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.antworksmoney.financialbuddy.views.fragments.Intro.IntroFragment2">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:src="@drawable/intro_insurance"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/app_name"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:textColor="@color/background_color"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/dimen_16sp"
+        android:text="Insurance"/>
+
+</RelativeLayout>

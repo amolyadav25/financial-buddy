@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Loan.QualificationSelectorFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:id="@+id/loanHeading"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loan Application"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginBottom="@dimen/dimen_10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp">
+
+            <TextView
+                android:id="@+id/journeyCompletedProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+    
+                android:text="0 %"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <ProgressBar
+                android:id="@+id/journeyCompletedProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_10dp"
+                android:layout_below="@+id/journeyCompletedProgressText"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/green_progress" />
+
+            <TextView
+                android:id="@+id/myMaritalStatusHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/journeyCompletedProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/dimen_20sp"
+    
+                android:text="Qualification"
+                android:textSize="@dimen/dimen_16sp" />
+
+
+            <ImageView
+                android:id="@+id/maritalStatusImage"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/myMaritalStatusHeading"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/qualification" />
+
+            <Spinner
+                android:id="@+id/qualificationSelector"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50sp"
+                android:layout_below="@+id/maritalStatusImage"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+            <ProgressBar
+                android:id="@+id/qualificationSelectorLoader"
+                style="@style/MyAppbarTheme"
+                android:layout_width="@dimen/dimen_30sp"
+                android:layout_height="@dimen/dimen_30sp"
+                android:layout_below="@+id/qualificationSelector"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/dimen_5dp" />
+
+            <RelativeLayout
+                android:id="@+id/buttonlayout"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_below="@+id/qualificationSelectorLoader"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <Button
+                    android:id="@+id/nextButtonForQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:background="@drawable/buttonbackgroundenabled"
+        
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/previousButtonForQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:layout_toStartOf="@+id/nextButtonForQuestions"
+                    android:background="@drawable/buttonbackgrounddisabled"
+        
+                    android:text="Previous"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

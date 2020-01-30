@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Insurance.RegisterAsPosFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Register As POS"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20sp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/userDetailsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+        
+                    android:text="Why POS"
+                    android:padding="@dimen/dimen_10dp"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/POSExplanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+    
+                android:text="Policy secure offers you an oppotunity to work and earn at your leisure by selling some basic insurance policies online. You also earn to get a chance to come on board and become a full time trained agent or a part time agent. You get an employment opportunity to work and earn from anywhere by becoming an agent by selling simple insurance policies online.\n\nYou will be redirected to our policysecure.in, please share few details to help you register"
+                android:layout_below="@+id/userDetailsHeading"
+                android:padding="@dimen/dimen_10dp"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <EditText
+                android:id="@+id/et_reg_fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/POSExplanation"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="@string/firstname"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+            <EditText
+                android:id="@+id/et_user_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_reg_fname"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <TextView
+                android:id="@+id/countrycodeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_user_mail"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
+                android:focusable="false"
+    
+                android:text=" +91 "
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <EditText
+                android:id="@+id/et_user_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_user_mail"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_40sp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_toEndOf="@+id/countrycodeText"
+                android:background="@drawable/edt_bg_selector"
+    
+                android:hint="@string/phone_number"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+            <RelativeLayout
+                android:id="@+id/stateSelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_46dp"
+                android:layout_below="@+id/et_user_phone_number"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_40sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/selectStateHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            
+                        android:text="Enter state"
+                        android:textSize="@dimen/dimen_10dp" />
+
+                    <EditText
+                        android:id="@+id/stateName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/selectStateHeading"
+                        android:layout_margin="@dimen/dimen_2dp"
+                        android:inputType="text"
+                        android:background="@drawable/edt_bg_selector"
+            
+                        android:text="Haryana"
+                        android:textSize="@dimen/dimen_12dp" />
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/stateSelectorLoader"
+                    android:layout_width="@dimen/dimen_30sp"
+                    android:layout_height="@dimen/dimen_30sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dimen_2dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/citySelectorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_46dp"
+                android:layout_below="@id/stateSelectorLayout"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_40sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/selectCityHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            
+                        android:text="Enter city"
+                        android:textSize="@dimen/dimen_10dp" />
+
+                    <EditText
+                        android:id="@+id/cityName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edt_bg_selector"
+                        android:layout_below="@+id/selectCityHeading"
+                        android:layout_margin="@dimen/dimen_2dp"
+                        android:inputType="text"
+            
+                        android:text="Faridabad"
+                        android:textSize="@dimen/dimen_12dp" />
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/citySelectorLoader"
+                    android:layout_width="@dimen/dimen_30sp"
+                    android:layout_height="@dimen/dimen_30sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dimen_2dp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/ProceedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_below="@+id/citySelectorLayout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:background="@drawable/buttonbackgroundenabled"
+    
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:text="REGISTER AS POS(point of sale)"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

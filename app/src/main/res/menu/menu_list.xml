@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/transaction_status"
+        android:title="Transaction Status"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/complaint_registration"
+        android:title="Register new complain"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/complaint_transaction"
+        android:title="Transaction complaints"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/complaint_tracking"
+        android:title="Complaint Tracking"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="never" />
+
+</menu>

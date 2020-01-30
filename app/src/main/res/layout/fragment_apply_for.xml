@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackBarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Loan.ApplyForFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:elevation="1px"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Compare Loan Offers"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/loanInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:visibility="gone"
+                android:text="Compare and choose best deals on Home loans, Personal Loans, Credit card and many more.\nBenefits of applying through Financial Buddy : \n\n☑ Online Application\n☑ Low Processing time\n☑ Best offers and rewards\n☑ Option of more than 40 Banks and NBFCs\n\nPress on Proceed button to find out best available loan offers for you: :"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/otherLayout_insurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/loanoffer"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/dimen_20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Best Loan Offers"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginEnd="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/socialBankingIcon"
+                            android:layout_width="@dimen/dimen_50dp"
+                            android:layout_height="@dimen/dimen_50dp"
+                            android:src="@drawable/socialbanking"/>
+
+                        <TextView
+                            android:id="@+id/socialText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Social"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/socialBankingIcon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Banking"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/socialText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="We engage with our users across all social platforms to provide information, latest updates and market trends to keep them updated."
+                            android:layout_below="@+id/socialText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/socialBankingIcon"
+                            android:layout_marginStart="5sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginStart="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/largestNetworkIcon"
+                            android:layout_width="@dimen/dimen_50dp"
+                            android:layout_height="@dimen/dimen_50dp"
+                            android:src="@drawable/largestnetwork"/>
+
+                        <TextView
+                            android:id="@+id/LargestText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Largest"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/largestNetworkIcon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Network"
+                            android:singleLine="true"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/LargestText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="With 40+ lenders and other lending networks, we provide largest network of lenders across India to meet all your loan requirements."
+                            android:layout_below="@+id/LargestText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/largestNetworkIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginEnd="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/lowerRatesIcon"
+                            android:layout_width="@dimen/dimen_50dp"
+                            android:layout_height="@dimen/dimen_50dp"
+                            android:src="@drawable/lowestrates"/>
+
+                        <TextView
+                            android:id="@+id/lowestText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/lowerRatesIcon"
+                            android:text="Lowest"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rates"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/lowestText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Our extensive network ensures that our users pay lowest ROI and processing fees"
+                            android:layout_below="@+id/lowestText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/lowerRatesIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="50"
+                        android:padding="@dimen/dimen_5dp"
+                        android:elevation="@dimen/dimen_5dp"
+                        android:background="@drawable/border_background"
+                        android:layout_marginStart="@dimen/dimen_5dp">
+
+                        <ImageView
+                            android:id="@+id/fastestApprovalsIcon"
+                            android:layout_width="@dimen/dimen_50dp"
+                            android:layout_height="@dimen/dimen_50dp"
+                            android:src="@drawable/fastestapprovals"/>
+
+                        <TextView
+                            android:id="@+id/FastestText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fastest"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_14sp"
+                            android:layout_marginStart="@dimen/dimen_5sp"
+                            android:layout_toEndOf="@+id/fastestApprovalsIcon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Approvals"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/dimen_5dp"
+                            android:layout_toEndOf="@+id/FastestText"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="With in-depth knowledge of financing norms we ensure that users get fastest approvals and disbursement of loans"
+                            android:layout_below="@+id/FastestText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_10dp"
+                            android:layout_toEndOf="@+id/fastestApprovalsIcon"
+                            android:layout_marginStart="@dimen/dimen_5sp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/applyForList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimen_20sp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <Button
+                        android:id="@+id/applyForSelf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40sp"
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:visibility="gone"
+                        android:background="@drawable/buttonbackgroundenabled"
+                        android:gravity="center"
+                        android:text="Self"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dimen_14sp" />
+
+
+                    <Button
+                        android:id="@+id/applyForOthers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40sp"
+                        android:background="@drawable/buttonbackgroundenabled"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dimen_20sp"
+                        android:paddingEnd="@dimen/dimen_20sp"
+                        android:text="Proceed"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dimen_14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+<!--
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/dimen_20sp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <Button
+                    android:id="@+id/applyForSelf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/buttonbackgroundenabled"
+        
+                    android:gravity="center"
+                    android:text="Proceed"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/dimen_12dp"
+                    android:theme="@style/MyAppbarTheme" />
+
+
+                <Button
+                    android:id="@+id/applyForOthers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:background="@drawable/buttonbackgroundenabled"
+        
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:text="Refer a Friend"
+                    android:visibility="gone"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/dimen_12dp"
+                    android:theme="@style/MyAppbarTheme" />
+
+
+            </LinearLayout>-->
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/dimen_40sp"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.Home.FeedBackFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/signUpLogoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/toolbar_background">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/applogo"
+                    android:padding="@dimen/dimen_5dp"
+                    android:background="@drawable/imageview_background_circle"/>
+
+                <ImageView
+                    android:id="@+id/saveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dehaze_white_24dp"
+                    android:padding="@dimen/dimen_10dp"
+                    android:contentDescription="@string/app_name"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/signup_text"
+                style="@style/customTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signUpLogoLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginBottom="@dimen/dimen_12dp"
+                android:text="@string/feedback"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dimen_24sp" />
+
+            <RelativeLayout
+                android:id="@+id/feedbackLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signup_text"
+                android:layout_marginStart="@dimen/dimen_50dp"
+                android:layout_marginEnd="@dimen/dimen_50dp">
+
+                <TextView
+                    android:id="@+id/nameText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_name_required"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <EditText
+                    android:id="@+id/nameEditText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/nameText"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:background="@drawable/border_background"
+                    android:hint="@string/empty"
+                    android:inputType="text"
+                    android:padding="@dimen/dimen_5dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:theme="@style/customTextViewStyle" />
+
+                <TextView
+                    android:id="@+id/emailText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameEditText"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:text="Your Phone Number (required)"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <EditText
+                    android:id="@+id/numberEditText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/emailText"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:background="@drawable/border_background"
+                    android:hint="@string/empty"
+                    android:inputType="phone"
+                    android:imeOptions="actionNext"
+                    android:focusable="false"
+                    android:padding="@dimen/dimen_5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:theme="@style/customTextViewStyle" />
+
+
+                <TextView
+                    android:id="@+id/subjectText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/numberEditText"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:text="Subject (required)"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <EditText
+                    android:id="@+id/subjectEditText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/subjectText"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:imeOptions="actionNext"
+                    android:background="@drawable/border_background"
+                    android:hint="@string/empty"
+                    android:inputType="text"
+                    android:padding="@dimen/dimen_5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:theme="@style/customTextViewStyle" />
+
+
+                <TextView
+                    android:id="@+id/messageText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subjectEditText"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:text="Message"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp" />
+
+                <EditText
+                    android:id="@+id/messageEditText"
+                    style="@style/customTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/messageText"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/border_background"
+                    android:hint="@string/empty"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@color/background_color"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:theme="@style/customTextViewStyle" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40sp"
+                    android:layout_below="@+id/messageEditText"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:layout_marginBottom="@dimen/dimen_12dp">
+
+                    <Button
+                        android:id="@+id/sendFeedBackButton"
+                        style="@style/customTextViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/buttonbackgroundenabled"
+                        android:elevation="@dimen/dimen_10dp"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingEnd="@dimen/dimen_10dp"
+                        android:text="SEND FEEDBACK"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/dimen_14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressHud"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/previousFeedbackList"
+                style="@style/customTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feedbackLayout"
+                android:layout_marginStart="@dimen/dimen_30sp"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:text="Previous Feedback"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <ProgressBar
+                android:id="@+id/feedbackProgressBar"
+                android:layout_width="@dimen/dimen_40sp"
+                android:layout_height="@dimen/dimen_40sp"
+                android:layout_below="@+id/previousFeedbackList"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/dimen_20sp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/feedbackList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/previousFeedbackList"
+                android:layout_margin="@dimen/dimen_20sp"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

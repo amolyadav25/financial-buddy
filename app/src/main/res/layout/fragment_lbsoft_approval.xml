@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/snackBarView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.LoanBuddy.TakeLoan.LBSoftApprovalFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/toolbar_background"
+        app:navigationIcon="@drawable/ic_dehaze_white_24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Profile Listing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+           <LinearLayout
+               android:id="@+id/successLayout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingStart="@dimen/dimen_20sp"
+               android:paddingEnd="@dimen/dimen_20sp"
+               android:visibility="gone"
+               android:orientation="vertical">
+
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dimen_10dp"
+                   android:contentDescription="@string/app_name"
+                   android:src="@drawable/soft_approval_banr"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                   android:text="Profile Listed Successfully !!"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:layout_marginTop="@dimen/dimen_30sp"
+                   android:textSize="@dimen/dimen_14sp"
+                   android:text="Loan Amount Approved !!"/>
+
+               <TextView
+                   android:id="@+id/loanAmountTextView"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:textSize="@dimen/dimen_30sp"
+                   android:layout_marginTop="@dimen/dimen_5dp"
+                   android:textColor="@color/green"
+                   android:text="₹100000"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:textSize="@dimen/dimen_14sp"
+                   android:gravity="center_horizontal"
+                   android:layout_marginTop="@dimen/dimen_5dp"
+                   android:text="Congratulations! Your profile has been Listed on\nAntworks P2P Platform. Please continue to proceed further"/>
+
+               <Button
+                   android:id="@+id/continueButton"
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/dimen_44dp"
+                   android:layout_marginTop="@dimen/dimen_20sp"
+                   android:layout_marginBottom="@dimen/dimen_30sp"
+                   android:text="CONTINUE"
+                   android:textColor="@android:color/white"
+                   android:textSize="@dimen/dimen_16sp"
+                   android:background="@drawable/buttonbackgroundenabled"/>
+           </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/faliureLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dimen_20sp"
+                android:paddingEnd="@dimen/dimen_20sp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/loan_reject_banr"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:text="We are sorry we couldn't get through the soft approval.\nPlease continue to the journey to list your profile."/>
+
+                <Button
+                    android:id="@+id/continueAnywaysButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_44dp"
+                    android:layout_marginTop="@dimen/dimen_20sp"
+                    android:layout_marginBottom="@dimen/dimen_30sp"
+                    android:paddingStart="@dimen/dimen_30sp"
+                    android:paddingEnd="@dimen/dimen_30sp"
+                    android:text="CONTINUE"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:background="@drawable/buttonbackgroundenabled"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="@color/transparent_white">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
