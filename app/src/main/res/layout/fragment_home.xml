@@ -216,7 +216,7 @@
                     android:paddingStart="@dimen/dimen_5dp"
                     android:gravity="center_vertical"
                     android:layout_toEndOf="@+id/nearbyPharmacy"
-                    android:text="Increase your earnings by lending to eligible borrowers or customers."
+                    android:text="Get instant cash and consumer loan upto 50 thousand."
                     android:textColor="@color/tab_title_dark"
                     android:textSize="@dimen/dimen_14sp" />
 
@@ -271,7 +271,7 @@
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_below="@+id/insuranceText"
                     android:layout_toEndOf="@+id/insurance_icon"
-                    android:text="Compare and buy more than over 20+  companies."
+                    android:text="Compare and buy attractive insurance plans over 20 insurance companies.."
                     android:textColor="@color/background_color"
                     android:textSize="@dimen/dimen_14sp" />
 
@@ -368,7 +368,7 @@
                     android:layout_marginBottom="@dimen/dimen_5dp"
                     android:layout_below="@+id/loanText"
                     android:layout_toEndOf="@+id/sos_Icon"
-                    android:text="Compare and get best loan &amp; card offers."
+                    android:text="Compare and get best loan &amp; card offers from 40 banks."
                     android:textColor="@color/background_color"
                     android:textSize="@dimen/dimen_14sp" />
             </RelativeLayout>
@@ -420,7 +420,8 @@
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_below="@+id/investmentText"
                     android:layout_toEndOf="@+id/investmentImage"
-                    android:text="Kick start with new investment offers in Corporate fds and loan bonds."
+                    android:text="Kick start with new investment offers in
+Corporate FDs and bonds."
                     android:textColor="@color/background_color"
                     android:textSize="@dimen/dimen_14sp" />
 
