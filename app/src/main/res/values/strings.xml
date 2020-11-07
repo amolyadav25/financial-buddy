@@ -47,7 +47,7 @@
     <string name="sending_notification">Sending Request</string>
     <string name="sending_notification_text">Please wait while we are sending request our server</string>
     <string name="verify_details">Please verify all the details</string>
-    <string name="demo_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+    <string name="demo_text"> Ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
     <string name="corporate_bonds">○ Company Fixed Deposits (Corporate FD) is a term deposit which is held over fixed period at fixed rates of interest. Company Fixed deposits are offered by Financial nad Non-Banking financial companies (NBFCs). The maturities of various company fixed deposits can renage from a very few months to a few years.\n\n○ Choose from multiple fixed deposits option varying in tenures, interest rates and institutions to suit your investment needs.\n\n○ Avail stable returns and benefits from much reduced volatility through a wide range of AAA and AA-rated Company Fixed Deposits.</string>
     <string name="cordporate_fd">These days a number of Corporates accept Fixed Deposits from Individuals on an ongoing basis as part of their overall Borrowing Program. For investor, Corporate Fixed deposits are one of favourite investment options, as they give investors the assurance of fixed returns with higher interest rates as compared to Bank\n\nThinking of multiplying your earnings the easy way? We, at Antwork Money can help. With our seasoned professionals and sound research, we equip you with intelligent debt options apart from the conventional fixed deposits and saving accounts.</string>
     <string name="feedback">Feedback</string>
@@ -59,7 +59,38 @@
     <string name="location_enable_request">Location settings on your phone are not correct. Please configure it manually.</string>
 
     <string name="title_activity_status">CCAvenueMobile</string>
-
+    <string name="upgrade_to_freedom_plan">Upgrade to Freedom Plan</string>
+    <string name="here_s_what_you_get">Here\'s what you get:</string>
+    <string name="life_and_accidental_insurance_covers">Life and Accidental Insurance Covers</string>
+    <string name="platinum_health_package_by_aetna">Platinum Health Package by AETNA</string>
+    <string name="buy_for_inr_4999_only_for_6_months">Buy for INR 4999/only for 6 Months</string>
+    <string name="buy_for_inr_4999_12_months_only">Buy for INR 4999/12 months only</string>
+    <string name="comprehensive_online_credit_assessment">Comprehensive Online Credit Assessment</string>
+    <string name="free_credit_score">Free Credit Score</string>
+    <string name="credit_report_and_financial_planning_report">Credit Report and Financial Planning Report</string>
+    <string name="action_based_recommendations_and_insights_of_customer_s_credit">Action Based Recommendations and insights of customer\'s Credit</string>
+    <string name="best_loan_and_credit_card_offers">Best Loan and Credit Card Offers</string>
+    <string name="buy_for_inr_590_6_months_only">Buy for INR 590/6 Months only</string>
+    <string name="buy_for_inr_589_6_months_only">Buy for INR 589/6 Months only</string>
+    <string name="upgrade_to_premium_membership">Upgrade to Premium Membership</string>
+    <string name="discount_card_and_pharmacy_vouchers">Discount Card and Pharmacy Vouchers</string>
+    <string name="discount_cards_redeemable_at_pharmacy_stores">Discount Cards redeemable at Pharmacy Stores</string>
+    <string name="inr_500_voucher_to_be_used_at_online_pharamacy">INR 500 Voucher to be used at online pharamacy</string>
+    <string name="alert">Your plan details has been sent to your registered mobile number.Please check your message inbox.</string>
+    <string name="free_loan_listing_on_antworks_p2p_platform_for_6_months">Free Loan Listing on Antworks P2P Platform for 6 Months</string>
+    <string name="discount_card_and_pharmacy_vouchers_by_aetna">Discount Card and Pharmacy Vouchers by AETNA</string>
+    <string name="personal_relationship_manager_for_all_financial_needs">Personal Relationship Manager for all Financial Needs</string>
+    <string name="accidental_insurance_of_inr_1_lakh_for_6_months">Accidental Insurance of INR 1 Lakh for 6 Months</string>
+    <string name="free_credit_report">Free Credit Report</string>
+    <string name="your_service_includes">Your service includes</string>
+    <string name="your_subscription_end_date">Your subscription End date</string>
+    <string name="your_subscription_start_date">Your subscription Start date</string>
+    <string name="congrates_for_subscribing_to_premium_plan">Congrates for subscribing to Premium plan.</string>
+    <string name="lastname">LastName</string>
+    <string name="upload_document">Upload Document</string>
+    <string name="contact_permission">Contact Permission</string>
+    <string name="contact_permission_is_mandatory_for_accessing_financial_buddy_app_please_allow_then_only_you_can_proceed">Contact permission is mandatory for accessing Financial Buddy App.Please allow then only you can proceed.</string>
+    <string name="notification_Services">Notification Services</string>
     <string-array name="selectAction">
         <item>Resend OTP</item>
         <item>Enter OTP Manually</item>

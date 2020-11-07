@@ -146,8 +146,4 @@ public class Db_Helper extends SQLiteOpenHelper {
         String querry = "UPDATE "+LEAD_DETAILS+" SET "+Is_Read+" = "+status+" WHERE "+lead_id+" = '"+caseNumber+"'";
         db.execSQL(querry);
     }
-
-
-
-
 }

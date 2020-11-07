@@ -1,6 +1,5 @@
 package com.antworksmoney.financialbuddy.helpers.Utility;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.antworksmoney.financialbuddy.R;
 
@@ -22,8 +23,8 @@ public class ApproveOTPFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.approve_otp_layout,container,false);
-        textView = (TextView) view.findViewById(R.id.otptext);
-        approveBtn = (Button) view.findViewById(R.id.approve);
+        textView = view.findViewById(R.id.otptext);
+        approveBtn = view.findViewById(R.id.approve);
         approveBtn.setOnClickListener(this);
 
         Log.i("Amit","---->> On Create View : "+otpText);
@@ -47,7 +48,7 @@ public class ApproveOTPFragment extends Fragment implements View.OnClickListener
         if(v.getId() == R.id.approve){
             Log.v("Logs : ", "-------------> Approve button Clicked");
             communicator.respond(otpText);
-            getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
             //Toast.makeText(getActivity(),"called",Toast.LENGTH_SHORT).show();
         }
     }

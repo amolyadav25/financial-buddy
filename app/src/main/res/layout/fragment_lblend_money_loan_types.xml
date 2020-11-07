@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout android:id="@+id/snackBarView"
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +7,10 @@
     tools:context=".views.fragments.LoanBuddy.TakeLoan.LBLoanTypesFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/mToolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
 
@@ -21,12 +21,12 @@
             android:text="New Loan"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             android:layout_centerInParent="true"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_weight="50"
                 android:layout_marginEnd="@dimen/dimen_14sp"
@@ -58,7 +58,7 @@
 
                         <ImageView
                             android:layout_width="@dimen/dimen_80dp"
-                            android:src="@drawable/consumer_durable"
+                            app:srcCompat="@drawable/consumer_durable"
                             android:layout_gravity="center_horizontal"
                             android:tint="@android:color/white"
                             android:layout_height="@dimen/dimen_80dp"/>
@@ -77,9 +77,9 @@
 
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_weight="50"
                 android:layout_marginStart="@dimen/dimen_14sp"
@@ -100,7 +100,7 @@
 
                         <ImageView
                             android:layout_width="@dimen/dimen_80dp"
-                            android:src="@drawable/micro_loan"
+                            app:srcCompat="@drawable/micro_loan"
                             android:tint="@android:color/white"
                             android:layout_height="@dimen/dimen_80dp"/>
 
@@ -119,7 +119,7 @@
 
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
@@ -132,7 +132,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/transparent_white">
 
         <ProgressBar
@@ -143,4 +143,4 @@
 
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

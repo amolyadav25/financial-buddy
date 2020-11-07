@@ -1,8 +1,8 @@
 package com.antworksmoney.financialbuddy.views.fragments.BillPayment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +45,6 @@ public class QuickBillPayFragment extends Fragment {
         loader = rootView.findViewById(R.id.loader);
 
         mRequestQueue = Volley.newRequestQueue(getContext());
-
 
         nextButtonForBiller.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,23 +3,21 @@ package com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
@@ -28,10 +26,6 @@ import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.BuddyProfile.L
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.ChangeRequests.LBChangeRequestTypesFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.Documents.LBDocumentsUploadFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.MYLoans.LBMyLoansFragment;
-
-import org.json.JSONObject;
-
-import java.time.temporal.TemporalAccessor;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -88,6 +82,7 @@ public class LBDashBoardFragment extends Fragment {
         snackBarView = rootView.findViewById(R.id.snackBarView);
 
 
+
       //  otherLayout_loanbuddy = rootView.findViewById(R.id.otherLayout_loanbuddy);
 
 
@@ -142,7 +137,15 @@ public class LBDashBoardFragment extends Fragment {
                 } else if (mSharedPreferences.getString(AppConstant.LOAN_STATUS_TRACKER, "").trim().equalsIgnoreCase("8")) {
                    fragmentToReplace = LBAddressDetails.newInstance("SalaryProcess");
                 } else if (mSharedPreferences.getString(AppConstant.LOAN_STATUS_TRACKER, "").trim().equalsIgnoreCase("9")) {
-                   fragmentToReplace = LBPaymentRegistrationFragment.newInstance();
+                    SharedPreferences fcmpref3;
+                    fcmpref3 = getContext().getSharedPreferences("PersonalDetails", Context.MODE_PRIVATE);
+
+                    Log.e("Mytag","fcmpref2ddd"+fcmpref3.getString("paymentdonepremiumplanenddate",null));
+                    if(fcmpref3.getString("paymentdonepremiumplanenddate",null)!=null) {
+                        fragmentToReplace = LBSoftApprovalFragment.newInstance();
+                    }else {
+                        fragmentToReplace = LBPaymentRegistrationFragment.newInstance();
+                    }
                 } else if (mSharedPreferences.getString(AppConstant.LOAN_STATUS_TRACKER, "").trim().equalsIgnoreCase("10")) {
                    fragmentToReplace = LBSoftApprovalFragment.newInstance();
                 } else if (mSharedPreferences.getString(AppConstant.LOAN_STATUS_TRACKER, "").trim().equalsIgnoreCase("11")) {
@@ -169,14 +172,11 @@ public class LBDashBoardFragment extends Fragment {
                     fragmentToReplace = null;
                     checkIfLoanExistsOrNot();
                 }
-
                 if (fragmentToReplace != null && getActivity() != null){
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.homeParent, fragmentToReplace);
                     transaction.addToBackStack(null).commit();
                 }
-
-
             }
         });
 
@@ -219,21 +219,16 @@ public class LBDashBoardFragment extends Fragment {
 
     private void checkIfLoanExistsOrNot() {
         progressBar.setVisibility(View.VISIBLE);
-
         try {
-
             JsonObjectRequest request = new JsonObjectRequest(
                     Request.Method.GET,
                     AppConstant.borrowerBaseUrl + "borrowerloan/checkBorrowerCurrentproposal",
                     null,
                     response -> {
-
                         progressBar.setVisibility(View.GONE);
-
                         Log.e(TAG, response.toString());
 
                         try {
-
                             if (response.getString("status").trim().equalsIgnoreCase("0")) {
                                 showSnackBar(response.getString("msg"), R.color.red);
                             } else {
@@ -242,7 +237,6 @@ public class LBDashBoardFragment extends Fragment {
                                 transaction.addToBackStack(null).commit();
 
                             }
-
                         } catch (Exception e) {
                             showSnackBar("Failed to get status !!", R.color.red);
                             e.printStackTrace();
@@ -268,20 +262,15 @@ public class LBDashBoardFragment extends Fragment {
                     AppConstant.MY_SOCKET_TIMEOUT_MS,
                     DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                     DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
             Volley.newRequestQueue(getContext()).add(request);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
     private void showSnackBar(String message, int backgroundColor) {
         final Snackbar snackbar = Snackbar.make(snackBarView, message, Snackbar.LENGTH_SHORT);
         View snackBarView = snackbar.getView();
         snackBarView.setBackgroundColor(getContext().getResources().getColor(backgroundColor));
         snackbar.show();
     }
-
 }

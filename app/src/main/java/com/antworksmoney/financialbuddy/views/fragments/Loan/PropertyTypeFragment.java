@@ -1,13 +1,7 @@
 package com.antworksmoney.financialbuddy.views.fragments.Loan;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +12,13 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Entity.LoanInfoEntity;
@@ -45,7 +46,7 @@ public class PropertyTypeFragment extends Fragment {
 
     private ArrayList<String> maritalStatusList;
 
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
     private ProgressBar progressBar, journeyCompletedProgressBar;
 

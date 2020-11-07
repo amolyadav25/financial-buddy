@@ -6,10 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.BillPayment.ComplaintEnquiryFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -24,12 +24,12 @@
             android:singleLine="true"
             android:text="Bill Payments"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         <ImageView
             android:layout_width="@dimen/dimen_80dp"
             android:layout_height="@dimen/dimen_30sp"
-            android:src="@drawable/bbps"
+            app:srcCompat="@drawable/bbps"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 

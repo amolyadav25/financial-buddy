@@ -1,6 +1,5 @@
 package com.antworksmoney.financialbuddy.views.fragments.Home;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,11 +7,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +16,18 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.antworksmoney.financialbuddy.R;
+import com.antworksmoney.financialbuddy.views.activities.GetNumber;
+import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
+import com.antworksmoney.financialbuddy.views.activities.UserAuthActivity;
+import com.antworksmoney.financialbuddy.views.fragments.Insurance.LoadUrlFragment;
 import com.bumptech.glide.Glide;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -39,10 +45,6 @@ import com.linkedin.platform.listeners.ApiListener;
 import com.linkedin.platform.listeners.ApiResponse;
 import com.linkedin.platform.listeners.AuthListener;
 import com.linkedin.platform.utils.Scope;
-import com.antworksmoney.financialbuddy.R;
-import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
-import com.antworksmoney.financialbuddy.views.activities.UserAuthActivity;
-import com.antworksmoney.financialbuddy.views.fragments.Insurance.LoadUrlFragment;
 import com.suke.widget.SwitchButton;
 
 import org.json.JSONException;
@@ -369,7 +371,7 @@ public class SettingsFragment extends Fragment {
             editor.putString("profileUpdate","0");
             editor.apply();
 
-            Intent intent = new Intent(getActivity(), UserAuthActivity.class);
+            Intent intent = new Intent(getActivity(), GetNumber.class);
             startActivity(intent);
             getActivity().finish();
         });

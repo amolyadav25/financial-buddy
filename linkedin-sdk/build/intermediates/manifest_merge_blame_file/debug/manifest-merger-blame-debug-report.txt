@@ -6,15 +6,15 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->/home/ankit/Developement/financial-buddy/linkedin-sdk/src/main/AndroidManifest.xml
+8-->E:\financial-buddy\financial-buddy\linkedin-sdk\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->/home/ankit/Developement/financial-buddy/linkedin-sdk/src/main/AndroidManifest.xml
+9-->E:\financial-buddy\financial-buddy\linkedin-sdk\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/ankit/Developement/financial-buddy/linkedin-sdk/src/main/AndroidManifest.xml:6:5-66
-11-->/home/ankit/Developement/financial-buddy/linkedin-sdk/src/main/AndroidManifest.xml:6:22-64
+11-->E:\financial-buddy\financial-buddy\linkedin-sdk\src\main\AndroidManifest.xml:6:5-66
+11-->E:\financial-buddy\financial-buddy\linkedin-sdk\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application />
-13-->/home/ankit/Developement/financial-buddy/linkedin-sdk/src/main/AndroidManifest.xml:5:5-20
+13-->E:\financial-buddy\financial-buddy\linkedin-sdk\src\main\AndroidManifest.xml:5:5-20
 14
 15</manifest>

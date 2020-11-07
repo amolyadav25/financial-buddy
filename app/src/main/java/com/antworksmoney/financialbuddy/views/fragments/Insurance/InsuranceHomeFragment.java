@@ -1,17 +1,8 @@
 package com.antworksmoney.financialbuddy.views.fragments.Insurance;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +10,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 
 public class InsuranceHomeFragment extends Fragment implements View.OnClickListener {
@@ -46,7 +45,7 @@ public class InsuranceHomeFragment extends Fragment implements View.OnClickListe
 
     private static final String TAG = "InsuranceHomeFragment";
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private CoordinatorLayout snackBarView;
 
@@ -78,7 +77,6 @@ public class InsuranceHomeFragment extends Fragment implements View.OnClickListe
 
         insurance_menulist = rootView .findViewById(R.id.insurance_menulist);
 
-
         registerAsPOSButton = rootView.findViewById(R.id.registerAsPOSButton);
 
         snackBarView = rootView.findViewById(R.id.snackBarView);
@@ -87,19 +85,12 @@ public class InsuranceHomeFragment extends Fragment implements View.OnClickListe
 
         insurance_text = rootView.findViewById(R.id.insurance_text);
 
-
         proceedbutton = rootView.findViewById(R.id.applyForOthers);
 
-
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         otherLayout_insurance.setVisibility(View.VISIBLE);
         insurance_menulist.setVisibility(View.GONE);
-
-
-
-
-
 
         insurance_text.setText(Html.fromHtml("Buy Insurance online at <a heref = 'www.Policysecure.in'>www.Policysecure.in</a>"));
 
@@ -143,47 +134,41 @@ public class InsuranceHomeFragment extends Fragment implements View.OnClickListe
 
                 insurance_menulist.setVisibility(View.VISIBLE);
 
-
                 break;
 
-
-
             case R.id.healthInsuranceProduct:
-                fragmentToReplace = LoadUrlFragment.newInstance("http://policysecure.in/Home/Health-Insurance", "Health Insurance");
+                fragmentToReplace = LoadUrlFragment.newInstance("https://www.policysecure.in/Home/Health-Insurance", "Health Insurance");
                 break;
 
             case R.id.carInsuranceProduct:
-                fragmentToReplace = LoadUrlFragment.newInstance("http://policysecure.in/antworks/index", "Car Insurance");
+                fragmentToReplace = LoadUrlFragment.newInstance("https://www.policysecure.in/antworks/index", "Car Insurance");
                 break;
 
             case R.id.twoWheelerProduct:
-                fragmentToReplace = LoadUrlFragment.newInstance("http://policysecure.in/antworks/index", "Bike Insurance");
+                fragmentToReplace = LoadUrlFragment.newInstance("https://www.policysecure.in/antworks/index", "Bike Insurance");
                 break;
 
             case R.id.travelProduct:
-                fragmentToReplace = LoadUrlFragment.newInstance("http://policysecure.in/Antworks/Travel-Insurance", "Travel Insurance");
+                fragmentToReplace = LoadUrlFragment.newInstance("https://www.policysecure.in/Antworks/Travel-Insurance", "Travel Insurance");
                 break;
 
             case R.id.lifeProduct:
-                fragmentToReplace = LoadUrlFragment.newInstance("http://policysecure.in/Antworks/Life-Insurance", "Life Insurance");
+                fragmentToReplace = LoadUrlFragment.newInstance("https://www.policysecure.in/Antworks/Life-Insurance", "Life Insurance");
                 break;
 
             case R.id.registerAsPOSButton:
                 if (mSharedPreferences.getString("registerAsPos", "").equalsIgnoreCase("Yes")) {
-                    fragmentToReplace = LoadUrlFragment.newInstance("http://policysecure.in/Antworks/Register-POS", "Register As POS (Point of Sale)");
+                    fragmentToReplace = LoadUrlFragment.newInstance("https://www.policysecure.in/Antworks/Register-POS", "Register As POS (Point of Sale)");
                 } else {
                     fragmentToReplace = RegisterAsPosFragment.newInstance();
                 }
                 break;
-
-
         }
         if (fragmentToReplace != null) {
-            FragmentTransaction transaction = ((FragmentActivity) mActivity).getSupportFragmentManager().beginTransaction();
+            FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.homeParent, fragmentToReplace);
             transaction.addToBackStack(null).commit();
         }
-
     }
 
 

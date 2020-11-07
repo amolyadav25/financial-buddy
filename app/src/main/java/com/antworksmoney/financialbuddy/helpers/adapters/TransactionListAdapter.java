@@ -1,8 +1,8 @@
 package com.antworksmoney.financialbuddy.helpers.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +60,6 @@ public class TransactionListAdapter extends RecyclerView.Adapter<TransactionList
                                     "Loan Amount : Rs. " + mAllContactsData.get(position).getLoanAmount()+"\n"+
                                     "Loan Type : "+ mAllContactsData.get(position).getLoanType()+"\n"+
                                     "Disbursed loan Amount : Rs. "+ mAllContactsData.get(position).getDisburseLoanAmount()+"\n");
-
 
         holder.borowwerName.setOnClickListener(new View.OnClickListener() {
             @Override

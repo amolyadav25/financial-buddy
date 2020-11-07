@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,21 +8,21 @@
     tools:context=".views.fragments.LoanBuddy.MYLoans.LBMyLoansFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/mToolbar"
         android:layout_width="match_parent"
         android:background="@drawable/toolbar_background"
         app:titleTextColor="@color/white"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp"
         app:title="My Loans"
-        android:layout_height="?android:attr/actionBarSize"/>
+        android:layout_height="?attr/actionBarSize"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_60sp"
         android:paddingStart="@dimen/dimen_20sp"
         android:paddingEnd="@dimen/dimen_20sp"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
         <TextView
             android:id="@+id/onGoingLoansTextView"
@@ -50,7 +50,7 @@
             android:background="@drawable/buttonbackgrounddisabled"/>
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myLoanList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/transparent_white">
 
         <ProgressBar
@@ -73,4 +73,4 @@
     </RelativeLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

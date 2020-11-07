@@ -1,8 +1,8 @@
 package com.antworksmoney.financialbuddy.helpers.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +26,6 @@ public class LoanTypesAdapter extends RecyclerView.Adapter<LoanTypesAdapter.Hold
         this.mAllContactsData = contactData;
         this.mContext = context;
         recyclerView = mRecyclerView;
-
     }
 
     public interface OnItemClicked {
@@ -57,7 +56,6 @@ public class LoanTypesAdapter extends RecyclerView.Adapter<LoanTypesAdapter.Hold
                 onClick.onItemClick(holder.getAdapterPosition());
             }
         });
-
     }
 
     @Override
@@ -89,6 +87,4 @@ public class LoanTypesAdapter extends RecyclerView.Adapter<LoanTypesAdapter.Hold
 
         }
     }
-
-
 }

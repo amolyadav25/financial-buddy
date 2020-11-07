@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,10 +8,10 @@
     tools:context=".views.fragments.LoanBuddy.TakeLoan.LBSelfEmployedBusinessFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -23,12 +23,12 @@
             android:layout_height="wrap_content"
             android:text="Self Employed Business"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginBottom="@dimen/dimen_10dp">
 
         <RelativeLayout
@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_30sp"
-                android:src="@drawable/salary"/>
+                app:srcCompat="@drawable/salary"/>
 
             <Spinner
                 android:id="@+id/companyTypeSpinner"
@@ -87,7 +87,7 @@
             <RelativeLayout
                 android:id="@+id/buttonlayout"
                 android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_below="@+id/grossTurnOverLastYearEditText"
                 android:layout_marginTop="@dimen/dimen_20sp"
                 android:layout_marginBottom="@dimen/dimen_20sp">
@@ -127,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/transparent_white">
 
         <ProgressBar
@@ -138,4 +138,4 @@
 
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

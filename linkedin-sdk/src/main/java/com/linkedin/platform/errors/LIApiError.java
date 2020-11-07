@@ -22,10 +22,10 @@ import org.json.JSONException;
 
 public class LIApiError extends Exception {
 
-    public static enum ErrorType {
+    public enum ErrorType {
         accessTokenIsNotSet,
         apiErrorResponse,
-        other;
+        other
     }
 
     private VolleyError volleyError;

@@ -2,10 +2,10 @@ package com.antworksmoney.financialbuddy.views.fragments.Loan;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +44,7 @@ public class InstantLoanResultFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_instant_loan_result, container, false);
+        Log.e("Mytag","setOnClickInstantLoanResultFragment");
 
         instantLoanList = rootView.findViewById(R.id.instantLoanList);
 
@@ -51,7 +52,6 @@ public class InstantLoanResultFragment extends Fragment {
 
         instantLoanList.setHasFixedSize(true);
         instantLoanList.setLayoutManager(new GridLayoutManager(getContext(), 2));
-
 
         loadList();
         return rootView;
@@ -85,6 +85,7 @@ public class InstantLoanResultFragment extends Fragment {
                         instantLoanList.setAdapter(loanTypesAdapter);
 
                         loanTypesAdapter.setOnClick(position -> {
+                            Log.e("Mytag","setOnClick"+position);
 
                             for (int i = 0; i < dataList.size(); i++) {
                                 ImageView layout = ((View) (instantLoanList.findViewHolderForAdapterPosition(i)).itemView).findViewById(R.id.servicePic);
@@ -97,6 +98,7 @@ public class InstantLoanResultFragment extends Fragment {
                                         public void run() {
                                             if (getActivity() != null){
                                                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                                                Log.e("Mytag","LoanType"+dataList.get(position).getLoanName());
                                                 transaction.replace(R.id.homeParent, LoadUrlFragment.newInstance(dataList.get(position).getLoanId(), dataList.get(position).getLoanName()));
                                                 transaction.addToBackStack(null).commit();
                                             }

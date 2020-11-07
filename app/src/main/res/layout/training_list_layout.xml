@@ -6,7 +6,7 @@
     android:id="@+id/dataCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:selectableItemBackground"
+    android:background="?attr/selectableItemBackground"
     android:theme="@style/MyAppbarTheme"
     android:layout_marginBottom="@dimen/dimen_5dp">
 

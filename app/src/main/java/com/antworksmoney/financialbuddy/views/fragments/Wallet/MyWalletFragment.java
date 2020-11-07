@@ -1,18 +1,8 @@
 package com.antworksmoney.financialbuddy.views.fragments.Wallet;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +14,15 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -36,15 +34,13 @@ import com.antworksmoney.financialbuddy.helpers.adapters.TransactionListAdapter;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 import com.antworksmoney.financialbuddy.views.activities.ResponseActivity;
-
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-
 import static android.content.Context.MODE_PRIVATE;
 
 
@@ -329,7 +325,6 @@ public class MyWalletFragment extends Fragment {
                                 }
                             });
                         }
-
                     } catch (Exception e) {
                         e.printStackTrace();
                         walletAmount.setText(" 0");
@@ -344,8 +339,6 @@ public class MyWalletFragment extends Fragment {
                     walletAmount.setText(" 0");
                 }
         );
-
-
         dataObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
                 AppConstant.MY_SOCKET_TIMEOUT_MS,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
@@ -353,7 +346,4 @@ public class MyWalletFragment extends Fragment {
 
         requestQueue.add(dataObjectRequest);
     }
-
-
-
 }

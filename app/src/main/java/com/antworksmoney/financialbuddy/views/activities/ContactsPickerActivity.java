@@ -10,21 +10,10 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.ContactsContract;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,10 +26,20 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Entity.ProfileInfo;
 import com.antworksmoney.financialbuddy.helpers.adapters.ContactsCompleteListDataViewAdapter;
-import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -68,8 +67,6 @@ public class ContactsPickerActivity extends AppCompatActivity {
     private ArrayList<ProfileInfo> selectedContactsList, completeList;
 
     private CoordinatorLayout snackBarView;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +126,9 @@ public class ContactsPickerActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra("contactList", selectedContactsList);
                 intent.putExtra("completeList", completeList);
+
+               // Log.e("contactList" , selectedContactsList.toString());
+              //  Log.e("completeList" , completeList.toString());
                 setResult(RESULT_OK, intent);
                 finish();
             } else {
@@ -154,7 +154,7 @@ public class ContactsPickerActivity extends AppCompatActivity {
                 else
                     searchtollbar.setVisibility(View.VISIBLE);
 
-                item_search.expandActionView();
+                MenuItemCompat.expandActionView(item_search);
                 return true;
 
             case android.R.id.home:
@@ -201,15 +201,15 @@ public class ContactsPickerActivity extends AppCompatActivity {
     }
 
     public void initSearchView() {
-        final SearchView searchView = (SearchView) search_menu.findItem(R.id.action_filter_search).getActionView();
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(search_menu.findItem(R.id.action_filter_search));
         searchView.setSubmitButtonEnabled(false);
         ImageView closeButton = searchView.findViewById(R.id.search_close_btn);
         closeButton.setImageResource(R.drawable.ic_close);
-        EditText txtSearch = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText txtSearch = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         txtSearch.setHint("Search..");
         txtSearch.setHintTextColor(Color.DKGRAY);
         txtSearch.setTextColor(getResources().getColor(R.color.tab_title_dark));
-        AutoCompleteTextView searchTextView = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        AutoCompleteTextView searchTextView = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         try {
             Field mCursorDrawableRes = TextView.class.getDeclaredField("mCursorDrawableRes");
             mCursorDrawableRes.setAccessible(true);
@@ -267,7 +267,7 @@ public class ContactsPickerActivity extends AppCompatActivity {
         else
             anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, (float) width, 0);
 
-        anim.setDuration((long) 220);
+        anim.setDuration(220);
 
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -434,9 +434,7 @@ public class ContactsPickerActivity extends AppCompatActivity {
                 });
             }
 
-
             mHandler.postDelayed(() -> mLoadingLayout.setVisibility(View.GONE), DELAY);
-
 
         }
     }

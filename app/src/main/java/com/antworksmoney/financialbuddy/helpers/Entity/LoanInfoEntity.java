@@ -5,13 +5,35 @@ import java.io.Serializable;
 public class LoanInfoEntity implements Serializable {
     private String name = "";
 
-    private String email = "";
 
+    private String url = "";
+
+
+    private String last_name = "";
+    private String email = "";
+    private String pan = "";
+    private String postalcode = "";
     private String phoneNumber = "";
 
     private String occupation = "";
 
     private String qualification = "";
+
+    public String getPan() {
+        return pan;
+    }
+
+    public void setPan(String pan) {
+        this.pan = pan;
+    }
+
+    public String getPostalcode() {
+        return postalcode;
+    }
+
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
 
     private String state = "";
 
@@ -96,6 +118,25 @@ public class LoanInfoEntity implements Serializable {
     private String bIdRegistrationId = "";
 
     private String emi_interest = "", emi_principal = "";
+
+    private String x_sessionid = "";
+
+    public String getX_sessionid() {
+        return x_sessionid;
+    }
+
+    public void setX_sessionid(String x_sessionid) {
+        this.x_sessionid = x_sessionid;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 
     public String getEmi_interest() {
         return emi_interest;
@@ -222,7 +263,13 @@ public class LoanInfoEntity implements Serializable {
     public void setOfficePhoneNumber(String officePhoneNumber) {
         this.officePhoneNumber = officePhoneNumber;
     }
+    public String getLast_name() {
+        return last_name;
+    }
 
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
     public String getGrossTurnOverBeforeLastYear() {
         return grossTurnOverBeforeLastYear;
     }

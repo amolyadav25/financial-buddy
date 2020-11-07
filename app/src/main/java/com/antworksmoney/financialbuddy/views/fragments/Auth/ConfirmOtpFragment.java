@@ -1,24 +1,17 @@
 package com.antworksmoney.financialbuddy.views.fragments.Auth;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
@@ -26,6 +19,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.alimuzaffar.lib.pin.PinEntryEditText;
 import com.android.volley.DefaultRetryPolicy;
@@ -37,6 +37,7 @@ import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.helpers.messaging.SendOtpToUser;
 import com.antworksmoney.financialbuddy.views.fragments.Profile.ProfileUpdateFragment;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONException;
@@ -69,17 +70,33 @@ public class ConfirmOtpFragment extends Fragment implements View.OnClickListener
 
     private SharedPreferences preferences;
 
-
     public static ConfirmOtpFragment newInstance(JSONObject dataObject) {
         mDataObject = dataObject;
         return new ConfirmOtpFragment();
     }
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_confirm_otp, container, false);
+
+/*
+        rootView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.
+                        INPUT_METHOD_SERVICE);
+                if (getActivity().getCurrentFocus() != null) {
+                    imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+                }
+                return false;
+            }
+        });
+
+*/
+
+
 
         mContext = getContext();
 
@@ -178,7 +195,7 @@ public class ConfirmOtpFragment extends Fragment implements View.OnClickListener
             if (actionId == EditorInfo.IME_ACTION_DONE) {
 
                 if (getActivity() != null) {
-                    hideKeyboard(getActivity());
+                    hideKeyboard((AppCompatActivity) getActivity());
                 }
                 verifyUser();
                 return true;
@@ -261,6 +278,7 @@ public class ConfirmOtpFragment extends Fragment implements View.OnClickListener
         innerObject.put("userType","0");
         innerObject.put("token", FirebaseInstanceId.getInstance().getToken());
 
+
         JSONObject outerObject = new JSONObject();
         outerObject.put("userData", innerObject);
 
@@ -326,8 +344,8 @@ public class ConfirmOtpFragment extends Fragment implements View.OnClickListener
     }
 
 
-    public static void hideKeyboard(Activity activity) {
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+    public static void hideKeyboard(AppCompatActivity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE);
         View view = activity.getCurrentFocus();
         if (view == null) {
             view = new View(activity);
@@ -354,7 +372,7 @@ public class ConfirmOtpFragment extends Fragment implements View.OnClickListener
         switch (view.getId()) {
             case R.id.otpConfirmButton:
                 if (getActivity() != null) {
-                    hideKeyboard(getActivity());
+                   // hideKeyboard(getActivity());
                 }
                 verifyUser();
                 break;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?android:attr/actionBarSize">
+        android:layout_marginBottom="?attr/actionBarSize">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/app_name"
                     android:padding="@dimen/dimen_10dp"
-                    android:src="@drawable/ic_dehaze_white_24dp" />
+                    app:srcCompat="@drawable/ic_dehaze_white_24dp" />
 
                 <ImageView
                     android:id="@+id/appLogo"
@@ -40,7 +40,7 @@
                     android:padding="@dimen/dimen_14sp"
                     android:background="@drawable/imageview_background_circle"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/applogo" />
+                    app:srcCompat="@drawable/applogo" />
 
                 <!--<TextView-->
                 <!--android:id="@+id/logoText"-->
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:background="?android:selectableItemBackground"
+                    android:background="?attr/selectableItemBackground"
                     android:text="@string/skip"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
@@ -104,15 +104,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dimen_40sp"
                 android:layout_below="@+id/emergency_informative_text"
-                android:src="@drawable/ic_info_outline_black_24dp"
+                app:srcCompat="@drawable/ic_info_outline_black_24dp"
                 android:padding="@dimen/dimen_5dp"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:contentDescription="@string/app_name"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:layout_toEndOf="@+id/openContactsButton"
                 android:theme="@style/MyAppbarTheme" />
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/contactslist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -163,4 +163,4 @@
 
     </RelativeLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

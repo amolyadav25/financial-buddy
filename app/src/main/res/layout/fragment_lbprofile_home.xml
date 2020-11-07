@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackBarView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     tools:context=".views.fragments.LoanBuddy.BuddyProfile.LBProfileHome">
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
@@ -25,7 +24,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="?android:attr/actionBarSize">
+                    android:layout_height="?attr/actionBarSize">
 
                     <ImageView
                         android:id="@+id/toolBarIcon"
@@ -33,7 +32,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:padding="@dimen/dimen_16sp"
-                        android:src="@drawable/ic_dehaze_white_24dp" />
+                        app:srcCompat="@drawable/ic_dehaze_white_24dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -56,7 +55,7 @@
                         android:layout_width="@dimen/dimen_80dp"
                         android:layout_height="@dimen/dimen_80dp"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/user"
+                        app:srcCompat="@drawable/user"
                         android:tint="@android:color/white" />
 
                     <TextView
@@ -175,8 +174,6 @@
                     android:text="ACCOUNT INFO"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/dimen_10dp" />
-
-
             </LinearLayout>
 
             <FrameLayout
@@ -193,7 +190,7 @@
         android:id="@+id/progress_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/transparent_white"
         android:visibility="gone">
 
@@ -204,4 +201,4 @@
     </RelativeLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

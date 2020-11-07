@@ -1,22 +1,13 @@
 package com.antworksmoney.financialbuddy.views.fragments.Home;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -25,6 +16,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -36,6 +37,7 @@ import com.antworksmoney.financialbuddy.helpers.Entity.WalletEntity;
 import com.antworksmoney.financialbuddy.helpers.adapters.FeedbackListAdapter;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONObject;
 
@@ -61,7 +63,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     private SharedPreferences pref;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private CoordinatorLayout snackBarView;
 
@@ -91,12 +93,22 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "FeedBackFragment";
 
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_feed_back, container, false);
 
+        rootView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.
+                        INPUT_METHOD_SERVICE);
+                if (getActivity().getCurrentFocus() != null) {
+                    imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+                }
+                return false;
+            }
+        });
 
         name = rootView.findViewById(R.id.nameEditText);
 
@@ -116,7 +128,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
         feedbackProgressBar = rootView.findViewById(R.id.feedbackProgressBar);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         mContext = getContext();
 
@@ -186,7 +198,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                     showSnackBar("Please enter a valid Phone number !!");
                     email.requestFocus();
                 } else {
-                    hideKeyboard(mActivity);
+                   // hideKeyboard(mActivity);
                     dialogSocialsites.show();
                     sendFeedBackDataTOServer();
                 }
@@ -220,8 +232,8 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         Snackbar.make(snackBarView, message, Snackbar.LENGTH_SHORT).show();
     }
 
-    public static void hideKeyboard(Activity activity) {
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+  /*  public static void hideKeyboard(AppCompatActivity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE);
         View view = activity.getCurrentFocus();
         if (view == null) {
             view = new View(activity);
@@ -229,7 +241,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         if (imm != null) {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-    }
+    }*/
 
     private void sendFeedBackDataTOServer(){
 

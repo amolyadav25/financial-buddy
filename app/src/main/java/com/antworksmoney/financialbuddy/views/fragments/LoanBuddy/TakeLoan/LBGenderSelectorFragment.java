@@ -1,17 +1,8 @@
 package com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,15 +13,22 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.antworksmoney.financialbuddy.R;
-import com.antworksmoney.financialbuddy.helpers.Entity.LoanInfoEntity;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
-import com.antworksmoney.financialbuddy.views.fragments.Loan.DateOfBirthFragment;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONObject;
 
@@ -52,7 +50,7 @@ public class LBGenderSelectorFragment extends Fragment {
 
     private ImageView genderMale, genderFemale;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private Context mContext;
 
@@ -77,7 +75,7 @@ public class LBGenderSelectorFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_gender_selector, container, false);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         mContext = getContext();
 

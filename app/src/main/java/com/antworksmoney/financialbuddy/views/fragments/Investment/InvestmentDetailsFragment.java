@@ -1,21 +1,22 @@
 package com.antworksmoney.financialbuddy.views.fragments.Investment;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Entity.InvestmentEntity;
@@ -44,7 +45,7 @@ public class InvestmentDetailsFragment extends Fragment {
 
     private Button buttonInterested;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private static final String TAG = "InvestmentDetailsFragme";
 
@@ -108,7 +109,7 @@ public class InvestmentDetailsFragment extends Fragment {
 //
 //        querryTextBox = rootView.findViewById(R.id.querryTextBox);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
 //        pref = mActivity.getSharedPreferences("PersonalDetails", MODE_PRIVATE);
 
@@ -194,7 +195,7 @@ public class InvestmentDetailsFragment extends Fragment {
 //                changeVisibilityOfbottomSheet();
                 Log.e(TAG, mInvestmentEntity.getInvestmentId().trim());
 
-                FragmentTransaction transaction = ((FragmentActivity)mActivity).getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
                 if (mInvestmentEntity.getInvestmentId().trim().equalsIgnoreCase("4")){
                     transaction.replace(R.id.homeParent,InvestmentApplyNowFragment.newInstance(mInvestmentEntity));
                 }

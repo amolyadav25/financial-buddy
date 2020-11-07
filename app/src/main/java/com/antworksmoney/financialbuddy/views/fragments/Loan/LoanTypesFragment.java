@@ -3,14 +3,14 @@ package com.antworksmoney.financialbuddy.views.fragments.Loan;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,11 +28,9 @@ import com.antworksmoney.financialbuddy.helpers.Entity.LoanInfoEntity;
 import com.antworksmoney.financialbuddy.helpers.adapters.LoanTypesAdapter;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 
@@ -72,7 +69,7 @@ public class LoanTypesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_loan_types, container, false);
 
         mContext = getContext();
-
+Log.e("Mytag","LoanType");
         loanTypeList = rootView.findViewById(R.id.loanTypeList);
         loanTypeList.setLayoutManager(new GridLayoutManager(mContext, 2));
         loanTypeList.setHasFixedSize(true);
@@ -170,7 +167,7 @@ public class LoanTypesFragment extends Fragment {
                         loanTypeList.setAdapter(loanTypesAdapter);
 
                         loanTypesAdapter.setOnClick(position -> {
-
+                            Log.e("Mytag","loanTypesAdapter");
                             for (int i = 0; i < dataList.size(); i++) {
                                 ImageView layout = ((View) (loanTypeList.findViewHolderForAdapterPosition(i)).itemView).findViewById(R.id.servicePic);
                                 if (i == position) {
@@ -264,6 +261,7 @@ public class LoanTypesFragment extends Fragment {
                 loanSubTypeList.setAdapter(loanTypesAdapter);
 
                 loanTypesAdapter.setOnClick(position -> {
+                    Log.e("Mytag","loanTypesAdapter2");
                     for (int i = 0; i < loanNameList.size(); i++) {
                         ImageView layout = ((View) (loanSubTypeList.findViewHolderForAdapterPosition(i)).itemView).findViewById(R.id.servicePic);
 
@@ -276,12 +274,13 @@ public class LoanTypesFragment extends Fragment {
                             mLoanInfoEntity.setLoanName(loanNameList.get(position).getLoanName());
 
                             loanSubTypeLoader.setVisibility(View.VISIBLE);
-
+                            Log.e("Mytag","loanNameList.get(position).getLoanName()"+loanNameList.get(position).getLoanName());
+                            Log.e("Mytag","loanNameList.get(position).getLoanId()"+loanNameList.get(position).getLoanId());
                             layout.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_check_circle_grey_50dp));
                         }
                     }
-
                     new Handler().postDelayed(() -> {
+
                         if (loanNameList.get(position).getLoanName().trim().equalsIgnoreCase("Credit Counselling")){
                             if (getActivity() != null){
                                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();

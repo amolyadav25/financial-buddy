@@ -6,10 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.Loan.ThankYouFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -23,18 +23,18 @@
 
             android:text="Credit Card"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ProgressBar
         android:id="@+id/loader"
-        android:layout_width="?android:attr/actionBarSize"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:layout_gravity="center"/>
     <LinearLayout
         android:id="@+id/thankYouLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:padding="@dimen/dimen_30sp"
         android:visibility="gone"
         android:orientation="vertical">
@@ -70,7 +70,7 @@
                 android:rotation="180"
                 android:tint="@color/colorPrimary"
                 android:background="@drawable/imageview_background_circle"
-                android:src="@drawable/ic_attach_money_black_24dp"/>
+                app:srcCompat="@drawable/ic_attach_money_black_24dp"/>
 
             <View
                 android:layout_width="0dp"

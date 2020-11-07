@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +7,10 @@
     tools:context=".views.fragments.Loan.LoanAmountFragment">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -24,12 +24,12 @@
 
             android:text="Loan Application"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginBottom="@dimen/dimen_10dp">
 
         <RelativeLayout
@@ -82,7 +82,7 @@
                 android:layout_height="180dp"
                 android:layout_below="@+id/myMaritalStatusHeading"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/salary" />
+                app:srcCompat="@drawable/salary" />
 
             <EditText
                 android:id="@+id/et_reg_amount"
@@ -94,19 +94,53 @@
                 android:layout_marginEnd="@dimen/dimen_20sp"
                 android:background="@drawable/edt_bg_selector"
                 android:digits="0123456789"
-    
                 android:hint="Loan amount"
                 android:imeOptions="actionDone"
                 android:inputType="number"
                 android:textColor="@color/background_color"
                 android:textColorHint="@color/background_color"
                 android:textSize="@dimen/dimen_12dp" />
-
+            <EditText
+                android:id="@+id/et_reg_pan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_reg_amount"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/edt_bg_selector"
+                android:maxLines="1"
+                android:maxLength="10"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                android:inputType="textCapCharacters"
+                android:hint="Pan Number"
+                android:imeOptions="actionDone"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
+            <EditText
+                android:id="@+id/et_reg_postal_Code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_reg_pan"
+                android:layout_marginTop="@dimen/dimen_20sp"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginEnd="@dimen/dimen_20sp"
+                android:background="@drawable/edt_bg_selector"
+                android:hint="Postal Code"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:maxLength="6"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
             <RelativeLayout
                 android:id="@+id/buttonlayout"
                 android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:layout_below="@+id/et_reg_amount"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_below="@+id/et_reg_postal_Code"
                 android:layout_marginTop="@dimen/dimen_20sp">
 
                 <Button
@@ -140,4 +174,4 @@
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

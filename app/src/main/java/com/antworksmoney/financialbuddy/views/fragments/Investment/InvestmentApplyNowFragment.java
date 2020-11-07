@@ -2,7 +2,6 @@ package com.antworksmoney.financialbuddy.views.fragments.Investment;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,12 +9,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +19,14 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -38,6 +39,7 @@ import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 import com.antworksmoney.financialbuddy.views.activities.RegionalDataFetch;
 import com.antworksmoney.financialbuddy.views.fragments.Insurance.LoadUrlFragment;
+import com.google.android.material.snackbar.Snackbar;
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
 
 import org.json.JSONObject;
@@ -60,7 +62,7 @@ public class InvestmentApplyNowFragment extends Fragment implements View.OnClick
 
 //    private LocationRequest mLocationRequest;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private static InvestmentEntity investmentEntity;
 
@@ -111,7 +113,7 @@ public class InvestmentApplyNowFragment extends Fragment implements View.OnClick
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_investment_apply, container, false);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         mContext = getContext();
 

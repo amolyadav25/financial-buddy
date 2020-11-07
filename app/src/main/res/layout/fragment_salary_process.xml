@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackBarView"
@@ -8,10 +8,10 @@
     tools:context=".views.fragments.Loan.SalaryProcessFragment">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -25,12 +25,12 @@
 
             android:text="Loan Application"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginBottom="@dimen/dimen_10dp">
 
         <RelativeLayout
@@ -82,7 +82,7 @@
                 android:layout_height="240dp"
                 android:layout_below="@+id/myMaritalStatusHeading"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/salary" />
+                app:srcCompat="@drawable/salary" />
 
             <Spinner
                 android:id="@+id/maritalStatusSelector"
@@ -142,7 +142,7 @@
             <RelativeLayout
                 android:id="@+id/buttonlayout"
                 android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_below="@+id/emiEditText"
                 android:layout_marginTop="@dimen/dimen_10dp">
 
@@ -183,4 +183,4 @@
     </ScrollView>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -54,6 +54,5 @@ public class UpdateProductStatus {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 }

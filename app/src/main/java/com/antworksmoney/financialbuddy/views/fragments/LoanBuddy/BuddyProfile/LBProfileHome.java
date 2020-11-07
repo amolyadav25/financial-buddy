@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,10 +27,8 @@ import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.ChangeRequests.LBChangePasswordSendOtpFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.ChangeRequests.LBNewPasswordFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBAddressDetails;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBBankDetailsFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBSelfOtherProfessionFragment;
 
 import org.json.JSONObject;
 
@@ -66,8 +64,6 @@ public class LBProfileHome extends Fragment implements View.OnClickListener {
     private SharedPreferences mSharedPreferances;
 
     private JSONObject responseObject;
-
-
 
 
     @Override

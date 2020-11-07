@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,10 +8,10 @@
     tools:context=".views.fragments.LoanBuddy.TakeLoan.LBEsignFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/mToolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
 
@@ -23,12 +23,12 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:textColor="@android:color/white" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:layout_height="180dp"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/e_sign" />
+            app:srcCompat="@drawable/e_sign" />
 
 
         <TextView
@@ -87,7 +87,7 @@
             android:text="SUBMIT"
             android:textColor="@color/white"
             android:layout_marginTop="@dimen/dimen_20sp"
-            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:layout_marginBottom="?attr/actionBarSize"
             android:background="@drawable/buttonbackgroundenabled"
             android:layout_height="@dimen/dimen_46dp"/>
 
@@ -97,4 +97,4 @@
     </ScrollView>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

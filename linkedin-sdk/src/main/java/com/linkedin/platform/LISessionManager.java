@@ -1,20 +1,16 @@
 package com.linkedin.platform;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
-import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.linkedin.android.mobilesdk.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.linkedin.platform.errors.LIAppErrorCode;
 import com.linkedin.platform.errors.LIAuthError;
 import com.linkedin.platform.internals.AppStore;
@@ -131,7 +127,8 @@ public class LISessionManager {
     /**
      * This method must be called in the calling Activity's onActivityResult in order to
      * process the response to
-     * {@link com.linkedin.platform.LISessionManager#init(android.app.Activity, com.linkedin.platform.utils.Scope, com.linkedin.platform.listeners.AuthListener, boolean)}
+     * {@link com.linkedin.platform.LISessionManager#init(Activity, com.linkedin.platform.utils.Scope, com.linkedin.platform.listeners.AuthListener, boolean)}
+     *
      * @param activity
      * @param requestCode
      * @param resultCode

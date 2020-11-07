@@ -7,18 +7,14 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
-
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
-
 import static android.content.Context.MODE_PRIVATE;
 
 public class ProfileImageUpload extends AsyncTask {
@@ -69,7 +65,7 @@ public class ProfileImageUpload extends AsyncTask {
                 Log.e(TAG, "reached here");
 
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                image.compress(Bitmap.CompressFormat.PNG, 1, baos);
+                image.compress(Bitmap.CompressFormat.PNG, 100, baos);
                 byte[] imageBytes = baos.toByteArray();
                 final String imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
@@ -87,10 +83,13 @@ public class ProfileImageUpload extends AsyncTask {
                         response -> {
                             try {
 
-                                Log.e(TAG, response.toString());
+                                Log.e(TAG, "amol"+response.toString());
 
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("user_image_url", response.getJSONObject("data")
+                                        .getJSONObject("userData")
+                                        .getString("profile_image_url"));
+                                Log.e("Mytag","userimage"+response.getJSONObject("data")
                                         .getJSONObject("userData")
                                         .getString("profile_image_url"));
                                 editor.apply();

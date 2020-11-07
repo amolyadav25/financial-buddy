@@ -1,70 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.fragments.Loan.LoanOfferRequestFragment">
-
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px">
-
         <ImageView
             android:id="@+id/toolBarIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_dehaze_white_24dp" />
-
+            app:srcCompat="@drawable/ic_dehaze_white_24dp" />
         <TextView
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
             android:text="Loan Offers"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
-
+    </androidx.appcompat.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize">
-
-        <RelativeLayout
+        android:layout_marginTop="?attr/actionBarSize">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayoutApprovedLimit"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:padding="20dp"
+                >
+            <TextView
+                android:id="@+id/textViewApprovedLimit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approved Limit:"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_14sp" />
+            <TextView
+                android:id="@+id/textViewgetApprovedLimit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/background_color"
+                android:textSize="@dimen/dimen_14sp" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/buttonUploadDocument"
+                android:text="@string/upload_document"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:layout_height="@dimen/dimen_40dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackgroundenabled"/>
             <TextView
                 android:id="@+id/offerHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_20sp"
-    
                 android:text="Best offers for you"
                 android:textColor="@color/background_color"
                 android:textSize="@dimen/dimen_14sp" />
-
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dataList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/offerHeading" />
-
             <ProgressBar
                 android:id="@+id/dataLoader"
                 android:layout_width="@dimen/dimen_50sp"
                 android:layout_height="@dimen/dimen_50sp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="100dp" />
-
-        </RelativeLayout>
-
-
+        </LinearLayout>
     </ScrollView>
-
-
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackBarView"
@@ -8,10 +8,10 @@
     android:fitsSystemWindows="true"
     tools:context=".views.fragments.Home.HomeFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
 
@@ -23,8 +23,8 @@
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
                 android:layout_centerVertical="true"
+                android:text="@string/app_name"
                 android:textColor="@android:color/white" />
 
             <ImageView
@@ -34,28 +34,28 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/dimen_10dp"
-                android:src="@drawable/ic_notifications_white_24dp"/>
+                app:srcCompat="@drawable/ic_notifications_white_24dp" />
 
             <TextView
                 android:id="@+id/newNotificationText"
                 android:layout_width="@dimen/dimen_10dp"
                 android:layout_height="@dimen/dimen_10dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/dimen_10dp"
                 android:layout_marginTop="@dimen/dimen_16sp"
-                android:visibility="gone"
+                android:layout_marginEnd="@dimen/dimen_10dp"
                 android:background="@drawable/contact_view_circle_red"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
         </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:clipToPadding="false">
 
         <LinearLayout
@@ -71,40 +71,35 @@
                 android:id="@+id/banner_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/top_banner" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/top_banner" />
 
 
             <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/dimen_10dp"
-                                android:layout_marginTop="@dimen/dimen_10dp"
-                                android:layout_marginEnd="@dimen/dimen_10dp"
-
-                                android:singleLine="true"
-                                android:text="Offers"
-                android:visibility="gone"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/dimen_14sp"
-                                android:textStyle="bold" />
-
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:singleLine="true"
+                android:text="Offers"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
 
 
             <RelativeLayout
                 android:id="@+id/pharmacyTextHeading"
 
-                android:padding="@dimen/dimen_10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/dimen_10dp"
                 android:theme="@style/MyAppbarTheme">
-
 
 
                 <TextView
@@ -113,9 +108,9 @@
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:text="Best offers for you!"
-                    android:textStyle="bold"
                     android:textColor="@color/tab_title_dark"
-                    android:textSize="@dimen/dimen_18sp" />
+                    android:textSize="@dimen/dimen_18sp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
@@ -123,18 +118,18 @@
 
             <RelativeLayout
                 android:id="@+id/chemistListLayout"
-                android:layout_marginBottom="@dimen/dimen_10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/pharmacyTextHeading">
+                android:layout_below="@+id/pharmacyTextHeading"
+                android:layout_marginBottom="@dimen/dimen_10dp">
 
                 <ImageView
                     android:id="@+id/offerListErrorImage"
                     android:layout_width="match_parent"
                     android:layout_height="174dp"
+                    android:contentDescription="@string/app_name"
                     android:visibility="gone"
-                    android:src="@drawable/data_not_found"
-                    android:contentDescription="@string/app_name"/>
+                    app:srcCompat="@drawable/data_not_found" />
 
                 <ProgressBar
                     android:id="@+id/chemistShopLoader"
@@ -143,7 +138,7 @@
                     android:layout_centerInParent="true"
                     android:visibility="gone" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/offerList"
                     android:layout_width="match_parent"
                     android:layout_height="180dp" />
@@ -152,15 +147,14 @@
 
 
             <RelativeLayout
-                android:padding="@dimen/dimen_10dp"
                 android:id="@+id/loanLaysout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/dimen_10dp"
                 android:theme="@style/MyAppbarTheme">
-
 
 
                 <TextView
@@ -170,21 +164,19 @@
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:text="Choose a service"
-                    android:textStyle="bold"
                     android:textColor="@color/tab_title_dark"
-                    android:textSize="@dimen/dimen_18sp" />
+                    android:textSize="@dimen/dimen_18sp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
-
-
 
 
             <RelativeLayout
                 android:id="@+id/loanBuddyLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:theme="@style/MyAppbarTheme">
 
                 <ImageView
@@ -194,7 +186,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen_20sp"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/loanbuddy" />
+                    app:srcCompat="@drawable/loanbuddy" />
 
                 <TextView
                     android:id="@+id/appBazarText"
@@ -204,18 +196,74 @@
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_toEndOf="@+id/nearbyPharmacy"
                     android:text="Loan Buddy"
-                    android:textStyle="bold"
                     android:textColor="@color/tab_title_dark"
-                    android:textSize="@dimen/dimen_16sp"/>
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/appBazarText"
                     android:layout_margin="@dimen/dimen_5dp"
-                    android:paddingStart="@dimen/dimen_5dp"
-                    android:gravity="center_vertical"
                     android:layout_toEndOf="@+id/nearbyPharmacy"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dimen_5dp"
+                    android:text="Get instant cash and consumer loan upto 50 thousand."
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_14sp" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dimen_20sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:visibility="gone"
+                android:background="@color/dark_gray"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/mutualfund"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="?attr/selectableItemBackground"
+                android:theme="@style/MyAppbarTheme">
+
+                <ImageView
+                    android:id="@+id/nearbyPharmacy1"
+                    android:layout_width="@dimen/dimen_70dp"
+                    android:layout_height="@dimen/dimen_70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_20sp"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/loanbuddy" />
+
+                <TextView
+                    android:id="@+id/appBazarText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_toEndOf="@+id/nearbyPharmacy1"
+                    android:text="Mutual Fund"
+                    android:textColor="@color/tab_title_dark"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/appBazarText1"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:layout_toEndOf="@+id/nearbyPharmacy1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dimen_5dp"
                     android:text="Get instant cash and consumer loan upto 50 thousand."
                     android:textColor="@color/tab_title_dark"
                     android:textSize="@dimen/dimen_14sp" />
@@ -234,12 +282,11 @@
 
                 />
 
-
             <RelativeLayout
                 android:id="@+id/insuranceLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:theme="@style/MyAppbarTheme">
 
                 <ImageView
@@ -250,7 +297,7 @@
                     android:layout_marginStart="@dimen/dimen_20sp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/insurance_image" />
+                    app:srcCompat="@drawable/insurance_image" />
 
                 <TextView
                     android:id="@+id/insuranceText"
@@ -260,22 +307,23 @@
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_toEndOf="@+id/insurance_icon"
                     android:text="Insurance"
-                    android:textStyle="bold"
                     android:textColor="@color/tab_title_dark"
-                    android:textSize="@dimen/dimen_16sp"/>
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/insuranceText"
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
-                    android:layout_below="@+id/insuranceText"
                     android:layout_toEndOf="@+id/insurance_icon"
                     android:text="Compare and buy attractive insurance plans over 20 insurance companies.."
                     android:textColor="@color/background_color"
                     android:textSize="@dimen/dimen_14sp" />
 
             </RelativeLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
@@ -283,8 +331,7 @@
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginEnd="@dimen/dimen_10dp"
                 android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="@color/dark_gray"
-                />
+                android:background="@color/dark_gray" />
 
 
             <!-- <RelativeLayout
@@ -334,7 +381,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10dp"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:theme="@style/MyAppbarTheme">
 
                 <ImageView
@@ -345,7 +392,7 @@
                     android:layout_marginStart="@dimen/dimen_20sp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/loan_image" />
+                    app:srcCompat="@drawable/loan_image" />
 
                 <TextView
                     android:id="@+id/loanText"
@@ -355,18 +402,18 @@
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_toEndOf="@+id/sos_Icon"
                     android:text="Bank Loan &amp; Card Offer"
-                    android:textStyle="bold"
                     android:textColor="@color/tab_title_dark"
-                    android:textSize="@dimen/dimen_16sp" />
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/loanDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/loanText"
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_marginBottom="@dimen/dimen_5dp"
-                    android:layout_below="@+id/loanText"
                     android:layout_toEndOf="@+id/sos_Icon"
                     android:text="Compare and get best loan &amp; card offers from 40 banks."
                     android:textColor="@color/background_color"
@@ -380,15 +427,14 @@
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginEnd="@dimen/dimen_10dp"
                 android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="@color/dark_gray"
-                />
+                android:background="@color/dark_gray" />
 
 
             <RelativeLayout
                 android:id="@+id/investmentLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:theme="@style/MyAppbarTheme">
 
                 <ImageView
@@ -399,7 +445,7 @@
                     android:layout_marginStart="@dimen/dimen_20sp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/investment" />
+                    app:srcCompat="@drawable/investment" />
 
                 <TextView
                     android:id="@+id/investmentText"
@@ -409,16 +455,16 @@
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:layout_toEndOf="@+id/investmentImage"
                     android:text="Investment"
-                    android:textStyle="bold"
                     android:textColor="@color/tab_title_dark"
-                    android:textSize="@dimen/dimen_16sp"/>
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/investmentText"
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
-                    android:layout_below="@+id/investmentText"
                     android:layout_toEndOf="@+id/investmentImage"
                     android:text="Kick start with new investment offers in
 Corporate FDs and bonds."
@@ -428,9 +474,7 @@ Corporate FDs and bonds."
             </RelativeLayout>
 
 
-
             <View
-
 
 
                 android:layout_width="match_parent"
@@ -439,8 +483,7 @@ Corporate FDs and bonds."
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginEnd="@dimen/dimen_10dp"
                 android:layout_marginBottom="@dimen/dimen_10dp"
-                android:background="@color/dark_gray"
-                />
+                android:background="@color/dark_gray" />
 
 
             <RelativeLayout
@@ -495,20 +538,19 @@ Corporate FDs and bonds."
                     android:id="@+id/friendStatusHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                     android:visibility="gone"
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
-
                     android:text="Videos"
+
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/dimen_14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/friendSeeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
@@ -516,7 +558,8 @@ Corporate FDs and bonds."
                     android:text="See all"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/dimen_14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
 
                 <RelativeLayout
@@ -531,8 +574,8 @@ Corporate FDs and bonds."
                         android:layout_height="174dp"
                         android:layout_centerInParent="true"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/data_not_found"
-                        android:visibility="gone" />
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/data_not_found" />
 
                     <ProgressBar
                         android:id="@+id/friendSListLoader"
@@ -541,7 +584,7 @@ Corporate FDs and bonds."
                         android:layout_centerInParent="true"
                         android:visibility="gone" />
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/videoList"
                         android:layout_width="match_parent"
                         android:layout_height="180dp" />
@@ -555,12 +598,12 @@ Corporate FDs and bonds."
                     android:layout_below="@+id/friendsListLayout"
                     android:layout_marginStart="@dimen/dimen_10dp"
                     android:layout_marginEnd="@dimen/dimen_10dp"
-                        android:visibility="gone"
                     android:singleLine="true"
                     android:text="Blogs"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/dimen_14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/bestHospitalText"
@@ -570,11 +613,11 @@ Corporate FDs and bonds."
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="@dimen/dimen_10dp"
                     android:background="@drawable/edt_bg_selected"
-                     android:visibility="invisible"
                     android:text="See all"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/dimen_14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
 
                 <RelativeLayout
@@ -589,8 +632,8 @@ Corporate FDs and bonds."
                         android:layout_height="174dp"
                         android:layout_centerInParent="true"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/data_not_found"
-                        android:visibility="gone" />
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/data_not_found" />
 
                     <ProgressBar
                         android:id="@+id/bestHospitalLoader"
@@ -599,7 +642,7 @@ Corporate FDs and bonds."
                         android:layout_centerInParent="true"
                         android:visibility="gone" />
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/blogList"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
@@ -613,4 +656,4 @@ Corporate FDs and bonds."
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

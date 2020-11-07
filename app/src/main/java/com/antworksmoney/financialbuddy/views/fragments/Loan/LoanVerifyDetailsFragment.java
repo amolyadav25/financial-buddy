@@ -1,15 +1,10 @@
 package com.antworksmoney.financialbuddy.views.fragments.Loan;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,11 +27,8 @@ import com.antworksmoney.financialbuddy.helpers.Entity.BankInfoEntity;
 import com.antworksmoney.financialbuddy.helpers.Entity.LoanInfoEntity;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.fragments.Home.HomeFragment;
-
 import org.json.JSONObject;
-
 import java.text.MessageFormat;
-
 import static android.content.Context.MODE_PRIVATE;
 
 public class LoanVerifyDetailsFragment extends Fragment implements View.OnClickListener {
@@ -74,7 +70,7 @@ public class LoanVerifyDetailsFragment extends Fragment implements View.OnClickL
 
     private static final String TAG = "LoanVerifyDetailsFragmn";
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private SharedPreferences pref;
 
@@ -87,7 +83,7 @@ public class LoanVerifyDetailsFragment extends Fragment implements View.OnClickL
 
         changeDataButton = rootView.findViewById(R.id.changeDataButton);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         pref = mActivity.getSharedPreferences("PersonalDetails", MODE_PRIVATE);
 

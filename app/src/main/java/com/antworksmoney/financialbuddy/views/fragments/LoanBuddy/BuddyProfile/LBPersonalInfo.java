@@ -1,8 +1,8 @@
 package com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.BuddyProfile;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -51,7 +51,7 @@ public class LBPersonalInfo extends Fragment {
 
     private RelativeLayout dateOfBirthSelectorLayout;
 
-    private String arrayGender[] = new String[]{
+    private String[] arrayGender = new String[]{
             "Male", "Female", "Gender"
     };
 

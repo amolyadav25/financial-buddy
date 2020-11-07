@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/parentRelativeLayout"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         android:id="@+id/icon"
         android:layout_width="260dp"
         android:layout_height="260dp"
-        android:src="@drawable/intro_loan"
+        app:srcCompat="@drawable/intro_loan"
         android:scaleType="centerInside"
         android:contentDescription="@string/app_name"
         android:layout_centerInParent="true"/>

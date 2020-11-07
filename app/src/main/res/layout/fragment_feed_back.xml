@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -27,7 +27,7 @@
                     android:layout_height="160dp"
                     android:layout_centerInParent="true"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/applogo"
+                    app:srcCompat="@drawable/applogo"
                     android:padding="@dimen/dimen_5dp"
                     android:background="@drawable/imageview_background_circle"/>
 
@@ -35,7 +35,7 @@
                     android:id="@+id/saveButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_dehaze_white_24dp"
+                    app:srcCompat="@drawable/ic_dehaze_white_24dp"
                     android:padding="@dimen/dimen_10dp"
                     android:contentDescription="@string/app_name"/>
 
@@ -232,7 +232,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_margin="@dimen/dimen_20sp"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/feedbackList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -242,4 +242,4 @@
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

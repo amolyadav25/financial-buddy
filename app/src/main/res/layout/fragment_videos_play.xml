@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-   <android.support.v7.widget.Toolbar
+   <androidx.appcompat.widget.Toolbar
        android:id="@+id/top_toolBar"
        android:layout_width="match_parent"
-       android:layout_height="?android:attr/actionBarSize"
+       android:layout_height="?attr/actionBarSize"
        android:background="@android:color/transparent"
        android:elevation="1px"/>
 
@@ -41,7 +41,7 @@
              android:layout_height="wrap_content"
              android:layout_margin="@dimen/dimen_10dp"
              android:layout_below="@+id/playerParent"
-             android:background="?android:selectableItemBackground">
+             android:background="?attr/selectableItemBackground">
 
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="@dimen/dimen_30sp"
                 android:layout_alignParentEnd="true"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_arrow_drop_down_grey_24dp"/>
+                app:srcCompat="@drawable/ic_arrow_drop_down_grey_24dp"/>
 
             <TextView
                 android:id="@+id/videoCompleteDetails"
@@ -85,7 +85,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:contentDescription="@string/app_name"
-                   android:src="@drawable/ic_share_grey_24dp"
+                   app:srcCompat="@drawable/ic_share_grey_24dp"
                    android:padding="@dimen/dimen_5dp"
                    android:background="@drawable/contact_view_circle_accent"
                    android:layout_margin="@dimen/dimen_10dp"/>
@@ -95,7 +95,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_toEndOf="@+id/shareButton"
-                   android:src="@drawable/ic_star_grey_24dp"
+                   app:srcCompat="@drawable/ic_star_grey_24dp"
                    android:padding="@dimen/dimen_5dp"
                    android:background="@drawable/contact_view_circle_accent"
                    android:contentDescription="@string/app_name"
@@ -123,7 +123,7 @@
                 android:layout_below="@+id/separatorView"
                 android:layout_margin="@dimen/dimen_5dp"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/videosList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -154,4 +154,4 @@
 
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,12 +1,12 @@
 package com.antworksmoney.financialbuddy.helpers.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,33 +89,27 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
             }
         }
 
-
-
         holder.dataCard.setOnClickListener(view -> {
             FragmentTransaction transaction = ((FragmentActivity) mContext).
                     getSupportFragmentManager()
                     .beginTransaction();
-
             Fragment toReplaceFragment;
-
-            if (mType.trim().equalsIgnoreCase("videos")) {
-                new UpdateProductStatus(mContext,"video",mServicePojoArrayList.get(position).getId());
-                toReplaceFragment = VideosPlayFragment.newInstance(data, mServicePojoArrayList);
-            } else if (mType.trim().equalsIgnoreCase("pdfs")) {
-                toReplaceFragment = PdfReadFragment.newInstance(data);
-                new UpdateProductStatus(mContext,"pdf",mServicePojoArrayList.get(position).getId());
-            } else {
+            Log.e("Mytag","Offer");
+Log.e("Mytag","Offer"+(mType));
+//            if (mType.trim().equalsIgnoreCase("videos")) {
+//                new UpdateProductStatus(mContext,"video",mServicePojoArrayList.get(position).getId());
+//                toReplaceFragment = VideosPlayFragment.newInstance(data, mServicePojoArrayList);
+//            } else if (mType.trim().equalsIgnoreCase("pdfs")) {
+//                toReplaceFragment = PdfReadFragment.newInstance(data);
+//                new UpdateProductStatus(mContext,"pdf",mServicePojoArrayList.get(position).getId());
+//            } else {
                 toReplaceFragment = TrainingDetailsFragment.newInstance(data, mType);
                 new UpdateProductStatus(mContext,"blog",mServicePojoArrayList.get(position).getId());
 
-            }
-
+       //     }
             transaction.replace(R.id.homeParent, toReplaceFragment);
             transaction.addToBackStack(null).commit();
-
         });
-
-
     }
 
 

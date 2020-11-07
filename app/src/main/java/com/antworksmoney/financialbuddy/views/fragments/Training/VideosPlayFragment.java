@@ -3,15 +3,15 @@ package com.antworksmoney.financialbuddy.views.fragments.Training;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +34,8 @@ import com.antworksmoney.financialbuddy.helpers.service.UpdateTrainingProgress;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 import java.util.ArrayList;
 import java.util.Objects;
+
+import static com.antworksmoney.financialbuddy.R.id.youtube_fragment;
 
 
 public class VideosPlayFragment extends Fragment  implements View.OnClickListener {
@@ -59,7 +61,7 @@ public class VideosPlayFragment extends Fragment  implements View.OnClickListene
 
     private RelativeLayout videoDetailsLayout;
 
-    private android.support.v7.widget.Toolbar mToolBar;
+    private androidx.appcompat.widget.Toolbar mToolBar;
 
     private ImageView shareButton,favouriteButton;
 
@@ -99,28 +101,28 @@ public class VideosPlayFragment extends Fragment  implements View.OnClickListene
         videosList  = rootView.findViewById(R.id.videosList);
 
         playerParent = rootView.findViewById(R.id.playerParent);
-
-        YouTubePlayerSupportFragment youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.add(R.id.youtube_fragment, youTubePlayerFragment).commit();
-
-        youTubePlayerFragment.initialize(AppConstant.YouTubeApiKey, new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider arg0, YouTubePlayer youTubePlayer, boolean b) {
-                if (!b) {
-                    YPlayer = youTubePlayer;
-                    YPlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
-                    YPlayer.loadVideo(mTrainingEntity.getUrl().split("=")[1]);
-                    YPlayer.play();
-                }
-            }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider arg0, YouTubeInitializationResult arg1) {
-                Toast.makeText(getContext(),"Failed to start",Toast.LENGTH_SHORT).show();
-
-            }
-        });
+//
+//        YouTubePlayerSupportFragment youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
+//        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+//        transaction.add(R.id.youtube_fragment, youTubePlayerFragment).commit();
+//
+//        youTubePlayerFragment.initialize(AppConstant.YouTubeApiKey, new YouTubePlayer.OnInitializedListener() {
+//            @Override
+//            public void onInitializationSuccess(YouTubePlayer.Provider arg0, YouTubePlayer youTubePlayer, boolean b) {
+//                if (!b) {
+//                    YPlayer = youTubePlayer;
+//                    YPlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
+//                    YPlayer.loadVideo(mTrainingEntity.getUrl().split("=")[1]);
+//                    YPlayer.play();
+//                }
+//            }
+//
+//            @Override
+//            public void onInitializationFailure(YouTubePlayer.Provider arg0, YouTubeInitializationResult arg1) {
+//                Toast.makeText(getContext(),"Failed to start",Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
 
         if (mToolBar != null && getActivity()!= null) {

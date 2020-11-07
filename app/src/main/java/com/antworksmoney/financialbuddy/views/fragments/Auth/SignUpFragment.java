@@ -1,9 +1,12 @@
 package com.antworksmoney.financialbuddy.views.fragments.Auth;
 
-import android.app.Activity;
-import android.app.AlertDialog;
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -11,15 +14,8 @@ import android.content.pm.Signature;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
@@ -37,15 +33,28 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.antworksmoney.financialbuddy.R;
+import com.antworksmoney.financialbuddy.contact.MyService;
+import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
+import com.antworksmoney.financialbuddy.helpers.messaging.SendOtpToUser;
+import com.antworksmoney.financialbuddy.views.activities.CanNotUseAppActivity;
+import com.antworksmoney.financialbuddy.views.fragments.Profile.ProfileUpdateFragment;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -54,6 +63,7 @@ import com.facebook.GraphRequest;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.linkedin.platform.APIHelper;
 import com.linkedin.platform.LISessionManager;
@@ -63,17 +73,13 @@ import com.linkedin.platform.listeners.ApiListener;
 import com.linkedin.platform.listeners.ApiResponse;
 import com.linkedin.platform.listeners.AuthListener;
 import com.linkedin.platform.utils.Scope;
-import com.antworksmoney.financialbuddy.R;
-import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
-import com.antworksmoney.financialbuddy.helpers.messaging.SendOtpToUser;
-import com.antworksmoney.financialbuddy.views.fragments.Profile.ProfileUpdateFragment;
-
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import static com.antworksmoney.financialbuddy.contact.MyService.PERMISSIONS_REQUEST_READ_CONTACTS;
 
 
 public class SignUpFragment extends Fragment implements View.OnClickListener {
@@ -86,7 +92,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 
     private Context mContext;
 
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
     private static final String TAG = "SignUpFragment";
 
@@ -116,12 +122,82 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 
     private ImageView signInWithFb;
 
+String p;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getContext());
         AppEventsLogger.activateApp(getActivity());
+
+    }
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String s1 = intent.getStringExtra("DATAPASSED");
+           // text.setText(s1);
+        }
+    };
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.antworksmoney.financialbuddy");
+        getActivity().registerReceiver(broadcastReceiver, intentFilter);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        getActivity().unregisterReceiver(broadcastReceiver);
+    }
+
+    public void requestContactPermission() {
+        Log.e("Mytag","hi");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(requireActivity(),
+                        new String[]{android.Manifest.permission.READ_CONTACTS},
+                        PERMISSIONS_REQUEST_READ_CONTACTS);
+//                if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
+//                        android.Manifest.permission.READ_CONTACTS)) {
+//                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(requireActivity());
+//                    builder.setTitle("Read contacts access needed");
+//                    builder.setPositiveButton(android.R.string.ok, null);
+//                    builder.setMessage("Please enable access to contacts.");
+//                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+//                        @TargetApi(Build.VERSION_CODES.M)
+//                        @Override
+//                        public void onDismiss(DialogInterface dialog) {
+//                            requestPermissions(
+//                                    new String[]
+//                                            {android.Manifest.permission.READ_CONTACTS}
+//                                    , PERMISSIONS_REQUEST_READ_CONTACTS);
+//                        }
+//                    });
+//                    builder.show();
+//                    Log.e("Mytag","AmolLog1");
+//                } else {
+//                    ActivityCompat.requestPermissions(requireActivity(),
+//                            new String[]{android.Manifest.permission.READ_CONTACTS},
+//                            PERMISSIONS_REQUEST_READ_CONTACTS);
+//                    Log.e("Mytag","AmolLog2");
+//                }
+            } else {
+                Log.e("Mytag","AmolLog3");
+                //   requireActivity().startService(new Intent(requireActivity(), MyService.class));
+                Intent serviceIntent= new Intent(requireActivity(), MyService.class);
+                serviceIntent.putExtra("phone", etUser_Phone.getText().toString().trim());
+                requireActivity().startService(serviceIntent);
+            }
+        } else {
+            Log.e("Mytag","AmolLog4");
+            // requireActivity().startService(new Intent(requireActivity(), MyService.class));
+            Intent serviceIntent= new Intent(requireActivity(),MyService.class);
+            serviceIntent.putExtra("phone", etUser_Phone.getText().toString().trim());
+            requireActivity().startService(serviceIntent);
+        }
     }
 
 
@@ -230,6 +306,9 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                 mGraphRequest.executeAsync();
             }
 
+
+
+
             @Override
             public void onCancel() {
                 Log.e(TAG, "CANCELED by user");
@@ -264,6 +343,10 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 
         signInWithFb.setOnClickListener(this);
 
+        etUser_Phone.setText(preferences.getString("user_phone", ""));
+
+
+
         try {
             PackageInfo info = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
@@ -276,8 +359,9 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        requestContactPermission();
         return rootView;
+
     }
 
     @Override
@@ -330,9 +414,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
             case R.id.signInWithFb:
                 signInWithFacebook.performClick();
                 break;
-
         }
-
     }
 
     private void showSnackBar(String message) {
@@ -352,7 +434,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                 Log.e(TAG, error.toString());
             }
         }, true);
-
     }
 
 //    @Override
@@ -441,6 +522,15 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 //        queue.add(dataRequest);
 //    }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        etUser_Phone.setText(preferences.getString("user_phone", ""));
+
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -508,10 +598,13 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
             JSONObject innerObject = new JSONObject();
             innerObject.put("name", preferences.getString("user_name", ""));
             innerObject.put("email", preferences.getString("email_value", ""));
+            innerObject.put("referralcode", preferences.getString("referralcode", ""));
             innerObject.put("contact", "");
             innerObject.put("login_method", loginMethod);
             innerObject.put("userType","0");
             innerObject.put("token", FirebaseInstanceId.getInstance().getToken());
+
+            Log.e("referralcode" , preferences.getString("referralcode", ""));
 
             JSONObject outerObject = new JSONObject();
             outerObject.put("userData", innerObject);
@@ -532,6 +625,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                     if (userDetails.getString("status").trim().equalsIgnoreCase("1")) {
                         editor.putString("user_name", userDetails.getString("name"));
                         editor.putString("user_phone", userDetails.getString("mobile"));
+
 //                    editor.putString("email_value", userDetails.getString("email"));
 //                    editor.putString("user_image_url", userDetails.getString("profile_image_url"));
 //                    editor.putString("user_donor_name", userDetails.getString("blood_group_donor"));
@@ -710,6 +804,31 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         view.setText(spanTxt, TextView.BufferType.SPANNABLE);
     }
 
-
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+Log.e("Mytag","PERMISSIONS_REQUEST_READ_CONTACTS"+PERMISSIONS_REQUEST_READ_CONTACTS);
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_READ_CONTACTS: {
+                if (grantResults.length > 0) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.READ_CONTACTS)) {
+                        Intent intent = new Intent(getActivity(), CanNotUseAppActivity.class);
+                        startActivity(intent);
+                        // Denied
+                    } else {
+                        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+                            // To what you want
+                            Intent serviceIntent= new Intent(requireActivity(), MyService.class);
+                            serviceIntent.putExtra("phone", etUser_Phone.getText().toString().trim());
+                            requireActivity().startService(serviceIntent);
+                        } else {
+                            // Bob never checked click
+                            Intent intent = new Intent(getActivity(), CanNotUseAppActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

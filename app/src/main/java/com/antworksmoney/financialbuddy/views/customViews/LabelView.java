@@ -19,7 +19,7 @@ import android.widget.RelativeLayout;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class LabelView extends android.support.v7.widget.AppCompatTextView{
+public class LabelView extends androidx.appcompat.widget.AppCompatTextView{
 
     private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
     private float _offsetx;

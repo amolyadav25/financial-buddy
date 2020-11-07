@@ -6,20 +6,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.Home.NotificationFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:title="Notifications"
         app:titleTextColor="@color/white"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notificationListLoader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:padding="@dimen/dimen_20sp"/>
 
 </FrameLayout>
