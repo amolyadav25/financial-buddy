@@ -3,13 +3,6 @@ package com.antworksmoney.financialbuddy.views.fragments.Loan;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +11,14 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Entity.LoanInfoEntity;
@@ -57,7 +58,7 @@ public class WhereYouLiveFragment extends Fragment {
 
 //    private Context mContext;
 
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
     private Button nextButtonForQuestions;
 
@@ -163,14 +164,14 @@ public class WhereYouLiveFragment extends Fragment {
             else if (mLoanInfoEntity.getLoanName().trim().equalsIgnoreCase("Credit Card")){
              fragmentToReplace = DateOfBirthFragment.newInstance(mLoanInfoEntity);
             }
-            else if (mLoanInfoEntity.getLoanName().trim().equalsIgnoreCase("Instant Loan")){
-                fragmentToReplace = ContactDetailsFragment.newInstance(mLoanInfoEntity);
-            }
+//            else if (mLoanInfoEntity.getLoanName().trim().equalsIgnoreCase("Instant Loan")){
+//                fragmentToReplace = ContactDetailsFragment.newInstance(mLoanInfoEntity);
+//            }
             else {
                 fragmentToReplace = GenderSelectorFragment.newInstance(mLoanInfoEntity);
             }
 
-            FragmentTransaction transaction = ((FragmentActivity) mActivity).getSupportFragmentManager().beginTransaction();
+            FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.homeParent, fragmentToReplace);
             transaction.addToBackStack(null).commit();
         });
@@ -186,7 +187,6 @@ public class WhereYouLiveFragment extends Fragment {
         journeyCompletedProgressBar.setProgress(9);
         journeyCompletedProgressText.setText(MessageFormat.format("{0} %",
                 String.valueOf(journeyCompletedProgressBar.getProgress())));
-
     }
 
 //    private void displayLocationSettingsRequest(Context context) {

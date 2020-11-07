@@ -32,6 +32,9 @@ public class AppConstant {
 
     public static String borrowerBaseUrl = "https://antworksp2p.com/p2papiborrower/";
 
+
+    public static String Refercode = "https://play.google.com/store/apps/details?id=com.antworksmoney.financialbuddy&referrer=utm_source%3Dgothird%26utm_medium%3Dcpc%26anid%3Dadmob\"";
+
     public static final int MY_SOCKET_TIMEOUT_MS = 10000;
 
     public static final String NEW_MESSAGE_RECIEVED = "0";

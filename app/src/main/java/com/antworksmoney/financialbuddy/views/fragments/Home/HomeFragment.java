@@ -1,18 +1,9 @@
 package com.antworksmoney.financialbuddy.views.fragments.Home;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +13,22 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.antworksmoney.financialbuddy.MutualFunds.MutualLogin;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Database.Db_Helper;
 import com.antworksmoney.financialbuddy.helpers.Entity.TrainingEntity;
@@ -37,26 +38,11 @@ import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 import com.antworksmoney.financialbuddy.views.fragments.Insurance.InsuranceHomeFragment;
 import com.antworksmoney.financialbuddy.views.fragments.Investment.InvestmentApplyForFragment;
 import com.antworksmoney.financialbuddy.views.fragments.Loan.ApplyForFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.Authentication.LBHomeFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.Authentication.LBOTPVerificationFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.LBfirstFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBAddressDetails;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBBankDetailsFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBBankStatementUploadFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBCoBorrowerFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBDashBoardFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBDateOfBirthFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBEstimatedTimeFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBGenderSelectorFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBLoanConfirmationFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBMaritalStatusFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBOccupationSelectorFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBSalaryProcessFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBSelfEmployedBusinessFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBSelfEmployedProfessionalFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBSelfOtherProfessionFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBSoftApprovalFragment;
 import com.antworksmoney.financialbuddy.views.fragments.Training.SeeAllFragment;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,8 +56,6 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-
-
     public static HomeFragment newInstance() {
         return new HomeFragment();
     }
@@ -82,7 +66,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private RecyclerView blogsList, offersList, videosList;
 
-    private RelativeLayout loanLayout, loanBuddyLayout, insuranceLayout, investmentLayout,offerslayout;
+    private RelativeLayout loanLayout, loanBuddyLayout, mutualfund, insuranceLayout, investmentLayout, offerslayout;
 
     private static final String TAG = "HomeFragment";
 
@@ -90,7 +74,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private Toolbar toolbar;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private ProgressBar friendSListLoader, bestHospitalLoader, chemistShopLoader;
 
@@ -106,6 +90,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public Db_Helper mDatabaseObject;
 
+    private ImageView banner_image;
+
+    HomeActivity homeActivity;
 
 
     @Override
@@ -138,12 +125,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         friendSListLoader = rootView.findViewById(R.id.friendSListLoader);
 
         loanBuddyLayout = rootView.findViewById(R.id.loanBuddyLayout);
+        mutualfund = rootView.findViewById(R.id.mutualfund);
 
         seeAllVideos = rootView.findViewById(R.id.friendSeeText);
 
         seeAllBlogs = rootView.findViewById(R.id.bestHospitalText);
 
-       // offerslayout= rootView.findViewById(R.id.offersLayout);
+        banner_image = rootView.findViewById(R.id.banner_image);
 
         insuranceLayout = rootView.findViewById(R.id.insuranceLayout);
 
@@ -161,7 +149,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mDatabaseObject = new Db_Helper(getContext());
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         scrollView.smoothScrollTo(0, loanLayout.getBottom());
 
@@ -232,13 +220,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
 
 
+        Glide.with(getContext()).load("https://www.antworksmoney.com/financial_buddy/assets/offers-img/top-banner.jpg").asBitmap().into(banner_image);
+
+
         blogsList = rootView.findViewById(R.id.blogList);
         blogsList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         blogsList.setHasFixedSize(true);
 
-       offersList = rootView.findViewById(R.id.offerList);
-       offersList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
-       offersList.setHasFixedSize(true);
+        offersList = rootView.findViewById(R.id.offerList);
+        offersList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+        offersList.setHasFixedSize(true);
 
         videosList = rootView.findViewById(R.id.videoList);
         videosList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
@@ -256,13 +247,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         newNotificationText.setOnClickListener(this);
 
+        mutualfund.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MutualLogin.class);
+                view.getContext().startActivity(intent);
+                getActivity().finish();
 
-//        blogsErrorListImage.setOnClickListener(this);
-//
-//        offerListErrorImage.setOnClickListener(this);
-//
-//        friendErrorListImage.setOnClickListener(this);
-
+            }
+        });
         return rootView;
     }
 
@@ -279,6 +272,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+
         FragmentTransaction transaction = ((FragmentActivity) mContext)
                 .getSupportFragmentManager()
                 .beginTransaction();
@@ -291,10 +285,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.loanBuddyLayout:
-                if (pref.getString("loginSave","").trim().equalsIgnoreCase("0.5")){
+                if (pref.getString("loginSave", "").trim().equalsIgnoreCase("0.5")) {
                     fragmentToReplace = LBOTPVerificationFragment.newInstance();
-                }
-                else if (pref.getString("loginSave","").trim().equalsIgnoreCase("1")){
+                } else if (pref.getString("loginSave", "").trim().equalsIgnoreCase("1")) {
                     fragmentToReplace = LBDashBoardFragment.newInstance();
                 }
 //                else if (pref.getString("loginSave","").trim().equalsIgnoreCase("2")){
@@ -324,26 +317,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.newNotificationText:
             case R.id.notificationIcon:
+
                 fragmentToReplace = NotificationFragment.newInstance();
                 break;
-
         }
-
         if (fragmentToReplace != null) {
             transaction.replace(R.id.homeParent, fragmentToReplace);
             transaction.addToBackStack(null).commit();
         }
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
-        if (mDatabaseObject.getUnreadMessagegeCount()>0){
+        if (mDatabaseObject.getUnreadMessagegeCount() > 0) {
             newNotificationText.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             newNotificationText.setVisibility(View.GONE);
         }
     }
@@ -359,7 +348,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             JsonObjectRequest dataRequest = new JsonObjectRequest(
                     Request.Method.POST,
                     AppConstant.BaseUrl + "offer-videos",
-                    new JSONObject().put("mobile",pref.getString("user_phone","")),
+                    new JSONObject().put("mobile", pref.getString("user_phone", "")),
                     response -> {
                         Log.e("Video Response", response.toString());
                         friendSListLoader.setVisibility(View.GONE);
@@ -423,79 +412,79 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         bestHospitalLoader.setVisibility(View.VISIBLE);
         blogsErrorListImage.setVisibility(View.GONE);
 
-       try {
+        try {
 
-           JsonObjectRequest dataRequest = new JsonObjectRequest(
-                   Request.Method.POST,
-                   AppConstant.BaseUrl + "blogs",
-                   new JSONObject().put("mobile",pref.getString("user_phone","")),
-                   response -> {
-                       bestHospitalLoader.setVisibility(View.GONE);
-                       ArrayList<TrainingEntity> dataList = new ArrayList<>();
-                       ArrayList<TrainingEntity> nextPageList = new ArrayList<>();
+            JsonObjectRequest dataRequest = new JsonObjectRequest(
+                    Request.Method.POST,
+                    AppConstant.BaseUrl + "blogs",
+                    new JSONObject().put("mobile", pref.getString("user_phone", "")),
+                    response -> {
+                        bestHospitalLoader.setVisibility(View.GONE);
+                        ArrayList<TrainingEntity> dataList = new ArrayList<>();
+                        ArrayList<TrainingEntity> nextPageList = new ArrayList<>();
 
-                       try {
-                           JSONArray dataArray = response.getJSONArray("blogs_data");
-                           for (int i = 0; i < dataArray.length(); i++) {
-                               JSONObject dataObject = dataArray.getJSONObject(i);
-                               TrainingEntity data = new TrainingEntity();
-                               data.setId(dataObject.getString("ID"));
-                               data.setDescription(dataObject.getString("post_title"));
-                               data.setLongDescription(dataObject.getString("post_content"));
-                               data.setUrl(dataObject.getString("guid"));
-                               data.setThumbnail(dataObject.getString("blog_fetured_image"));
-                               data.setIsSeen(dataObject.getString("is_view"));
-                               for (int k = 0; k < dataObject.getJSONArray("categories").length(); k++) {
-                                   data.getCategoryTags().add(dataObject.getJSONArray("categories")
-                                           .getJSONObject(k)
-                                           .getString("category"));
-                               }
-                               if (i<5){
-                                   dataList.add(data);
-                               }
+                        try {
+                            JSONArray dataArray = response.getJSONArray("blogs_data");
+                            for (int i = 0; i < dataArray.length(); i++) {
+                                JSONObject dataObject = dataArray.getJSONObject(i);
+                                TrainingEntity data = new TrainingEntity();
+                                data.setId(dataObject.getString("ID"));
+                                data.setDescription(dataObject.getString("post_title"));
+                                data.setLongDescription(dataObject.getString("post_content"));
+                                data.setUrl(dataObject.getString("guid"));
+                                data.setThumbnail(dataObject.getString("blog_fetured_image"));
+                                data.setIsSeen(dataObject.getString("is_view"));
+                                for (int k = 0; k < dataObject.getJSONArray("categories").length(); k++) {
+                                    data.getCategoryTags().add(dataObject.getJSONArray("categories")
+                                            .getJSONObject(k)
+                                            .getString("category"));
+                                }
+                                if (i < 5) {
+                                    dataList.add(data);
+                                }
 
-                               nextPageList.add(data);
+                                nextPageList.add(data);
 
-                           }
+                            }
 
-                           ServiceListAdapter dataListAdapter = new ServiceListAdapter(getContext(), dataList, "Blogs");
-                           blogsList.setAdapter(dataListAdapter);
+                            ServiceListAdapter dataListAdapter = new ServiceListAdapter(getContext(), dataList, "Blogs");
+                            blogsList.setAdapter(dataListAdapter);
 
-                           seeAllBlogs.setOnClickListener(v -> {
-                               FragmentTransaction transaction = ((FragmentActivity) mContext)
-                                       .getSupportFragmentManager()
-                                       .beginTransaction();
-                               transaction.replace(R.id.homeParent, SeeAllFragment.newInstance(nextPageList, "Blogs"));
-                               transaction.addToBackStack(null).commit();
-                           });
+                            seeAllBlogs.setOnClickListener(v -> {
+                                FragmentTransaction transaction = ((FragmentActivity) mContext)
+                                        .getSupportFragmentManager()
+                                        .beginTransaction();
+                                transaction.replace(R.id.homeParent, SeeAllFragment.newInstance(nextPageList, "Blogs"));
+                                transaction.addToBackStack(null).commit();
+                            });
 
 
-                       } catch (Exception e) {
-                           blogsErrorListImage.setVisibility(View.VISIBLE);
-                           bestHospitalLoader.setVisibility(View.GONE);
-                           e.printStackTrace();
-                       }
+                        } catch (Exception e) {
+                            blogsErrorListImage.setVisibility(View.VISIBLE);
+                            bestHospitalLoader.setVisibility(View.GONE);
+                            e.printStackTrace();
+                        }
 
-                   },
-                   error -> {
-                       blogsErrorListImage.setVisibility(View.VISIBLE);
-                       bestHospitalLoader.setVisibility(View.GONE);
-                       Log.e(TAG, error.toString());
-                   }
-           );
+                    },
+                    error -> {
+                        blogsErrorListImage.setVisibility(View.VISIBLE);
+                        bestHospitalLoader.setVisibility(View.GONE);
+                        Log.e(TAG, error.toString());
+                    }
+            );
 
-           dataRequest.setRetryPolicy(new DefaultRetryPolicy(
-                   AppConstant.MY_SOCKET_TIMEOUT_MS,
-                   DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                   DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+            dataRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    AppConstant.MY_SOCKET_TIMEOUT_MS,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-           dataRequest.setShouldCache(false);
+            dataRequest.setShouldCache(false);
 
-           mRequestQueue.add(dataRequest);
+            mRequestQueue.add(dataRequest);
 
-       }catch (Exception e){
-           e.printStackTrace();
-       }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void loadOffers() {
@@ -509,7 +498,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 null,
                 response -> {
                     try {
-                       chemistShopLoader.setVisibility(View.GONE);
+                        chemistShopLoader.setVisibility(View.GONE);
 
                         ArrayList<TrainingEntity> datalist = new ArrayList<>();
                         ArrayList<TrainingEntity> nextPageList = new ArrayList<>();
@@ -520,7 +509,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             JSONObject dataObject = dataArray.getJSONObject(i);
                             TrainingEntity data = new TrainingEntity();
 
-                            Log.e(TAG,dataObject.getString("offer_banner_image"));
+                            Log.e(TAG, dataObject.getString("offer_banner_image"));
 
                             data.setId(dataObject.getString("offer_id"));
                             data.setDescription(dataObject.getString("offer_tagline"));
@@ -531,8 +520,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                             nextPageList.add(data);
                         }
-
-
 
 
                         ServiceListAdapter dataListAdapter = new ServiceListAdapter(getContext(), datalist, "Offers");
@@ -546,9 +533,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             transaction.replace(R.id.homeParent, SeeAllFragment.newInstance(nextPageList, "Offers"));
                             transaction.addToBackStack(null).commit();
                         });*/
-
-
-
 
 
                     } catch (JSONException e) {
@@ -574,4 +558,35 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mRequestQueue.add(dataObjectRequest);
 
     }
+
+    /*public class CustomAdapter extends FragmentPagerAdapter {
+        List<Fragment> mFragmentCollection = new ArrayList<>();
+        List<String> mTitleCollection = new ArrayList<>();
+
+        public CustomAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        public void addFragment(String title, Fragment fragment) {
+            mTitleCollection.add(title);
+            mFragmentCollection.add(fragment);
+
+        }
+
+        //Needed for
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mTitleCollection.get(position);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentCollection.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentCollection.size();
+        }
+    }*/
 }

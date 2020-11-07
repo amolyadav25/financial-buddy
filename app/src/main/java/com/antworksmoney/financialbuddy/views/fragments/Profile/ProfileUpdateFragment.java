@@ -3,7 +3,6 @@ package com.antworksmoney.financialbuddy.views.fragments.Profile;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -11,18 +10,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,22 +30,33 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.ProfileImageUpload;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
+import com.google.android.material.snackbar.Snackbar;
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -60,8 +65,8 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
+import static androidx.appcompat.app.AppCompatActivity.RESULT_OK;
 
 
 public class ProfileUpdateFragment extends Fragment implements View.OnClickListener {
@@ -74,8 +79,9 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
     }
 
     private SharedPreferences pref;
+    SharedPreferences.Editor  editor2;
 
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
     private EditText et_reg_fname, et_user_mail, et_user_phone_number;
 
@@ -143,7 +149,7 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         mActivity = getActivity();
 
         pref = mActivity.getSharedPreferences("PersonalDetails", MODE_PRIVATE);
-
+        editor2 = pref.edit();
         profileImage = rootView.findViewById(R.id.profileImage);
 
         et_reg_fname = rootView.findViewById(R.id.et_reg_fname);
@@ -212,7 +218,11 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
                 else {
                     month = String.valueOf(monthOfYear+1);
                 }
+                Log.e("Mytag","dateyear"+year);
+                Log.e("Mytag","dateyear"+month);
+                Log.e("Mytag","dateyear"+day);
                 selectDateTextView.setText(year + "-" + month + "-" + day);
+
             }
         });
 
@@ -246,8 +256,8 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
             editor.putString("profileUpdate", "1");
             editor.apply();
         }
-
         if (!pref.getString("user_name","").trim().equalsIgnoreCase("")){
+            Log.e("Mytag","amolusername"+pref.getString("user_name", ""));
             et_reg_fname.setText(pref.getString("user_name", ""));
             progress = 17;
         }
@@ -264,10 +274,11 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         }
 
         if (!pref.getString("user_dob","").trim().equalsIgnoreCase("")) {
-            if (!pref.getString("user_dob","").trim().equalsIgnoreCase("0000-00-00")) {
+           // if (!pref.getString("user_dob","").trim().equalsIgnoreCase("0000-00-00")) {
+                Log.e("Mytag","user_dobuser_dob"+pref.getString("user_dob", ""));
                 selectDateTextView.setText(pref.getString("user_dob", ""));
                 progress = progress + 17;
-            }
+          //  }
         }
 
         if ((!pref.getString("gender","").equalsIgnoreCase("Gender"))
@@ -277,7 +288,7 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
             int pos = 0;
             for (int i= 0; i<arrayCity.length; i++){
                 if (pref.getString("","").trim().equalsIgnoreCase(arrayCity[i])){
-                   pos = i;
+                    pos = i;
                 }
             }
             genderSelector.setSelection(pos);
@@ -295,11 +306,18 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
             }
             maritalStatusSelector.setSelection(pos);
         }
-
-        Glide.with(mActivity).load(pref.getString("user_image_url",""))
-                .asBitmap()
-                .error(null)
+Log.e("Mytag","pref.getString"+pref.getString("user_image_url",""));
+        Glide.with(mActivity)
+                .load(pref.getString("user_image_url",""))
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .into(profileImage);
+//        Picasso.get()
+//                .load(pref.getString("user_image_url",""))
+//                .resize(50, 50)
+//                .centerCrop()
+//                .into(profileImage);
+       // Glide.with(mActivity).load(pref.getString("user_image_url","")).into(profileImage);
 
         fbCodeTextView.setText("FB CODE : "+ pref.getString("fbCode",""));
 
@@ -433,35 +451,29 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
                     et_user_mail.requestFocus();
                 }
                 else {
-
                     JSONObject outerObject = new JSONObject();
+                    try {
 
+                        outerObject.put("name", et_reg_fname.getText().toString().trim());
 
+                        outerObject.put("contact", et_user_phone_number.getText().toString().trim());
 
-                        try {
+                        outerObject.put("mail", et_user_mail.getText().toString().trim());
 
-                            outerObject.put("name", et_reg_fname.getText().toString().trim());
+                        if (selectDateTextView.getText().toString().trim().equalsIgnoreCase("Select Date")) {
+                            outerObject.put("date_of_birth", "");
+                        } else
+                            outerObject.put("date_of_birth", selectDateTextView.getText().toString());
+                        if (gender.trim().equalsIgnoreCase("Gender")) {
+                            outerObject.put("gender", "");
+                        } else outerObject.put("gender", gender);
 
-                            outerObject.put("contact", et_user_phone_number.getText().toString().trim());
+                        if (maritalStatus.trim().equalsIgnoreCase("Marital Status")) {
+                            outerObject.put("marital_status", "");
+                        } else outerObject.put("marital_status", maritalStatus);
 
-                            outerObject.put("mail", et_user_mail.getText().toString().trim());
-
-                            if (selectDateTextView.getText().toString().trim().equalsIgnoreCase("Select Date")) {
-                                outerObject.put("date_of_birth", "");
-                            } else
-                                outerObject.put("date_of_birth", selectDateTextView.getText().toString());
-
-
-                            if (gender.trim().equalsIgnoreCase("Gender")) {
-                                outerObject.put("gender", "");
-                            } else outerObject.put("gender", gender);
-
-                            if (maritalStatus.trim().equalsIgnoreCase("Marital Status")) {
-                                outerObject.put("marital_status", "");
-                            } else outerObject.put("marital_status", maritalStatus);
-
-                            if (profileImage.getDrawable() != null) {
-
+                        if (profileImage.getDrawable() != null) {
+Log.e("Mytag","profileImageprofileImage");
                             try {
                                 new ProfileImageUpload(
                                         ((GlideBitmapDrawable) profileImage.getDrawable().getCurrent()).getBitmap(),
@@ -477,23 +489,21 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
                                 }
 
                             }
+                            Log.e("Mytag","outerObject"+outerObject);
+
+                        }else
+                        {
 
                         }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     Log.e(TAG,outerObject.toString());
 
                     fragmentToReplace = AdditionalInfoFragment.newInstance(mBaseFrameLayout,outerObject);
                 }
-
                 break;
-
-
-
         }
 
         if (fragmentToReplace != null) {
@@ -563,7 +573,7 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         ProgressBar imageLoader;
 
         @SuppressLint("StaticFieldLeak")
-        Activity mActivity;
+        AppCompatActivity mActivity;
 
         Bitmap selectedImage;
         SharedPreferences preferences;
@@ -575,7 +585,7 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
             mProfileImage = (ImageView) objects[1];
             snackBarView = (CoordinatorLayout) objects[2];
             imageLoader = (ProgressBar) objects[3];
-            mActivity = (Activity) objects[4];
+            mActivity = (AppCompatActivity) objects[4];
             preferences = (SharedPreferences) objects[5];
 
             final InputStream imageStream;
@@ -591,6 +601,7 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
 
         @Override
         protected void onPostExecute(String s) {
+            Log.e("Mytag","s"+s);
             mProfileImage.setImageBitmap(selectedImage);
             imageLoader.setVisibility(View.GONE);
 
@@ -602,19 +613,18 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         }
     }
 
-
     @Override
     public void onPause() {
         super.onPause();
 
         Log.e(TAG, "onPause()");
 
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("user_name", et_reg_fname.getText().toString().trim());
-        editor.putString("email_value", et_user_mail.getText().toString().trim());
-        editor.putString("user_phone", et_user_phone_number.getText().toString().trim());
-
-        editor.apply();
+//        SharedPreferences.Editor editor = pref.edit();
+//        editor.putString("user_name", et_reg_fname.getText().toString().trim());
+//        editor.putString("email_value", et_user_mail.getText().toString().trim());
+//        editor.putString("user_phone", et_user_phone_number.getText().toString().trim());
+//
+//        editor.apply();
 
 
     }

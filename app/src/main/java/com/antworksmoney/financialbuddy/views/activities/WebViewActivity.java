@@ -1,12 +1,5 @@
 package com.antworksmoney.financialbuddy.views.activities;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Map;
-
-
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -16,13 +9,14 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
-import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -30,7 +24,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Utility.AvenuesParams;
@@ -42,7 +35,13 @@ import com.antworksmoney.financialbuddy.helpers.Utility.ServiceUtility;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+
 public class WebViewActivity extends AppCompatActivity {
+
     Intent mainIntent;
     String encVal;
     private static final String TAG = "WebViewActivity";
@@ -74,7 +73,7 @@ public class WebViewActivity extends AppCompatActivity {
         protected Void doInBackground(Void... arg0) {
             if (!ServiceUtility.chkNull(vResponse).equals("")
                     && ServiceUtility.chkNull(vResponse).toString().indexOf("ERROR") == -1) {
-                StringBuffer vEncVal = new StringBuffer("");
+                StringBuffer vEncVal = new StringBuffer();
                 vEncVal.append(ServiceUtility.addToPostParams(AvenuesParams.AMOUNT, mainIntent.getStringExtra(AvenuesParams.AMOUNT)));
                 vEncVal.append(ServiceUtility.addToPostParams(AvenuesParams.CURRENCY, mainIntent.getStringExtra(AvenuesParams.CURRENCY)));
                 vResponse = vResponse.replaceAll("\\\n", "");

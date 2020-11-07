@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF"
+    tools:context=".views.activities.CanNotUseAppActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@drawable/denied4"
+        android:layout_height="250dp"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="20dp"
+    android:textSize="@dimen/dimen_20sp"
+    android:textColor="@android:color/black"
+    android:text="@string/contact_permission_is_mandatory_for_accessing_financial_buddy_app_please_allow_then_only_you_can_proceed"/>
+    <Button
+        android:id="@+id/buttonContactPermission"
+        android:background="@drawable/buttonbackgroundenabled"
+        android:layout_width="wrap_content"
+        android:text="@string/contact_permission"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dimen_20sp"
+        android:paddingRight="@dimen/dimen_20sp"
+        android:textColor="@android:color/white"
+        android:layout_height="40sp"/>
+    <Button
+        android:id="@+id/buttonNotificationPermission"
+        android:background="@drawable/buttonbackgroundenabled"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:text="@string/notification_Services"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dimen_20sp"
+        android:paddingRight="@dimen/dimen_20sp"
+        android:textColor="@android:color/white"
+        android:layout_height="40sp"/>
+</LinearLayout>

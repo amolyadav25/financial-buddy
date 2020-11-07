@@ -3,11 +3,14 @@ package com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.ChangeRequest
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+
+import com.antworksmoney.financialbuddy.ForgotPasswordPOJO.ForgotPasswordPOJO;
+import com.antworksmoney.financialbuddy.helpers.AllApiInterface;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -25,11 +29,14 @@ import com.android.volley.toolbox.Volley;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
-
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LBChangePasswordSendOtpFragment extends Fragment {
 
@@ -132,7 +139,7 @@ public class LBChangePasswordSendOtpFragment extends Fragment {
                     try {
 
                         MToken = response.getString("token");
-
+                       Log.e("Mytag","MTokenhhhhh"+MToken);
                     } catch (Exception e) {
 
                         progress_bar.setVisibility(View.GONE);
@@ -146,6 +153,7 @@ public class LBChangePasswordSendOtpFragment extends Fragment {
 
                     Log.e(TAG, error.toString());
 
+
                     progress_bar.setVisibility(View.GONE);
 
                 });
@@ -156,26 +164,51 @@ public class LBChangePasswordSendOtpFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         mRequestQueue.add(dataRequest);
-
     }
 
 
 
     private void chnageUserPassword(){
-
+//
+//        Retrofit retrofit  = new Retrofit.Builder()
+//                .baseUrl(AppConstant.commonAPIUrl)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        AllApiInterface client = retrofit.create(AllApiInterface.class);
+//        Call<ForgotPasswordPOJO> calltargetResponse = client.sendotpForgotpassword(et_user_phone_number.getText().toString().trim(), "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJiZWZvcmVfbG9naW4iOnRydWV9.sMIgmo8-VbbrSthg9oI2vCrY5DMk7aEWODDnKYQUg-w");
+//        calltargetResponse.enqueue(new Callback<ForgotPasswordPOJO>() {
+//            @Override
+//            public void onResponse(Call<ForgotPasswordPOJO> call, retrofit2.Response<ForgotPasswordPOJO> response) {
+//               // UserProfile UserResponse = response.body();
+//                Log.e("Mytag","responesssssAmol"+response.body());
+//                Log.e("Mytag","responesssssAmolMSg"+response.body().getMsg());
+//                Log.e("Mytag","responesssssAmolStatus"+response.body().getStatus());
+//                Toast.makeText(getActivity(), " Response Amol"+response.body(), Toast.LENGTH_SHORT).show();
+//            }
+//            @Override
+//            public void onFailure(Call<ForgotPasswordPOJO> call, Throwable t) {
+//                //Toast.makeText(this, "Failed ", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        Log.e("Mytag","logintoken"+ mSharedPreferences.getString("loginToken", ""));
         try {
-
             progress_bar.setVisibility(View.VISIBLE);
 
             Map<String, String> params = new HashMap<>();
             params.put("mobile",et_user_phone_number.getText().toString().trim());
+            params.put("Authorization", mSharedPreferences.getString("loginToken", ""));
+            Log.e("Mytag","logintoken"+ mSharedPreferences.getString("loginToken", ""));
+            Log.e("Mytag","mobileet_user_phone_number"+et_user_phone_number.getText().toString().trim());
 
+            Log.e("Mytag","mobileet_user_phone_number"+et_user_phone_number.getText().toString().trim());
             String url = "";
             if (calledFromProfilePage){
                 url = AppConstant.borrowerBaseUrl + "borrowerrequest/sendOtpPassword";
             }
             else {
-                url = AppConstant.borrowerBaseUrl + "borrowerrequest/sendotpForgotpassword";
+               // url = AppConstant.borrowerBaseUrl + "borrowerrequest/sendotpForgotpassword";
+                url = "https://antworksp2p.com/p2papi/commonapi/sendotpForgotpassword";
             }
 
             JsonObjectRequest request = new JsonObjectRequest(
@@ -186,16 +219,16 @@ public class LBChangePasswordSendOtpFragment extends Fragment {
 
                         progress_bar.setVisibility(View.GONE);
 
-                        Log.e(TAG, response.toString());
+                        Log.e("AmolYadav", response.toString());
 
                         try {
-
-                            if (response.getString("status").trim().equalsIgnoreCase("1")){
+                            Log.e(TAG, response.getString("status"));
+                            if (response.getInt("status")==1){
 
                                 showSnackBar("OTP sent successfully !!", R.color.green);
                             }
                             else {
-                                showSnackBar("Failed to send OTP !!", R.color.red);
+                                showSnackBar("Failed to send OTP !!"+response.getString("msg"), R.color.red);
                             }
 
                         }catch (Exception e){
@@ -205,16 +238,18 @@ public class LBChangePasswordSendOtpFragment extends Fragment {
 
                     }, error -> {
                 showSnackBar("Failed to send OTP !!", R.color.red);
-                Log.e(TAG, error.toString());
+                Log.e(TAG, "amol"+error.toString());
                 progress_bar.setVisibility(View.GONE);
             }) {
                 @Override
                 public Map<String, String> getHeaders() {
                     if (calledFromProfilePage){
+                        Log.e("Mytag","loginToken"+mSharedPreferences.getString("loginToken", ""));
                         params.put("Authorization", mSharedPreferences.getString("loginToken", ""));
                     }
                     else {
                         params.put("Authorization", MToken);
+                        Log.e("Mytag","MToken"+MToken);
                     }
                     params.put("Content-Type", "application/json");
                     Log.e(TAG,  params.toString());
@@ -256,13 +291,9 @@ public class LBChangePasswordSendOtpFragment extends Fragment {
                     }catch (Exception e){
                         e.printStackTrace();
                     }
-
-
                 }
             }
         });
         snackbar.show();
     }
-
-
 }

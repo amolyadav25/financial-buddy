@@ -1,18 +1,8 @@
 package com.antworksmoney.financialbuddy.views.fragments.Insurance;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +11,19 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 public class RegisterAsPosFragment extends Fragment implements View.OnClickListener {
     public RegisterAsPosFragment() {
@@ -31,7 +32,7 @@ public class RegisterAsPosFragment extends Fragment implements View.OnClickListe
 
     private TextView stateName, cityName;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
 //    private final int REQUEST_CHECK_SETTINGS = 0x04;
 //
@@ -81,7 +82,7 @@ public class RegisterAsPosFragment extends Fragment implements View.OnClickListe
 
         ProceedButton.setOnClickListener(this);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         preferences = mActivity.getSharedPreferences("PersonalDetails", Context.MODE_PRIVATE);
 
@@ -246,7 +247,7 @@ public class RegisterAsPosFragment extends Fragment implements View.OnClickListe
                     editor.putString("registerAsPos", "YES");
                     editor.apply();
 
-                    FragmentTransaction transaction = ((FragmentActivity) mActivity).getSupportFragmentManager().beginTransaction();
+                    FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.homeParent, LoadUrlFragment.newInstance("http://policysecure.in/Antworks/Register-POS","Register As POS (Point of Sale)"));
                     transaction.addToBackStack(null).commit();
                 }

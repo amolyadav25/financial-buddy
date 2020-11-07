@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +19,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -29,11 +28,8 @@ import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 import com.antworksmoney.financialbuddy.views.activities.LBStateCityFetch;
-import com.antworksmoney.financialbuddy.views.activities.RegionalDataFetch;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.BuddyProfile.LBProfileHome;
-
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -119,8 +115,6 @@ public class LBAddressDetails extends Fragment implements View.OnClickListener {
             mToolbar.setVisibility(View.GONE);
             ProceedButton.setVisibility(View.GONE);
             progress_bar = LBProfileHome.getProgressBar();
-
-
             et_reg_address.setFocusableInTouchMode(false);
             stateSelectorLayout.setEnabled(false);
             citySelectorLayout.setEnabled(false);
@@ -255,8 +249,6 @@ public class LBAddressDetails extends Fragment implements View.OnClickListener {
 
                 }
                 break;
-
-
         }
     }
 
@@ -275,7 +267,6 @@ public class LBAddressDetails extends Fragment implements View.OnClickListener {
                 }
             }
         }
-
     }
 
     private void updateAddressDetails(){

@@ -2,8 +2,8 @@ package com.antworksmoney.financialbuddy.views.fragments.LoanBuddy;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,14 +36,8 @@ public class LBfirstFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview=  inflater.inflate(R.layout.fragment_lbfirst, container, false);
-
-
         applyForOthers= rootview.findViewById(R.id.applyForOthers);
-
-
-
         applyForOthers.setOnClickListener(this);
-
         return rootview;
     }
 
@@ -59,10 +53,7 @@ public class LBfirstFragment extends Fragment implements View.OnClickListener {
                     transaction.replace(R.id.homeParent, LBHomeFragment.newInstance());
                     transaction.addToBackStack(null).commit();
                 }
-
                 break;
-
         }
     }
-
 }

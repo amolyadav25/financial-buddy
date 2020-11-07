@@ -3,7 +3,6 @@ package com.antworksmoney.financialbuddy.views.fragments.Loan;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -14,15 +13,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +21,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Entity.LoanInfoEntity;
@@ -48,6 +49,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 import java.util.Objects;
@@ -70,7 +72,7 @@ public class ApplyForFragment extends Fragment {
 
     private Button self, referAFriend;
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     private Context mContext;
 
@@ -93,7 +95,7 @@ public class ApplyForFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_apply_for, container, false);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         mContext = getContext();
 
@@ -152,8 +154,8 @@ public class ApplyForFragment extends Fragment {
                 mLoanInfoEntity.setOccupation(pref.getString("profession",""));
                 mLoanInfoEntity.setQualification(pref.getString("education",""));
                 mLoanInfoEntity.setGender(pref.getString("gender",""));
-
-                checkLocationPermission();
+                changeFragment();
+                //checkLocationPermission();
 
 
             }
@@ -166,7 +168,7 @@ public class ApplyForFragment extends Fragment {
             mProgressBar.setVisibility(View.VISIBLE);
 
             new Handler().postDelayed(() -> {
-                FragmentTransaction transaction = ((FragmentActivity) mActivity).getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.homeParent, LoanTypesFragment.newInstance(mLoanInfoEntity));
                 transaction.addToBackStack(null).commit();
             }, 1000);

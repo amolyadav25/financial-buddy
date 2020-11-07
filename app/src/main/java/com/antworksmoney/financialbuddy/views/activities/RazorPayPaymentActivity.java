@@ -1,21 +1,17 @@
 package com.antworksmoney.financialbuddy.views.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-
-import com.android.volley.toolbox.Volley;
+import androidx.appcompat.app.AppCompatActivity;
 import com.antworksmoney.financialbuddy.R;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentData;
-import com.razorpay.PaymentResultListener;
 import com.razorpay.PaymentResultWithDataListener;
-
 import org.json.JSONObject;
 
-public class RazorPayPaymentActivity extends Activity implements PaymentResultWithDataListener {
+public class RazorPayPaymentActivity extends AppCompatActivity implements PaymentResultWithDataListener {
 
     private static final String TAG = "RazorPayPaymentActivity";
 
@@ -29,14 +25,12 @@ public class RazorPayPaymentActivity extends Activity implements PaymentResultWi
         mSharedPreferences = getSharedPreferences("PersonalDetails", MODE_PRIVATE);
 
         Checkout.preload(RazorPayPaymentActivity.this);
-
         startPayment();
     }
 
     public void startPayment() {
 
         Checkout checkout = new Checkout();
-
         checkout.setImage(R.drawable.applogo);
 
         try {
@@ -74,4 +68,5 @@ public class RazorPayPaymentActivity extends Activity implements PaymentResultWi
         setResult(RESULT_CANCELED, intent);
         finish();
     }
+
 }

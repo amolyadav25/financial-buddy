@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout android:id="@+id/snackBarView"
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/snackBarView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +7,10 @@
     tools:context=".views.fragments.LoanBuddy.TakeLoan.LBSaleSuccessfulFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/mToolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:navigationIcon="@drawable/ic_arrow_back_white_24dp">
 
@@ -22,12 +22,12 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:textColor="@android:color/white" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:id="@+id/bannerImage"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
-                android:src="@drawable/loan_disbursed_banner"/>
+                app:srcCompat="@drawable/loan_disbursed_banner"/>
 
 
             <TextView
@@ -91,4 +91,4 @@
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

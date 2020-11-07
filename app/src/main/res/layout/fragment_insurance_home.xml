@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackBarView"
@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".views.fragments.Insurance.InsuranceHomeFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -23,12 +23,12 @@
 
             android:text="Insurance"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
 
         <LinearLayout
@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/insurance_banr"/>
+                    app:srcCompat="@drawable/insurance_banr"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                             android:id="@+id/socialBankingIcon"
                             android:layout_width="@dimen/dimen_50sp"
                             android:layout_height="@dimen/dimen_50sp"
-                            android:src="@drawable/completetransparency"/>
+                            app:srcCompat="@drawable/completetransparency"/>
 
                         <TextView
                             android:id="@+id/socialText"
@@ -128,7 +128,7 @@
                             android:id="@+id/largestNetworkIcon"
                             android:layout_width="@dimen/dimen_50sp"
                             android:layout_height="@dimen/dimen_50sp"
-                            android:src="@drawable/timesaving"/>
+                            app:srcCompat="@drawable/timesaving"/>
 
                         <TextView
                             android:id="@+id/LargestText"
@@ -187,7 +187,7 @@
                             android:id="@+id/lowerRatesIcon"
                             android:layout_width="@dimen/dimen_50sp"
                             android:layout_height="@dimen/dimen_50sp"
-                            android:src="@drawable/saveupto"/>
+                            app:srcCompat="@drawable/saveupto"/>
 
                         <TextView
                             android:id="@+id/lowestText"
@@ -236,7 +236,7 @@
                             android:id="@+id/fastestApprovalsIcon"
                             android:layout_width="@dimen/dimen_50sp"
                             android:layout_height="@dimen/dimen_50sp"
-                            android:src="@drawable/expertadvice"/>
+                            app:srcCompat="@drawable/expertadvice"/>
 
                         <TextView
                             android:id="@+id/FastestText"
@@ -361,7 +361,7 @@
                     android:layout_margin="@dimen/dimen_5dp"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen_5dp"
@@ -373,7 +373,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/dimen_2dp"
-                            android:background="?android:attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackground"
                             android:theme="@style/MyAppbarTheme"
                             android:orientation="vertical">
 
@@ -383,7 +383,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:contentDescription="@string/app_name"
                                 android:padding="@dimen/dimen_5dp"
-                                android:src="@drawable/health_insurance" />
+                                app:srcCompat="@drawable/health_insurance" />
 
                             <TextView
                                 style="@style/customTextViewStyle"
@@ -399,9 +399,9 @@
                         </LinearLayout>
 
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen_5dp"
@@ -413,7 +413,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/dimen_2dp"
-                            android:background="?android:attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackground"
                             android:theme="@style/MyAppbarTheme"
                             android:orientation="vertical">
 
@@ -423,7 +423,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:padding="@dimen/dimen_5dp"
                                 android:contentDescription="@string/app_name"
-                                android:src="@drawable/car_insurance" />
+                                app:srcCompat="@drawable/car_insurance" />
 
 
                             <TextView
@@ -438,7 +438,7 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -449,7 +449,7 @@
                     android:layout_margin="@dimen/dimen_5dp"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen_5dp"
@@ -461,7 +461,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/dimen_2dp"
-                            android:background="?android:attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackground"
                             android:theme="@style/MyAppbarTheme"
                             android:orientation="vertical">
 
@@ -471,7 +471,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:padding="@dimen/dimen_5dp"
                                 android:contentDescription="@string/app_name"
-                                android:src="@drawable/bike_insurance" />
+                                app:srcCompat="@drawable/bike_insurance" />
 
 
                             <TextView
@@ -486,9 +486,9 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen_5dp"
@@ -500,7 +500,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/dimen_2dp"
-                            android:background="?android:attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackground"
                             android:theme="@style/MyAppbarTheme"
                             android:orientation="vertical">
 
@@ -510,7 +510,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:padding="@dimen/dimen_5dp"
                                 android:contentDescription="@string/app_name"
-                                android:src="@drawable/travel_insurance" />
+                                app:srcCompat="@drawable/travel_insurance" />
 
 
                             <TextView
@@ -525,7 +525,7 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -536,13 +536,13 @@
                     android:orientation="horizontal"
                     android:weightSum="100">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dimen_5dp"
                         android:layout_marginEnd="@dimen/dimen_5dp"
                         android:layout_marginTop="@dimen/dimen_5dp"
-                        android:layout_marginBottom="?android:attr/actionBarSize"
+                        android:layout_marginBottom="?attr/actionBarSize"
                         android:layout_weight="50"
                         app:cardCornerRadius="@dimen/dimen_5dp">
 
@@ -551,7 +551,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/dimen_2dp"
-                            android:background="?android:attr/selectableItemBackground"
+                            android:background="?attr/selectableItemBackground"
                             android:theme="@style/MyAppbarTheme"
                             android:orientation="vertical">
 
@@ -561,7 +561,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:padding="@dimen/dimen_5dp"
                                 android:contentDescription="@string/app_name"
-                                android:src="@drawable/life_insurance" />
+                                app:srcCompat="@drawable/life_insurance" />
 
 
                             <TextView
@@ -577,7 +577,7 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
             </LinearLayout>
@@ -589,4 +589,4 @@
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

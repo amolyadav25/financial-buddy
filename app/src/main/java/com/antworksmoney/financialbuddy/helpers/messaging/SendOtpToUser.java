@@ -3,11 +3,11 @@ package com.antworksmoney.financialbuddy.helpers.messaging;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;

@@ -10,11 +10,14 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
+        android:name=".Tracking.Bean"
         android:allowBackup="false"
         android:icon="@drawable/app_logo_square"
         android:label="@string/app_name"
@@ -23,25 +26,65 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
-        <activity android:name="com.antworksmoney.financialbuddy.views.activities.ResponseActivity" />
-        <activity android:name=".views.activities.RazorPayPaymentActivity"/>
+        <activity android:name=".views.activities.CanNotUseAppActivity"></activity>
+        <activity android:name=".PremiumRegarding.PreDownload" />
+        <activity android:name=".PremiumRegarding.PremiumCongrates" />
+        <activity android:name=".PremiumRegarding.PremiumLoanready" />
+        <activity android:name=".PremiumRegarding.lodowoload" />
+        <activity android:name=".PremiumRegarding.locongrate" />
+        <activity android:name=".PremiumRegarding.DemPager" />
+        <activity android:name=".views.activities.Demo" />
+        <activity android:name=".PremiumRegarding.Fragmentstep" />
+        <activity android:name=".PDF" />
+        <activity android:name=".PremiumRegarding.PremiumRazorPaymentgetway" />
+        <activity android:name=".PremiumRegarding.PremiumWebpage" />
+        <activity android:name=".PremiumRegarding.Webpage" />
+        <activity android:name=".views.activities.PaymentGetway" />
+        <activity android:name=".PremiumRegarding.RazorPaymentFreedomPlan" />
+        <activity android:name=".PremiumRegarding.Payment" />
+        <activity android:name=".PremiumRegarding.Congratespopup" />
+        <activity android:name=".PremiumRegarding.LoanReady" />
+        <activity android:name=".PremiumRegarding.PremiumPager" />
+        <activity android:name=".PremiumRegarding.FreedomPager" />
+        <activity android:name=".MutualFundNew.MutualDashboard" />
+        <activity android:name=".MutualFundNew.FragmentAttachements" />
+        <activity android:name=".MutualFundNew.LiquidFund" />
+        <activity android:name=".MutualFunds.MutualRegister" />
+        <activity android:name=".MutualFunds.BuynewInvestment" />
+        <activity android:name=".MutualFunds.MutualProfile" />
+        <activity android:name=".MutualFunds.MutualOtp" />
+        <activity android:name=".MutualFunds.MutualLogin" />
+        <activity android:name=".Tracking.TrackingDemo" />
+        <activity android:name=".Tracking.DemoTracking" />
+        <activity android:name=".views.activities.GetNumber" />
+        <activity android:name=".views.activities.ResponseActivity" />
+        <activity android:name=".views.activities.RazorPayPaymentActivity" />
+
+        <service android:name=".contact.MyService" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <service android:name="com.antworksmoney.financialbuddy.helpers.messaging.MyFirebaseInstanceIDService">
+        <service android:name=".helpers.messaging.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <service
-            android:name="com.antworksmoney.financialbuddy.helpers.messaging.MyFirebaseMessagingService"
-            android:enabled="true"
-            android:exported="true">
+            android:name=".helpers.messaging.NotificationBackground"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service android:name=".helpers.messaging.MyFirebaseMessagingService">
+
+            <!-- android:permission="com.google.android.c2dm.permission.SEND" -->
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
 
@@ -51,8 +94,7 @@
             android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -62,21 +104,15 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.SplashActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".views.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.UserAuthActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.HomeActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".views.activities.UserAuthActivity" />
+        <activity android:name=".views.activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.INSERT" />
 
@@ -85,31 +121,27 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".views.activities.ContactsPickerActivity" />
+        <activity android:name=".views.activities.IntroActivity" />
+        <activity android:name=".views.activities.RegionalDataFetch" />
+        <activity android:name=".views.activities.LBStateCityFetch" />
         <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.ContactsPickerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.IntroActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.RegionalDataFetch"
-            android:screenOrientation="portrait" />
-
-        <activity android:name=".views.activities.LBStateCityFetch"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name="com.antworksmoney.financialbuddy.views.activities.WebViewActivity"
+            android:name=".views.activities.WebViewActivity"
             android:configChanges="orientation|screenSize"
-            android:label="@string/app_name" >
-        </activity>
-
+            android:label="@string/app_name" />
         <activity
             android:name=".views.activities.StatusActivity"
-            android:label="@string/title_activity_status" >
-        </activity>
+            android:label="@string/title_activity_status" />
 
-        <service android:name="com.antworksmoney.financialbuddy.helpers.service.UpdateTrainingProgress" />
+        <meta-data
+            android:name="invitereferrals_bid"
+            android:value="52X" />
+        <meta-data
+            android:name="invitereferrals_bid_e"
+            android:value="6F969A60F73C2218B6913465A5194CFC" />
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_uD1GQECOCMhllO" />
     </application>
 
 </manifest>

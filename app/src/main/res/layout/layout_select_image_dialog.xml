@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_bg">
@@ -11,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dimen_30sp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/applogo" />
+        app:srcCompat="@drawable/applogo" />
 
     <TextView
         android:id="@+id/selectImageHeading"
@@ -33,7 +34,7 @@
         android:text="@string/select_image_from_camera"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
-        android:background="?android:selectableItemBackground"
+        android:background="?attr/selectableItemBackground"
         android:textSize="@dimen/dimen_16sp"
         android:paddingStart="@dimen/dimen_10dp"
         android:paddingEnd="@dimen/dimen_10dp"/>
@@ -49,7 +50,7 @@
         android:textColor="@color/colorAccent"
         android:paddingStart="@dimen/dimen_10dp"
         android:paddingEnd="@dimen/dimen_10dp"
-        android:background="?android:selectableItemBackground"
+        android:background="?attr/selectableItemBackground"
         android:textSize="@dimen/dimen_16sp" />
 
     <Button
@@ -63,7 +64,7 @@
         android:textColor="@color/colorAccent"
         android:paddingStart="@dimen/dimen_10dp"
         android:paddingEnd="@dimen/dimen_10dp"
-        android:background="?android:selectableItemBackground"
+        android:background="?attr/selectableItemBackground"
         android:textSize="@dimen/dimen_16sp"
         android:layout_marginBottom="@dimen/dimen_30sp"/>
 

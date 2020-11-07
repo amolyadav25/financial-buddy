@@ -1,12 +1,9 @@
 package com.antworksmoney.financialbuddy.views.fragments.Profile;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +16,12 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -26,9 +29,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.antworksmoney.financialbuddy.R;
+import com.antworksmoney.financialbuddy.helpers.Entity.ProfileInfo;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Objects;
@@ -41,6 +47,8 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
     private static int mBaseFrameLayout;
 
     private static JSONObject dataObject;
+    private static JSONObject mDataObject;
+
 
     public static AdditionalInfoFragment newInstance(int baseFrameLayout, JSONObject outerObject) {
         dataObject = outerObject;
@@ -50,7 +58,7 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
 
     private String profession = "", education = "";
 
-    private String arrayProfession[] = new String[]{
+    private String[] arrayProfession = new String[]{
             "Salaried",
             "Self Employed Professional",
             "Self Employed Business",
@@ -61,14 +69,14 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
             "Profession"
     };
 
-    private String arrayEducation[] = new String[]{
+    private String[] arrayEducation = new String[]{
             "Post-graduate",
             "Graduate",
             "Diploma",
             "Education"
     };
 
-    private String arrayIncome[] = new String[]{
+    private String[] arrayIncome = new String[]{
             "0 - 25000",
             "25000 - 50000",
             "50000 - 100000",
@@ -79,7 +87,7 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
 
     private Button skipButton, proceedButton;
 
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
     private RadioGroup equityRadioGroup,
             ownHouseRadioGroup,
@@ -97,7 +105,7 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
     private RequestQueue dataRequestQueue;
 
     private static final String TAG = "AdditionalInfoFragment";
-
+    private ProgressBar progressAdHud;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -107,7 +115,7 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
         skipButton = rootView.findViewById(R.id.skipButton);
 
         proceedButton = rootView.findViewById(R.id.nextButton);
-
+        progressAdHud = rootView.findViewById(R.id.progressAdHud);
         professionSelector = rootView.findViewById(R.id.professionSelector);
 
         educationSelector = rootView.findViewById(R.id.educationSelector);
@@ -284,7 +292,6 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
 
             case R.id.nextButton:
                 try {
-
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putString("Profession", ((String) professionSelector.getSelectedItem()).trim());
                     editor.putString("Education",((String) educationSelector.getSelectedItem()).trim());
@@ -340,24 +347,276 @@ public class AdditionalInfoFragment extends Fragment implements View.OnClickList
                                     .getText().toString().trim());
 
                     Log.e("TAg", dataObject.toString());
+                    progressAdHud.setVisibility(View.VISIBLE);
+                    Log.e("MytagAmol"," dfgfg");
+                    Log.e("Mytag","dataObjectAmol"+dataObject);
+                    sendDataToServer();
+//                    fragmentToReplace = AddContactsFragment.newInstance(mBaseFrameLayout,dataObject);
+//                    if (fragmentToReplace != null) {
+//                        transaction.replace(mBaseFrameLayout, fragmentToReplace);
+//                        transaction.addToBackStack(null).commit();
+//                    }
 
-                    fragmentToReplace = AddContactsFragment.newInstance(mBaseFrameLayout, dataObject);
+//                    JsonObjectRequest updateProfileDataReques = new JsonObjectRequest(
+//                            Request.Method.POST,
+//                            AppConstant.BaseUrl + "update-profile",
+//                            dataObject, response -> {
+//                        try {
+//                            progressAdHud.setVisibility(View.GONE);
+//                            // submit_button.setBackground(mContext.getResources().getDrawable(R.drawable.buttonbackgroundenabled));
+//
+//                            Log.e("MytagAmol", response.toString());
+//
+//                            Intent intent = new Intent(mActivity, HomeActivity.class);
+//                            getActivity().startActivity(intent);
+//
+//                            Log.e("TAg","Asdfsfds");
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                            Log.e("TAg","Asdfsfds"+e.getMessage());
+//                        }
+//                    },
+//                            error -> {
+//                                progressAdHud.setVisibility(View.GONE);
+//                                //submit_button.setBackground(mContext.getResources().getDrawable(R.drawable.buttonbackgroundenabled));
+//                                Log.e("error", error.toString());
+//                                Toast.makeText(mActivity, "Failed to send data to server.....", Toast.LENGTH_SHORT).show();
+//                                //  showSnackBar("Failed to send data to server.....");
+//                            });
 
+//                    updateProfileDataReques.setRetryPolicy(new DefaultRetryPolicy(
+//                            AppConstant.MY_SOCKET_TIMEOUT_MS,
+//                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//
+//                    updateProfileDataReques.setShouldCache(false);
+//
+//                    RequestQueue queue = Volley.newRequestQueue(getActivity());
+//                    queue.add(updateProfileDataReques);
+                   // fragmentToReplace = AddContactsFragment.newInstance(mBaseFrameLayout, dataObject);
+                    //sendDataToServer();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
                 break;
-
         }
 
-        if (fragmentToReplace != null) {
-            transaction.replace(mBaseFrameLayout, fragmentToReplace);
-            transaction.addToBackStack(null).commit();
-        }
+//        if (fragmentToReplace != null) {
+//            transaction.replace(mBaseFrameLayout, fragmentToReplace);
+//            transaction.addToBackStack(null).commit();
+//        }
 
     }
+//    private void sendDataToServer() {
+//
+//        progressAdHud.setVisibility(View.VISIBLE);
+//
+//        try {
+//
+//            JSONObject contactObject;
+//
+//            JSONArray contactArray = new JSONArray();
+//
+////            for (int i = 0; i < completeSOSList.size(); i++) {
+////                ProfileInfo info = completeSOSList.get(i);
+////                contactObject = new JSONObject();
+////                contactObject.put("name", info.getName());
+////                contactObject.put("number", info.getPhoneNumber());
+////                contactArray.put(contactObject);
+////            }
+////
+////            mDataObject.put("my_network_contacts", contactArray);
+//
+//            JSONObject outerObject = new JSONObject();
+//            outerObject.put("userData", mDataObject);
+//
+//            Log.e(TAG,outerObject.toString());
+//
+//            JsonObjectRequest updateProfileDataReques = new JsonObjectRequest(
+//                    Request.Method.POST,
+//                    AppConstant.BaseUrl + "update-profile",
+//                    outerObject, response -> {
+//                try {
+//                    progressHUD.setVisibility(View.GONE);
+//                    submit_button.setBackground(mContext.getResources().getDrawable(R.drawable.buttonbackgroundenabled));
+//
+//                    Log.e(TAG, response.toString());
+//
+//                    JSONObject data = response.getJSONObject("respone").getJSONObject("UserData");
+//
+//                    SharedPreferences.Editor editor = pref.edit();
+//
+//                    editor.putString("email_value", data.getString("mail"));
+//                    editor.putString("user_name", data.getString("name"));
+//                    editor.putString("user_phone", data.getString("contact"));
+//                    editor.putString("date_of_birth", data.getString("date_of_birth"));
+//                    editor.putString("gender", data.getString("gender"));
+//                    editor.putString("marital_status", data.getString("marital_status"));
+//                    editor.putString("profession", data.getString("profession"));
+//                    editor.putString("education", data.getString("education"));
+//                    editor.putString("invest_in_market", data.getString("invest_in_market"));
+//                    editor.putString("own_a_house", data.getString("own_a_house"));
+//                    editor.putString("user_dob",data.getString("date_of_birth"));
+//                    editor.putString("net_monthly_income", data.getString("net_monthly_income"));
+//                    editor.putString("provide_financial_consultancy_service", data.getString("provide_financial_consultancy_service"));
+//                    editor.putString("interested_in_financial_consultancy", data.getString("interested_in_financial_consultancy"));
+//                    editor.apply();
+//
+//                    databaseObject.deleteContactsFromTable();
+//
+//                    for (int i = 0; i < data.getJSONArray("my_network_contacts").length(); i++) {
+//                        databaseObject.insertContactNumber(
+//                                data.getJSONArray("my_network_contacts")
+//                                        .getJSONObject(i)
+//                                        .getString("number"),
+//
+//                                data.getJSONArray("my_network_contacts")
+//                                        .getJSONObject(i)
+//                                        .getString("name"));
+//
+//                    }
+//
+//                    new Handler().postDelayed(() -> {
+//                        Intent intent = new Intent(mActivity, HomeActivity.class);
+//                        mContext.startActivity(intent);
+//                    }, 100);
+//
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//            },
+//                    error -> {
+//                        progressHUD.setVisibility(View.GONE);
+//                        submit_button.setBackground(mContext.getResources().getDrawable(R.drawable.buttonbackgroundenabled));
+//                        Log.e("error", error.toString());
+//                        showSnackBar("Failed to send data to server.....");
+//                    });
+//
+//            updateProfileDataReques.setRetryPolicy(new DefaultRetryPolicy(
+//                    AppConstant.MY_SOCKET_TIMEOUT_MS,
+//                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//
+//            updateProfileDataReques.setShouldCache(false);
+//
+//            RequestQueue queue = Volley.newRequestQueue(mContext);
+//            queue.add(updateProfileDataReques);
+//
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//    }
+private void sendDataToServer() {
 
+  //  progressHUD.setVisibility(View.VISIBLE);
+
+    try {
+
+        JSONObject contactObject;
+
+        JSONArray contactArray = new JSONArray();
+
+//        for (int i = 0; i < completeSOSList.size(); i++) {
+//            ProfileInfo info = completeSOSList.get(i);
+//            contactObject = new JSONObject();
+//            contactObject.put("name", info.getName());
+//            contactObject.put("number", info.getPhoneNumber());
+//            contactArray.put(contactObject);
+//        }
+
+        dataObject.put("my_network_contacts", contactArray);
+
+        JSONObject outerObject = new JSONObject();
+        outerObject.put("userData", dataObject);
+
+        Log.e(TAG,outerObject.toString());
+
+        JsonObjectRequest updateProfileDataReques = new JsonObjectRequest(
+                Request.Method.POST,
+                AppConstant.BaseUrl + "update-profile",
+                outerObject, response -> {
+            try {
+               // progressHUD.setVisibility(View.GONE);
+             //   submit_button.setBackground(getActivity().getResources().getDrawable(R.drawable.buttonbackgroundenabled));
+
+                Log.e(TAG, response.toString());
+
+                JSONObject data = response.getJSONObject("respone").getJSONObject("UserData");
+
+                SharedPreferences.Editor editor = pref.edit();
+
+                editor.putString("email_value", data.getString("mail"));
+                editor.putString("user_name", data.getString("name"));
+                editor.putString("user_phone", data.getString("contact"));
+                editor.putString("date_of_birth", data.getString("date_of_birth"));
+                editor.putString("gender", data.getString("gender"));
+                editor.putString("marital_status", data.getString("marital_status"));
+                editor.putString("profession", data.getString("profession"));
+                editor.putString("education", data.getString("education"));
+                editor.putString("invest_in_market", data.getString("invest_in_market"));
+                editor.putString("own_a_house", data.getString("own_a_house"));
+                editor.putString("user_dob",data.getString("date_of_birth"));
+                editor.putString("net_monthly_income", data.getString("net_monthly_income"));
+                editor.putString("provide_financial_consultancy_service", data.getString("provide_financial_consultancy_service"));
+                editor.putString("interested_in_financial_consultancy", data.getString("interested_in_financial_consultancy"));
+                editor.apply();
+
+              //  databaseObject.deleteContactsFromTable();
+
+//                for (int i = 0; i < data.getJSONArray("my_network_contacts").length(); i++) {
+//                    databaseObject.insertContactNumber(
+//                            data.getJSONArray("my_network_contacts")
+//                                    .getJSONObject(i)
+//                                    .getString("number"),
+//
+//                            data.getJSONArray("my_network_contacts")
+//                                    .getJSONObject(i)
+//                                    .getString("name"));
+//
+//                }
+
+                new Handler().postDelayed(() -> {
+                    Intent intent = new Intent(mActivity, HomeActivity.class);
+                    getActivity().startActivity(intent);
+                }, 100);
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        },
+                error -> {
+                   // progressHUD.setVisibility(View.GONE);
+                   // submit_button.setBackground(getActivity().getResources().getDrawable(R.drawable.buttonbackgroundenabled));
+                    Log.e("error", error.toString());
+                   // showSnackBar("Failed to send data to server.....");
+                });
+
+        updateProfileDataReques.setRetryPolicy(new DefaultRetryPolicy(
+                AppConstant.MY_SOCKET_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        updateProfileDataReques.setShouldCache(false);
+
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        queue.add(updateProfileDataReques);
+
+
+    } catch (JSONException e) {
+        e.printStackTrace();
+    }
+
+
+}
     private void getCompaniesDataFromAPI() {
         JsonObjectRequest dataRequest = new JsonObjectRequest(Request.Method.POST,
                 AppConstant.BaseUrl + "company_list",

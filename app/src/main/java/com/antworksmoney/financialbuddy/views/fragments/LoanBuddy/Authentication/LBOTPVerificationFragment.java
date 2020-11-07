@@ -5,14 +5,14 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -26,7 +26,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.alimuzaffar.lib.pin.PinEntryEditText;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -35,10 +34,8 @@ import com.android.volley.toolbox.Volley;
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
-
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 

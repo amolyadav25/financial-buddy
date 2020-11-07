@@ -5,12 +5,12 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -199,7 +199,8 @@ public class LBChangePasswordVerifyOTPFragment extends Fragment {
                 url = AppConstant.borrowerBaseUrl + "borrowerrequest/forgotPasswordOTPverify";
             }
             else {
-                url = AppConstant.borrowerBaseUrl + "borrowerrequest/forgotPasswordOTPverify";
+                //url = AppConstant.borrowerBaseUrl + "borrowerrequest/forgotPasswordOTPverify";
+                url = "https://antworksp2p.com/p2papi/commonapi/forgotPasswordOTPverify";
             }
 
 
@@ -273,7 +274,8 @@ public class LBChangePasswordVerifyOTPFragment extends Fragment {
                 url = AppConstant.borrowerBaseUrl + "borrowerrequest/sendOtpPassword";
             }
             else {
-                url = AppConstant.borrowerBaseUrl + "borrowerrequest/sendotpForgotpassword";
+                //url = AppConstant.borrowerBaseUrl + "borrowerrequest/sendotpForgotpassword";
+                url = "https://antworksp2p.com/p2papi/commonapi/verifyOTP";
             }
 
             JsonObjectRequest request = new JsonObjectRequest(

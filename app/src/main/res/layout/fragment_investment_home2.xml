@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackBarView"
@@ -8,10 +8,10 @@
     tools:context=".views.fragments.Investment.InvestmentApplyForFragment">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:title="Investment"
         app:titleTextColor="@android:color/white" />
@@ -20,7 +20,7 @@
         android:id="@+id/scrollBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
 
         <LinearLayout
@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/investment_banr"/>
+                    app:srcCompat="@drawable/investment_banr"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -78,9 +78,9 @@
 
                         <ImageView
                             android:id="@+id/socialBankingIcon"
-                            android:layout_width="?android:attr/actionBarSize"
-                            android:layout_height="?android:attr/actionBarSize"
-                            android:src="@drawable/portfolio"/>
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            app:srcCompat="@drawable/portfolio"/>
 
                         <TextView
                             android:id="@+id/socialText"
@@ -126,9 +126,9 @@
 
                         <ImageView
                             android:id="@+id/largestNetworkIcon"
-                            android:layout_width="?android:attr/actionBarSize"
-                            android:layout_height="?android:attr/actionBarSize"
-                            android:src="@drawable/monthlyincome"/>
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            app:srcCompat="@drawable/monthlyincome"/>
 
                         <TextView
                             android:id="@+id/LargestText"
@@ -183,9 +183,9 @@
 
                         <ImageView
                             android:id="@+id/lowerRatesIcon"
-                            android:layout_width="?android:attr/actionBarSize"
-                            android:layout_height="?android:attr/actionBarSize"
-                            android:src="@drawable/higherreturn"/>
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            app:srcCompat="@drawable/higherreturn"/>
 
                         <TextView
                             android:id="@+id/lowestText"
@@ -230,9 +230,9 @@
 
                         <ImageView
                             android:id="@+id/fastestApprovalsIcon"
-                            android:layout_width="?android:attr/actionBarSize"
-                            android:layout_height="?android:attr/actionBarSize"
-                            android:src="@drawable/taxsavings"/>
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            app:srcCompat="@drawable/taxsavings"/>
 
                         <TextView
                             android:id="@+id/FastestText"
@@ -316,7 +316,7 @@
                 android:visibility="gone" />
 
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/investmentTypeList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -327,4 +327,4 @@
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

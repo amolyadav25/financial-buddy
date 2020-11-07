@@ -1,12 +1,10 @@
 package com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.ChangeRequests;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +12,8 @@ import android.widget.RelativeLayout;
 
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.BuddyProfile.LBProfileHome;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.MYLoans.LBMyLoansFragment;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBAddressDetails;
 import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBCoBorrowerFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBLoanTypesFragment;
-import com.antworksmoney.financialbuddy.views.fragments.LoanBuddy.TakeLoan.LBWaitingForApprovalFragment;
 
 
 public class LBChangeRequestTypesFragment extends Fragment {

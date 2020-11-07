@@ -7,21 +7,21 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Database.Db_Helper;
@@ -29,10 +29,12 @@ import com.antworksmoney.financialbuddy.helpers.Entity.ProfileInfo;
 import com.antworksmoney.financialbuddy.helpers.adapters.ContactsDataViewAdapter;
 import com.antworksmoney.financialbuddy.views.activities.ContactsPickerActivity;
 import com.antworksmoney.financialbuddy.views.activities.HomeActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-import static android.app.Activity.RESULT_CANCELED;
+import static androidx.appcompat.app.AppCompatActivity.RESULT_CANCELED;
 
 
 public class MyNetworkHome extends Fragment {
@@ -67,7 +69,7 @@ public class MyNetworkHome extends Fragment {
 
     private static final String TAG = "MyNetworkHome";
 
-    private Activity mActivity;
+    private AppCompatActivity mActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -85,7 +87,7 @@ public class MyNetworkHome extends Fragment {
 
         databaseObject = new Db_Helper(mContext);
 
-        mActivity = getActivity();
+        mActivity = (AppCompatActivity) getActivity();
 
         top_toolBar = rootView.findViewById(R.id.top_toolBar);
 

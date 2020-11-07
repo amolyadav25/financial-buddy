@@ -8,14 +8,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +18,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -36,10 +35,8 @@ import com.antworksmoney.financialbuddy.R;
 import com.antworksmoney.financialbuddy.helpers.Entity.RegionalDataInfo;
 import com.antworksmoney.financialbuddy.helpers.adapters.RegionalDataListAdapter;
 import com.antworksmoney.financialbuddy.helpers.dataFetch.AppConstant;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -128,7 +125,7 @@ public class LBStateCityFetch extends AppCompatActivity {
                 else
                     searchtollbar.setVisibility(View.VISIBLE);
 
-                item_search.expandActionView();
+                MenuItemCompat.expandActionView(item_search);
                 return true;
 
             case android.R.id.home:
@@ -176,15 +173,15 @@ public class LBStateCityFetch extends AppCompatActivity {
 
 
     public void initSearchView() {
-        final SearchView searchView = (SearchView) search_menu.findItem(R.id.action_filter_search).getActionView();
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(search_menu.findItem(R.id.action_filter_search));
         searchView.setSubmitButtonEnabled(false);
         ImageView closeButton = searchView.findViewById(R.id.search_close_btn);
         closeButton.setImageResource(R.drawable.ic_close);
-        EditText txtSearch = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText txtSearch = searchView.findViewById(R.id.search_src_text);
         txtSearch.setHint("Search..");
         txtSearch.setHintTextColor(Color.DKGRAY);
         txtSearch.setTextColor(getResources().getColor(R.color.tab_title_dark));
-        AutoCompleteTextView searchTextView = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        AutoCompleteTextView searchTextView = searchView.findViewById(R.id.search_src_text);
         try {
             Field mCursorDrawableRes = TextView.class.getDeclaredField("mCursorDrawableRes");
             mCursorDrawableRes.setAccessible(true);
@@ -214,12 +211,8 @@ public class LBStateCityFetch extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Please Wait ! fetching cities !!", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
-
         });
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -242,7 +235,7 @@ public class LBStateCityFetch extends AppCompatActivity {
         else
             anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, (float) width, 0);
 
-        anim.setDuration((long) 220);
+        anim.setDuration(220);
 
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -256,8 +249,6 @@ public class LBStateCityFetch extends AppCompatActivity {
 
         if (isShow) myView.setVisibility(View.VISIBLE);
         anim.start();
-
-
     }
 
 
@@ -461,10 +452,7 @@ public class LBStateCityFetch extends AppCompatActivity {
                 AppConstant.MY_SOCKET_TIMEOUT_MS,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(dataRequest);
-
-
     }
 }

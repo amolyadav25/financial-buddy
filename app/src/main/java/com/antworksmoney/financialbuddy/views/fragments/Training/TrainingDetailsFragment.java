@@ -3,15 +3,16 @@ package com.antworksmoney.financialbuddy.views.fragments.Training;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.core.view.GravityCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -173,8 +174,10 @@ public class TrainingDetailsFragment extends Fragment {
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
             }
         });
-
-        Glide.with(getContext()).load(mTrainingEntity.getThumbnail()).error(null).into(kenBurnsView);
+        Log.e("Mytag","mTrainingEntity.getThumbnail("+mTrainingEntity.getThumbnail());
+       // kenBurnsView.setImageDrawable(getIR.drawable.pdfimage);
+        kenBurnsView.setImageResource(R.drawable.pdf_banner);
+       // Glide.with(getContext()).load(mTrainingEntity.getThumbnail()).error(null).into(kenBurnsView);
 
 
         return rootView;

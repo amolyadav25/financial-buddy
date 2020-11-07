@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.fragments.Loan.ContactDetailsFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         android:elevation="1px"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
@@ -23,12 +23,12 @@
 
             android:text="Loan Application"
             android:textColor="@android:color/white" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginBottom="@dimen/dimen_10dp">
 
         <RelativeLayout
@@ -80,7 +80,7 @@
                 android:layout_height="160dp"
                 android:layout_below="@+id/shareContactDetailsHeading"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/contact_details" />
+                app:srcCompat="@drawable/contact_details" />
 
             <EditText
                 android:id="@+id/et_reg_fname"
@@ -98,12 +98,26 @@
                 android:textColorHint="@color/background_color"
                 android:textSize="@dimen/dimen_12dp" />
 
+            <EditText
+                android:id="@+id/et_reg_lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_reg_fname"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/edt_bg_selector"
 
+                android:hint="@string/lastname"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textColor="@color/background_color"
+                android:textColorHint="@color/background_color"
+                android:textSize="@dimen/dimen_12dp" />
             <EditText
                 android:id="@+id/et_user_mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/et_reg_fname"
+                android:layout_below="@+id/et_reg_lname"
                android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginBottom="@dimen/dimen_10dp"
                 android:background="@drawable/edt_bg_selector"
@@ -167,7 +181,7 @@
             <RelativeLayout
                 android:id="@+id/buttonlayout"
                 android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_below="@+id/et_nationality"
                 android:layout_marginTop="@dimen/dimen_10dp">
 
@@ -201,4 +215,4 @@
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

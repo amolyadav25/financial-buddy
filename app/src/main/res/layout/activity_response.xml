@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".views.activities.ResponseActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:title="Response"
         app:titleTextColor="@android:color/white" />
@@ -17,12 +17,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="?android:attr/actionBarSize"
+            android:layout_margin="?attr/actionBarSize"
             android:background="@drawable/border_background"
             android:padding="@dimen/dimen_10dp">
 
@@ -119,4 +119,4 @@
         </RelativeLayout>
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

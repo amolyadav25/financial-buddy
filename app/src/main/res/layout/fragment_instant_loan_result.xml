@@ -6,9 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.Loan.InstantLoanResultFragment">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background"
         app:navigationIcon="@drawable/ic_dehaze_white_24dp">
 
@@ -20,13 +20,13 @@
             android:textColor="@android:color/white"
 />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/instantLoanList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginTop="?attr/actionBarSize"
         android:padding="@dimen/dimen_20sp"/>
 
     <ProgressBar

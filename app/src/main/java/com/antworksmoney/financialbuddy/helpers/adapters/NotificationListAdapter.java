@@ -2,8 +2,8 @@ package com.antworksmoney.financialbuddy.helpers.adapters;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -129,16 +129,16 @@ public class NotificationListAdapter extends RecyclerView.Adapter<NotificationLi
 
         String difference = "";
         if (elapsedDays > 0){
-            difference = difference + String.valueOf(elapsedDays) + " days ";
+            difference = difference + elapsedDays + " days ";
         }
         else if (elapsedHours > 0){
-            difference = difference + String.valueOf(elapsedHours) + " hours ";
+            difference = difference + elapsedHours + " hours ";
         }
         else if (elapsedMinutes > 0){
-            difference = difference + String.valueOf(elapsedMinutes) + " minutes ";
+            difference = difference + elapsedMinutes + " minutes ";
         }
         else if (elapsedSeconds > 0){
-            difference = difference + String.valueOf(elapsedSeconds) + " seconds ";
+            difference = difference + elapsedSeconds + " seconds ";
         }
 
         return difference + "ago";

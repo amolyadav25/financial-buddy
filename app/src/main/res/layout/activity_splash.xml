@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#FFF"
     tools:context=".views.activities.SplashActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
-
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/applogo" />
+            app:srcCompat="@drawable/finaciallogo2" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -66,8 +66,6 @@
                 android:layout_height="@dimen/dimen_10dp"
                 android:layout_margin="@dimen/dimen_5dp"
                 android:background="@drawable/contact_view_circle_blue" />
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,16 +76,14 @@
                 android:text="Investment"
                 android:textSize="@dimen/dimen_14sp"
                 android:textColor="@color/background_color" />
-
         </LinearLayout>
-
     </RelativeLayout>
 
     <ImageView
         android:layout_width="200dp"
-        android:src="@drawable/powerdby"
+        app:srcCompat="@drawable/powerdby"
         android:padding="@dimen/dimen_2dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_height="@dimen/dimen_34sp"/>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

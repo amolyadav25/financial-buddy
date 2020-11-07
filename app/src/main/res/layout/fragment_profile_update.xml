@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackBarView"
     android:layout_width="match_parent"
@@ -7,32 +8,26 @@
     android:background="@android:color/white"
     android:focusableInTouchMode="true"
     tools:context=".views.fragments.Profile.ProfileUpdateFragment">
-
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/ProfileUpdateToolBar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar_background">
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <ImageView
                 android:id="@+id/hamburgerIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_dehaze_white_24dp" />
-
+                app:srcCompat="@drawable/ic_dehaze_white_24dp" />
             <TextView
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-
                 android:text="@string/update_profile"
                 android:textColor="@android:color/white" />
 
@@ -42,32 +37,25 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:background="?android:selectableItemBackground"
-
+                android:background="?attr/selectableItemBackground"
                 android:text="@string/skip"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/dimen_14sp" />
-
-
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-
+    </androidx.appcompat.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?android:attr/actionBarSize">
-
+        android:layout_marginTop="?attr/actionBarSize">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <RelativeLayout
                 android:id="@+id/profileLogoLayout"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:background="@drawable/toolbar_background" >
-
                 <TextView
                     android:id="@+id/fbCodeTextView"
                     android:layout_width="wrap_content"
@@ -79,8 +67,6 @@
                     android:textColor="@color/toolbar_background_color"
                     android:background="@drawable/buttonbackgroundwhite"/>
             </RelativeLayout>
-
-
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profileImage"
                 android:layout_width="150dp"
@@ -90,7 +76,6 @@
                 android:layout_marginBottom="-20dp"
                 android:background="@drawable/update_profile_image_background"
                 android:contentDescription="@string/app_name" />
-
             <ProgressBar
                 android:id="@+id/imageLoader"
                 android:layout_width="wrap_content"
@@ -101,7 +86,6 @@
                 android:adjustViewBounds="true"
                 android:theme="@style/TextLabel"
                 android:visibility="gone" />
-
             <ImageView
                 android:id="@+id/overlapImage"
                 android:layout_width="wrap_content"
@@ -114,9 +98,7 @@
                 android:background="@drawable/camera_background"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/dimen_5dp"
-                android:src="@drawable/ic_photo_camera_white_24dp" />
-
-
+                app:srcCompat="@drawable/ic_photo_camera_white_24dp" />
             <RelativeLayout
                 android:id="@+id/layoutBottom"
                 android:layout_width="match_parent"
@@ -135,7 +117,6 @@
                     android:text="Profile Completeness"
                     android:textColor="@color/toolbar_background_color"
                     android:textSize="@dimen/dimen_14sp" />
-
                 <TextView
                     android:id="@+id/profileCompletenessPercentage"
                     android:layout_width="wrap_content"
@@ -143,11 +124,9 @@
                     android:layout_above="@+id/profileCompletenessProgressBar"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="@dimen/dimen_10dp"
-
                     android:text="0%"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/dimen_14sp" />
-
                 <ProgressBar
                     android:id="@+id/profileCompletenessProgressBar"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -159,7 +138,6 @@
                     android:indeterminate="false"
                     android:progress="0"
                     android:progressDrawable="@drawable/green_progress" />
-
                 <EditText
                     android:id="@+id/et_reg_fname"
                     android:layout_width="match_parent"
@@ -175,8 +153,6 @@
                     android:textColor="@color/toolbar_background_color"
                     android:textColorHint="@color/statusBackgroundColor"
                     android:textSize="@dimen/dimen_14sp" />
-
-
                 <EditText
                     android:id="@+id/et_user_mail"
                     android:layout_width="match_parent"
@@ -192,7 +168,6 @@
                     android:textColor="@color/toolbar_background_color"
                     android:textColorHint="@color/statusBackgroundColor"
                     android:textSize="@dimen/dimen_14sp" />
-
                 <TextView
                     android:id="@+id/countrycodeText"
                     android:layout_width="wrap_content"
@@ -205,7 +180,6 @@
                     android:text=" +91 "
                     android:textColor="@color/toolbar_background_color"
                     android:textSize="@dimen/dimen_14sp" />
-
                 <EditText
                     android:id="@+id/et_user_phone_number"
                     android:layout_width="match_parent"
@@ -221,8 +195,6 @@
                     android:textColor="@color/toolbar_background_color"
                     android:textColorHint="@color/statusBackgroundColor"
                     android:textSize="@dimen/dimen_14sp" />
-
-
                 <Spinner
                     android:id="@+id/genderSelector"
                     android:layout_width="match_parent"
@@ -231,7 +203,6 @@
                     android:layout_marginStart="@dimen/dimen_2dp"
                     android:layout_marginEnd="@dimen/dimen_2dp"
                     android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
-
                 <Spinner
                     android:id="@+id/maritalStatusSelector"
                     android:layout_width="match_parent"
@@ -240,7 +211,6 @@
                     android:layout_marginStart="@dimen/dimen_2dp"
                     android:layout_marginEnd="@dimen/dimen_2dp"
                     android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
-
                 <RelativeLayout
                     android:id="@+id/dateOfBirthSelectorLayout"
                     android:layout_width="match_parent"
@@ -250,8 +220,7 @@
                     android:layout_marginStart="@dimen/dimen_5dp"
                     android:layout_marginEnd="@dimen/dimen_5dp"
                     android:theme="@style/MyAppbarTheme"
-                    android:background="?android:attr/selectableItemBackground">
-
+                    android:background="?attr/selectableItemBackground">
                     <TextView
                         android:id="@+id/selectDateTextView"
                         android:layout_width="match_parent"
@@ -265,7 +234,14 @@
                         android:textColorHint="@color/statusBackgroundColor"
                         android:textSize="@dimen/dimen_14sp" />
                 </RelativeLayout>
-
+                <ProgressBar
+                    android:id="@+id/progressProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone" />
                 <Button
                     android:id="@+id/nextButton"
                     android:layout_width="match_parent"
@@ -281,13 +257,7 @@
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/dimen_14sp" />
-
-
             </RelativeLayout>
-
         </RelativeLayout>
-
-
     </ScrollView>
-
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
